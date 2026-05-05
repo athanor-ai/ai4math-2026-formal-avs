@@ -1,0 +1,63 @@
+% AI4MATH 2026 workshop submission.
+% Title: "Formal-AVS: A Lean 4 Benchmark for Anytime-Valid CS Theorem Proving"
+%
+% Template: ICML 2026 (AI4MATH 2026 uses ICML format per CFP).
+% Non-archival submission; also submitted to NeurIPS 2026 Datasets & Benchmarks.
+%
+% Compile: bash build.sh
+
+\documentclass{article}
+
+\usepackage{icml2026}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{lmodern}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+
+\icmltitlerunning{Formal-AVS: A Lean 4 Benchmark for Anytime-Valid CS Theorem Proving}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{Formal-AVS: A Lean 4 Benchmark for\\Anytime-Valid Confidence-Sequence Theorem Proving}
+
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+\icmlauthor{Anonymous Authors}{anon}
+\end{icmlauthorlist}
+
+\icmlaffiliation{anon}{Affiliation redacted for double-blind review.}
+\icmlcorrespondingauthor{Anonymous Authors}{anon@example.org}
+
+\icmlkeywords{formal theorem proving, Lean 4, benchmark, anytime-valid inference, LLM provers}
+
+\vskip 0.3in
+]
+
+\printAffiliationsAndNotice{}
+
+\input{sections/abstract}
+\input{sections/intro}
+\input{sections/related}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+
+\bibliographystyle{icml2026}
+\bibliography{references}
+
+\end{document}

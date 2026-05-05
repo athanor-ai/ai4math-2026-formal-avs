@@ -1,0 +1,279 @@
+\section{Benchmark Construction}
+\label{sec:methods}
+
+We define a \emph{target} as a single Lean~4 theorem statement that a
+solver is asked to close. \textsc{Formal-AVS} contains $60$ targets
+(\S\ref{sec:methods-tiers}). Each is annotated with its tier, required
+imports, family, and per-drafter closure record.
+Appendix~\ref{app:bench-format-fig}
+(Listings~\ref{lst:bench-lean} and~\ref{lst:bench-json}) shows one
+target as Lean source and as a JSONL row. The field-level schema is
+in Appendix~\ref{app:schema}.
+
+\subsection{The companion library: \texttt{formal-avs-lean}}
+
+We construct \texttt{formal-avs-lean}~\cite{formalavslean2026}, an
+Apache-2.0 Lean~4 library released as a prerequisite artefact for
+this benchmark. It instantiates the four canonical anytime-valid
+confidence-sequence constructions, supplies per-family rate
+functions $\eta_F$, and proves the dependency lemmas required to
+even \emph{state} the cross-family inequalities used in T3. The
+asymptotic CLT family is included for comparability with deployed
+systems that mix non-asymptotic and asymptotic CS constructions.
+The library is organised into eight modules (\texttt{Basic},
+\texttt{HowardRamdas}, \texttt{WaudbySmithBetting},
+\texttt{WhitehouseVector}, \texttt{AsymptoticCLT},
+\texttt{Quantization}, \texttt{PhiTransform},
+\texttt{MatchingConstants}). Target theorems are extracted from
+each.
+
+\textsc{Formal-AVS} contains $60$ targets by design:
+target curation is bounded by the $\sim$\,$50$ axiom-clean dependency
+lemmas a library author can hand-prove, which allows manual audit of
+axiom use. Translation pipelines sourcing olympiad or textbook
+content cannot reach the cross-family tier because Mathlib does not
+instantiate the rate functions.
+
+\paragraph{Why \texttt{formal-avs-lean} was necessary.}
+Mathlib's \texttt{Probability.Martingale} supplies Doob decomposition
+and Azuma's inequality but does not instantiate the four CS families,
+the per-family rate functions, or Ville's inequality for the
+betting-process construction. Without those, neither generalist
+drafters nor Aristotle can attempt the T3 cross-function statements:
+the goal type $\eta_{\mathrm{HR}}(b) \leq \eta_{\mathrm{vector}}(b)$
+is not expressible. The library closes that gap in
+$\sim$\,$3$k lines across $8$ modules and $\sim$\,$50$ dependency
+lemmas, with the QA guarantees described in
+\S\ref{sec:methods-qa}.
+
+\subsection{Quality assurance and axiom audit}
+\label{sec:methods-qa}
+
+Because the benchmark grades drafters against the library, the library
+itself must be trustworthy: a hidden \texttt{sorry} or a
+silently-widened axiom set in any dependency lemma would invalidate
+every closure built on top. Quality assurance has four components.
+\textbf{(i)~Axiom-clean baseline.} Every reference proof, every closed
+drafter attempt, and every closed Aristotle session terminates inside
+the canonical Mathlib core $\mathcal{A}_{\text{core}} = \{\texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}\}$. The drafter-sweep
+closure criterion (\S\ref{sec:methods-tiers}) rejects any candidate
+whose \texttt{\#print axioms} dump extends beyond
+$\mathcal{A}_{\text{core}}$, and per-target dumps union to exactly
+$\mathcal{A}_{\text{core}}$ (Appendix~\ref{app:axiom-audit}). This
+rules out the \texttt{axiom my\_lemma : \dots} shortcut.
+\textbf{(ii)~Hand-authored dependency lemmas.} The $\sim$\,$50$
+dependency lemmas (Ville's inequality, quantization-transport,
+$\Phi$-substitution, sharp constants) were written by the library
+authors before any solver run, and each was manually cross-checked
+against the published constructions of
+Howard et al.~\cite{howard2021time},
+Waudby-Smith and Ramdas~\cite{waudbysmith2024estimating}, and
+Whitehouse et al.~\cite{whitehouse2025timeuniform}.
+\textbf{(iii)~Refutation discovery.} Three benchmark candidates
+authored as legitimate targets were refuted by Aristotle on the first
+attempt, and both original and corrected forms ship in the JSONL
+(\S\ref{sec:aristotle-refute}).
+\textbf{(iv)~Toolchain pinning} (\S\ref{app:reproducibility}): library,
+JSONL, and verification driver are pinned to a fixed Lean toolchain
+and Mathlib commit, and \texttt{bash reproduce.sh} re-runs the full
+audit on cached outputs.
+
+The dependency lemmas are sorry-free. Target theorems contain
+\texttt{sorry} by design: these are the statements solvers attempt
+to close, and the $53/60$ closed proofs are in the Aristotle history
+and drafter output files.
+
+\subsection{Tiers and failure categories}
+\label{sec:methods-tiers}
+
+Each target carries two kinds of label. The four \emph{tiers} T0-T3
+are assigned by theorem shape before any drafter run. The two
+\emph{empirical failure categories} T4 and T5 are assigned
+after evaluation, because their definitions reference observed
+solver behaviour. We separate the two kinds of label so that the
+tier signal is independent of solver outcome.
+
+\paragraph{Pre-evaluation tiers (T0-T3).}
+\textbf{T0} (Mathlib canon, $7$ theorems): statement and proof
+expressible entirely within Mathlib (sanity-check floor).
+\textbf{T1} (single-function friendly, $34$): sign /
+monotonicity / positivity of a single $\eta_F$ closeable by
+\texttt{positivity}, \texttt{nlinarith}, or a short
+\texttt{simp}-chain.
+\textbf{T2} (single-function challenging, $8$): single-function
+targets whose closure requires a substitution or a Mathlib
+lemma not named in the goal.
+\textbf{T3} (cross-function inequality, $6$): inequalities
+or sharp-constant identities between two rate functions (e.g.\
+$\eta_{\mathrm{vector}} = \sqrt{2}\,\eta_{\mathrm{HR}}$),
+admitting a log-domain $\Phi$-substitution. T0-T3 assignment
+depends only on theorem signature and is fixed before any
+drafter sweep.
+
+\paragraph{Empirical failure categories (T4, T5).}
+\textbf{T4} (library-gap, $4$ theorems): targets where no
+evaluated solver returned a closure and the missing piece is a
+Mathlib API not yet upstream (sub-Gaussian MGF bound for
+martingale sums, Ville's inequality for supermartingales,
+vector concentration, time-uniform CLT). A Mathlib pull request
+adding the required API would move these targets out of T4.
+\textbf{T5} (unresolved, $1$ theorem): the sole T5 target,
+\texttt{equivalence\_\allowbreak break\_at\_\allowbreak finite\_precision}, has zero
+close-rate across every evaluated solver. It is a
+witness-construction problem on the continuous-equivalence
+break between Howard-Ramdas and Ville thresholds at finite
+precision; no missing Mathlib API explains the failure.
+T4 and T5 are empirical categories from this evaluation, not predictions for future solvers.
+
+\subsection{Drafter sweep protocol}
+
+Each drafter is evaluated at $N=5$ attempts per target under a
+mixed-temperature schedule: one greedy attempt (temperature
+$T=0$) followed by four independent samples at $T=0.7$. The
+attempt budget is $8$k tokens per sample. We define pass@$N$ at
+the target level. A target is \emph{closed} for a drafter if at
+least one of the $N$ attempts produces a Lean~4 proof that
+(a)~type-checks on the specified toolchain, (b)~closes the goal
+with no residual \texttt{sorry}, and (c)~does not widen the
+axiom set beyond $\{$\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}$\}$.
+Pass@$N$ is defined at the target level: a target is closed if any
+of the $N$ attempts succeeds. We do not aggregate over individual
+attempts as if they were independent samples.
+
+\paragraph{Target-selection protocol.}
+We extracted target theorems from the eight
+\texttt{formal-avs-lean} modules. The selection criteria,
+applied in order, were the following.
+(i)~The theorem is provable in Lean~$4$ against Mathlib at the
+pinned commit, modulo the dependency lemmas already proved
+inside \texttt{formal-avs-lean}.
+(ii)~The statement does not import a non-Apache-2.0 third-party
+library.
+(iii)~The statement is at most $400$ characters and does not
+require a custom tactic block to state.
+We did not pre-screen for drafter difficulty. Of the
+$\sim$\,$120$ candidate theorems in the library, $60$ met the
+criteria and form the released benchmark. The remaining
+candidates were excluded for reasons recorded per-target in the
+supplementary \texttt{selection\_log.csv}.
+
+\paragraph{Evaluated slate.}
+The headline drafter sweeps were run on a $48$-target subset.
+The $48$-slate is the canonical evaluation set in this
+submission. The full $60$-target table adds $4$ T4 entries,
+$1$ T5 entry, and $7$ T1 entries that we report separately
+(see Table~\ref{tab:headline}, footnote on imputed cells).
+T4 and T5 entries are zero by construction in the
+$60$-target table because they were assigned to those
+categories on the basis of zero closures across evaluated
+solvers (\S\ref{sec:methods-tiers}). We report headline rates
+on the $48$-slate and a status table on $60$ targets, rather
+than fold the two together.
+
+\paragraph{Drafter set.}
+Four closed-source drafters are scored in the headline sweep.
+Claude Sonnet~4.6, Kimi~K2.5, and Gemini~3 Pro under a shared
+hint-list prompt. Mistral Large~3 under a neutral prompt
+(\S\ref{sec:spec-inversion} reports the prompt-sensitivity
+result). Mistral collapses to $0/240$ on the same hint-list
+prompt because of greedy hint-list compliance, so the headline
+row uses the prompt that produces a non-degenerate row.
+Cross-drafter aggregates over Mistral and the other three
+should be read with this prompt asymmetry in mind. A
+supplementary closed-source row, Claude Opus~$4.6$, is reported
+on the same $48$-slate at $N=5$ under the hint-list prompt.
+Two specialised open-weights drafters complete the headline sweep:
+DeepSeek-Prover-V2-7B~\cite{dspv22025}
+(\href{https://huggingface.co/deepseek-ai/DeepSeek-Prover-V2-7B}{huggingface.co/deepseek-ai/DeepSeek-Prover-V2-7B})
+and Goedel-Prover-V2-8B~\cite{goedelprover2025}
+(\href{https://huggingface.co/Goedel-LM/Goedel-Prover-V2-8B}{huggingface.co/Goedel-LM/Goedel-Prover-V2-8B}).
+Both are scored on the $48$-slate at $N=5$ under the same neutral
+specialised-prover prompt template. Community quantization choices
+and reproduction details are in Appendix~\ref{app:prompts}. DSPv2
+attempts are released as cached candidates in the supplementary
+archive. The Goedel-V2 row is reproducible end-to-end from the
+released weights and evaluation driver.
+
+\subsection{Hint ablation protocol}
+\label{sec:methods-hint-ablation}
+
+Three prompt columns per T3 target are evaluated, with names chosen
+so the content is recoverable from the label.
+\textbf{\textsc{Base}}: goal statement only (no-hint baseline).
+\textbf{\textsc{Sub}}: \textsc{Base} plus a one-line
+$\Phi$-substitution hint
+$x \mapsto \exp(\lambda^{\star} x - (\lambda^{\star})^{2}\sigma^{2}/2)$,
+with family-specific $\lambda^{\star}$ (isolates lemma search given
+the substitution). \textbf{\textsc{Sub+Chain}}: \textsc{Sub} plus an
+explicit Mathlib lemma chain (\texttt{Real.exp\_le\_one\_iff},
+\texttt{Real.log\_nonneg}, \texttt{Real.sqrt\_le\_sqrt}, \dots) with
+usage-direction annotations (isolates lemma application given both).
+A boxed-table form is Table~\ref{tab:hint-legend}
+(Appendix~\ref{app:hint-legend-table}). The five-stage evaluation
+pipeline is expanded as Table~\ref{tab:eval-protocol}
+in Appendix~\ref{app:eval-protocol-fig}.
+
+The \textsc{Sub+Chain} lemma list was reverse-engineered from an
+Aristotle T3 closure (\S\ref{sec:methods-tiers}, footnote on
+hint-chain provenance). An alternative library-reference chain
+(\S\ref{app:alternative-hint-chain}) is released as a sensitivity
+check, overlapping on $5/7$ lemmas. We read \textsc{Sub+Chain} as a
+proof-plan-condition upper bound on drafter T3 closure given the
+lemma chain, not as an independent tactic-vocabulary measurement.
+
+\subsection{Aristotle history collection}
+
+Fourteen Harmonic Aristotle~\cite{aristotle2025} sessions were
+collected between 2026-03 and 2026-04 against the same
+\texttt{formal-avs-lean} library. Each session submits $1$ to
+$5$ targets. We record per-target verdict (\texttt{closed},
+\texttt{partial}, or \texttt{refuted}), the closed Lean proof
+when applicable, the counterexample when applicable, the
+axiom-set dump of the closed Lean kernel, and the fingerprint
+hash of the submitted Lean tarball. All 14 sessions are
+released as \texttt{aristotle\_history.jsonl} alongside the
+benchmark. Reproducing a session against the released library
+requires a Harmonic API key (we accessed Aristotle through the
+public dashboard at \url{aristotle.harmonic.fun}).
+
+\paragraph{Refutation handling.}
+Three benchmark targets were authored as legitimate library
+statements but Aristotle returned counterexamples on first
+attempt, identifying that the as-stated forms were
+mathematically false (\S\ref{sec:aristotle-refute}). We retain
+all three in the benchmark JSONL. The released schema includes
+both the corrected theorem (used in headline drafter sweeps and
+the Aristotle 53/60 closure count) and the original refuted
+form (used to support the statement-correctness classification
+axis). Refutations were not seeded by the authors. They are a
+discovered property of the library that the benchmark surfaces
+and preserves.
+
+\paragraph{Aristotle compute budget.}
+Each Aristotle session is a single API call submitted via
+\texttt{aristotle submit} against the released library. We did
+not impose a per-session token or rollout cap. Sessions return
+on average within $30$ to $50$ minutes of wall time.
+Drafters are scored at $N=5$ attempts of $8$k tokens each.
+The Aristotle vs.\ drafter comparison is therefore between a
+proof-search system with unbounded internal compute and a
+generalist drafter at a fixed token budget. The $53/60$
+vs.\ $2/24$ T3 gap conflates training data, training scale,
+search compute, and prompt-conditioned tactic vocabulary, and
+is reported as such.
+
+\paragraph{Reproducibility.}
+The supplementary archive includes the \texttt{formal-avs-lean}
+library at the cited Lean toolchain and Mathlib pin (toolchain
+reference and Mathlib commit are listed in the supplementary
+\texttt{REPRODUCE.md}), the benchmark JSONL with both corrected
+and original (refuted) statement forms, the prompt files, the
+drafter sweep driver, the Wilson-CI computation script, and the
+Lean kernel verification script that recomputes the
+$\{\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}\}$
+axiom audit. A single command (\texttt{bash reproduce.sh}) runs
+the verification pipeline on cached drafter outputs to
+regenerate every numeric cell in the headline tables. Drafter
+output files for all evaluated cells are released in the
+archive.

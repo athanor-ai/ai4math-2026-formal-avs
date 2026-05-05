@@ -1,0 +1,116 @@
+\section{Introduction}
+\label{sec:intro}
+
+A/B tests on tech platforms run in the thousands per day. The classical
+fixed-horizon $t$-test assumes the sample size is chosen before looking
+at the data. In practice analysts peek. They stop experiments that
+look significant or extend those that look close, which inflates the
+false-positive rate from $5\%$ to often $30\%$ or higher. The same
+\emph{optional stopping} problem arises with higher stakes in clinical
+trials. Interim analyses are essential there, but classical
+group-sequential designs require the number and timing of looks to be
+pre-specified. Anytime-valid confidence sequences~\cite{howard2021time,
+waudbysmith2024estimating, whitehouse2025timeuniform} supply confidence
+intervals valid at every stopping time simultaneously, removing this
+constraint. The non-asymptotic flavour (Howard-Ramdas, betting,
+Whitehouse vector) gives hard guarantees at every $t$. The
+asymptotic flavour (time-uniform central limit theorem, CLT)
+gives the looser large-sample
+behaviour that governs deployment-scale runtime characteristics. The
+benchmark covers both regimes, since deployed systems span both.
+
+The theory is clean. The code that computes the confidence band is not.
+A missing absolute value, an off-by-one on a log, a finite-precision
+coarsening of the cumulant bound, or a dropped symmetry hypothesis can
+each invalidate the nominal type-I guarantee while the software still
+appears to run. A Lean~4 proof pinned against a fixed
+Mathlib commit removes that class of error. Writing these proofs by
+hand is labour-intensive: each theorem takes a trained
+statistician-programmer hours to days. Closing them with language-model
+drafters would reduce the manual proof effort required for production
+deployment of anytime-valid methods. This paper benchmarks current drafters on a narrow, audited slice of that workload.
+
+Existing Lean-proof benchmarks (MiniF2F~\cite{zheng2022minif2f},
+ProofNet~\cite{azerbayev2023proofnet}, Verina~\cite{sunblazeverina})
+measure the ability of a language-model drafter to close a proof
+against a frozen statement library. Given a frontier Lean library with a specific conceptual
+structure, which drafter capabilities are required to close theorems
+about that structure, and can those capabilities be decomposed into
+prompt-level interventions? To answer this we release \textsc{Formal-AVS},
+a benchmark of $60$ Lean~4 theorems on anytime-valid confidence
+sequences (CS)~\cite{howard2021time, waudbysmith2024estimating}.
+The targets cover sign and monotonicity of family-specific rate
+functions, cross-function inequalities between the
+HR-family~\cite{howard2021time}, betting
+family~\cite{waudbysmith2024estimating}, Whitehouse
+vector~\cite{whitehouse2025timeuniform}, and asymptotic CLT families,
+and admissibility theorems for the four canonical stopping rules. A
+\emph{target} in the rest of the paper means one of these $60$ Lean
+theorem statements that a solver is asked to close. The companion
+library is released under Apache-2.0 at the snapshot URL listed in the
+supplementary archive (\texttt{REPRODUCE.md},
+item~\textsc{lib-snapshot}). Quality assurance for the library
+is described in~\S\ref{sec:methods-qa}. It includes
+the axiom-clean baseline $\mathcal{A}_{\text{core}} \coloneqq
+\{\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}\}$
+enforced on every closed proof, manual review of all
+$\sim$\,$50$ dependency lemmas, and Aristotle-surfaced refutations
+of three statements.
+
+The benchmark is paired with an Aristotle prover history archive.
+Fourteen sessions of Harmonic Aristotle~\cite{aristotle2025} applied to
+targets drawn from the same library are released alongside the
+benchmark, with per-session verdicts
+(closed / partial / refuted), closed Lean proofs, counterexample
+witnesses, and \texttt{\#print axioms} audits. Prior Lean benchmarks
+release target statements or solver traces, not both.
+
+On a $48$-target evaluated slate, four closed-source generalists,
+two specialised open-weights provers
+(DSPv2-7B~\cite{dspv22025},
+Goedel-Prover-V2-8B~\cite{goedelprover2025}), and Harmonic
+Aristotle~\cite{aristotle2025} are evaluated across three
+capability levels. Under single-shot $N{=}5$, generalist closure
+saturates at $22/48$ (Gemini hint-list). T0 Mathlib-canon
+targets return $0/28$ across four generalists. T3 cross-function
+targets return $2/24$. Under agentic mode
+(\texttt{cycle\_prove} $r{=}4$~\cite{opengauss2025}), Gemini
+reaches $19/48$ and closes the first non-Aristotle T3 target.
+The prompt-sensitivity gap narrows: Gemini's hint-list advantage
+vanishes under agentic mode, suggesting the refinement loop
+partially substitutes for prompt engineering
+(\S\ref{sec:agentic}). Aristotle, under an unbounded compute
+budget, closes $53/60$ axiom-clean and refutes three
+false-as-stated targets (\S\ref{sec:aristotle-refute}).
+We also report a 3-column T3 hint study
+(\S\ref{sec:methods-hint-ablation}) and a prompt-sensitivity
+matrix across all three capability levels
+(Table~\ref{tab:prompt-sensitivity}).
+
+\textsc{Formal-AVS} has four single-shape tiers (T0-T3) plus two
+empirical failure categories. T4 contains four targets blocked by
+missing Mathlib APIs. T5 contains one unresolved finite-precision
+witness target. Tier shape: T0~($7$), T1~($34$), T2~($8$), T3~($6$),
+T4~($4$), T5~($1$). Each theorem is annotated with a JSON record
+containing statement, tier, required imports, per-drafter closure
+rates at $N=5$, and a solver-status summary
+(\S\ref{sec:methods-tiers}). Appendix~\ref{app:bench-format-fig}
+(Listings~\ref{lst:bench-lean} and~\ref{lst:bench-json}) shows the
+schema and a representative T3 target. T4 and T5 assignments depend on
+observed solver behaviour and are flagged as such throughout the text.
+
+This paper releases three artifacts.
+(i) \texttt{formal-avs-lean}, an Apache-2.0 Lean~4 library authored as
+a prerequisite for this benchmark ($\sim$\,$3$k lines, $8$ modules,
+$\sim$\,$50$ axiom-clean dependency lemmas) that instantiates the four
+canonical anytime-valid CS families and the rate functions required to
+even state the cross-function targets.
+(ii) A 60-theorem benchmark with T0-T3 single-shape tiers and T4-T5
+empirical failure categories, plus per-drafter closure records and a
+3-column T3 hint study.
+(iii) A 14-session Aristotle history archive against the same library,
+with closed/partial/refuted verdicts, closed Lean proofs, counterexample
+witnesses, and axiom audits. The refutation track measures a capability
+axis orthogonal to pass@$N$ closure: whether a solver can identify
+false-as-stated theorems
+(\S\ref{sec:aristotle-refute}).

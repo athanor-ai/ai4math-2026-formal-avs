@@ -1,0 +1,84 @@
+\section*{NeurIPS Paper Checklist}
+
+\begin{enumerate}
+
+\item {\bf Claims}
+    \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: All closure rates, prompt-sensitivity findings, and capability-ladder results are backed by cached drafter outputs in the supplementary archive. Every numeric cell in Tables 1--2 is reproducible via \texttt{bash reproduce.sh}.
+
+\item {\bf Limitations}
+    \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: \S\ref{sec:discussion} discusses statistical power (Wilson CIs), Aristotle's unbounded compute regime, Sub+Chain contamination, and scope (four CS families only).
+
+\item {\bf Theory Assumptions and Proofs}
+    \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete proof?
+    \item[] Answer: \answerNA{}
+    \item[] Justification: This is a dataset/benchmark paper. It does not introduce new theorems. The companion library's dependency lemmas are sorry-free and axiom-audited (\S\ref{sec:methods-qa}).
+
+\item {\bf Experimental Result Reproducibility}
+    \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: Supplementary includes: benchmark JSONL, all cached drafter outputs, prompt templates, the companion Lean library, and \texttt{reproduce.sh} for table regeneration.
+
+\item {\bf Open access to data and code}
+    \item[] Question: Does the paper provide open access to the data and code?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: The benchmark slate, companion library (Apache-2.0), drafter outputs, and reproduction scripts are in the supplementary archive. Open-weights model links (DSPv2, Goedel-V2) are provided.
+
+\item {\bf Experimental Setting/Details}
+    \item[] Question: Does the paper specify all the training and test details?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: \S\ref{sec:methods}: $N=5$ attempts, mixed temperature ($T=0$ greedy + $T=0.7$), 8k token budget, $r=4$ agentic rounds. Prompt templates in supplementary.
+
+\item {\bf Experiment Statistical Significance}
+    \item[] Question: Does the paper report error bars suitably and correctly?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: Wilson 95\% confidence intervals reported in Appendix~\ref{tab:wilson-ci}. Pass@$N$ defined at target level. $N=10$ and $N=25$ follow-ups in appendix.
+
+\item {\bf Experiments Compute Resources}
+    \item[] Question: For each experiment, does the paper provide sufficient information on the computer resources?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: Local provers (DSPv2-7B, Goedel-V2-8B) run on a consumer GPU (GGUF Q6\_K / GPTQ-int8 quantization). Cloud drafters via standard API. Aristotle via public API.
+
+\item {\bf Code Of Ethics}
+    \item[] Question: Does the research conducted in the paper conform with the NeurIPS Code of Ethics?
+    \item[] Answer: \answerYes{}
+
+\item {\bf Broader Impacts}
+    \item[] Question: Does the paper discuss both potential positive and negative societal impacts?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: \S\ref{sec:discussion} (Intended use and ethics): evaluation artefact for comparing drafter capability. No personal or dual-use content.
+
+\item {\bf Safeguards}
+    \item[] Question: Does the paper describe safeguards for responsible release?
+    \item[] Answer: \answerNA{}
+    \item[] Justification: The benchmark contains mathematical theorem statements only. No privacy-sensitive data, no model weights released, no dual-use risk.
+
+\item {\bf Licenses for existing assets}
+    \item[] Question: Are existing assets properly credited with licenses respected?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: Mathlib (Apache-2.0), DSPv2 (MIT), Goedel-V2 (Apache-2.0), OpenGauss (MIT) cited with license-compatible use. Aristotle cited per terms.
+
+\item {\bf New Assets}
+    \item[] Question: Are new assets well documented?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: The benchmark JSONL schema is in Appendix~\ref{app:schema}. The companion library has a README, lakefile, and axiom audit. REPRODUCE.md documents the full archive.
+
+\item {\bf Crowdsourcing and Research with Human Subjects}
+    \item[] Question: For crowdsourcing experiments, does the paper include instructions given to participants?
+    \item[] Answer: \answerNA{}
+    \item[] Justification: No human subjects or crowdsourcing.
+
+\item {\bf Institutional Review Board (IRB) Approvals}
+    \item[] Question: Does the paper describe potential risks incurred by study participants?
+    \item[] Answer: \answerNA{}
+    \item[] Justification: No human subjects research.
+
+\item {\bf Declaration of LLM usage}
+    \item[] Question: Does the paper describe the usage of LLMs in the core methodology?
+    \item[] Answer: \answerYes{}
+    \item[] Justification: LLMs are the subject of evaluation (Claude Sonnet, Gemini, Kimi, Mistral, DSPv2, Goedel-V2 as drafters; Aristotle as prover). Their use is the paper's core contribution. Prompts are in supplementary.
+
+\end{enumerate}

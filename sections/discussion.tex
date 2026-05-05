@@ -1,0 +1,48 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Why T3 failures persist after the substitution hint.}
+Every T3 target reduces to a single-function inequality that one
+of the four drafters could close autonomously once the right
+rewrite is in hand. Two operations are jointly required for
+closure: producing the log-domain $\Phi$-substitution (or a
+problem-specific sqrt manipulation), and selecting the Mathlib
+lemma chain that discharges the re-encoded goal. The \textsc{Sub}
+column of Table~\ref{tab:ablation} ($0$-$2/6$ per drafter)
+isolates the second operation. The \textsc{Sub+Chain} column
+($3$-$5/6$) supplies both. Harmonic Aristotle closes $6/6$
+(\S\ref{sec:capability-ladder}) without either hint, using the
+$\Phi$-substitution on some targets and a direct
+\texttt{sqrt\_le\_sqrt}-family route on others. Aristotle is
+under a different compute regime
+(\S\ref{sec:methods-tiers}). The $6/6$ vs $0$-$2/6$ gap should
+be read as a system difference, not as an isolated generalist
+tactic-vocabulary bound. The \textsc{Sub+Chain} result suggests
+supplying the lemma list narrows the generalist closure gap on
+T3, conditional on the Aristotle-derived chain
+(\S\ref{sec:methods-tiers}, hint-ablation paragraph).
+
+\paragraph{Specialised provers and the Mathlib-outside gap.}
+Goedel-Prover-V2~\cite{goedelprover2025}, trained on Mathlib,
+surfaces this gap in its own reasoning trace: on
+\texttt{etabetting\_nonneg} ($0 \leq \eta_{\mathrm{betting}}(b)$),
+the model responds \emph{``the Lean 4 code provided does not define
+etaBetting \ldots\ we cannot proceed with a meaningful proof.''}
+Under single-shot, DSPv2~\cite{dspv22025} ($9/48$) outperforms
+Goedel-V2 ($5/48$) because its autocomplete format fits a $10$ GB
+GPU. Under agentic mode, Goedel-V2's self-correction training
+activates and it reaches $13/48$, surpassing DSPv2 (detailed
+hardware-constraint analysis in
+Appendix~\ref{app:inference-format}).
+
+\paragraph{Hint-response asymmetry.}
+The T3 hint ablation (Appendix~\ref{app:hint-ablation-table}) shows
+generalist closure rising from $0$--$1/6$ at \textsc{Base} to
+$3$--$5/6$ at \textsc{Sub+Chain}, while DSPv2 closes only one target
+across both hint columns. For mixed-drafter ensembles this suggests
+routing lemma-rich prompts to generalists and specialised provers to
+targets where their tactic prior matches the goal shape.
+
+\paragraph{Limitations.}
+Wilson 95\% CIs, scope, and contamination notes are in
+Appendix~\ref{tab:wilson-ci}.

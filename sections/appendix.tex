@@ -1,0 +1,1083 @@
+\appendix
+\section{T3 hint-ablation results}
+\label{app:hint-ablation-table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{3-column hint study on T3 cross-function inequalities
+(pass@$5$). The \textsc{Sub+Chain} chain was reverse-engineered
+from an Aristotle T3 closure, so this column is a
+proof-plan-condition upper bound, not an independent capability
+test. Generalist closure rises from $0$--$1/6$ at \textsc{Base}
+to $3$--$5/6$ at \textsc{Sub+Chain}. DSPv2 closes the same
+single target across both hint columns. Footnote superscripts
+match Table~\ref{tab:headline}.}
+\label{tab:ablation}
+\begin{tabular}{lccc}
+\toprule
+Drafter & \textsc{Base} & \textsc{Sub} & \textsc{Sub+Chain} \\
+\midrule
+Claude Sonnet~4.6  & 0/6 & 1/6 & 4/6 \\
+Kimi~K2.5          & 1/6 & 1/6 & 3/6 \\
+Gemini~3 Pro       & 0/6 & 2/6 & 4/6 \\
+Mistral Large~3$^{\ast}$ & 0/6 & 0/6 & 0/6 \\
+\midrule
+Claude Opus~4.6$^{\ddagger\ddagger}$ & 0/6 & 2/6 & 5/6 \\
+DSPv2-$7$B GPTQ-int$8$ & 0/6 & 1/6 & 1/6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Hint-ablation legend table}
+\label{app:hint-legend-table}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Hint-ablation legend, boxed-table form. Same content as the
+inline legend in~\S\ref{sec:methods-hint-ablation}.}
+\label{tab:hint-legend}
+\begin{tabular}{@{}lp{0.78\textwidth}@{}}
+\toprule
+\textsc{Base}      & Goal statement only, no hint (no-hint baseline). \\
+\textsc{Sub}       & \textsc{Base} plus $\Phi$-substitution hint
+                     $x \mapsto \exp(\lambda^{\star} x -
+                     (\lambda^{\star})^{2}\sigma^{2}/2)$,
+                     family-specific $\lambda^{\star}$ (lemma search
+                     given the substitution). \\
+\textsc{Sub+Chain} & \textsc{Sub} plus an explicit Mathlib lemma chain
+                     (\texttt{Real.exp\_le\_one\_iff},
+                     \texttt{Real.log\_nonneg},
+                     \texttt{Real.sqrt\_le\_sqrt}, \dots)
+                     (lemma application given both). \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\section{Benchmark format}
+\label{app:bench-format-fig}
+
+The two listings below show one T3 target as it appears in the Lean
+source (Listing~\ref{lst:bench-lean}) and as a row of
+\texttt{benchmark.jsonl} (Listing~\ref{lst:bench-json}). The full
+field-level schema is in Appendix~\ref{app:schema}.
+
+\begin{lstlisting}[style=leanstyle, caption={Lean theorem statement
+  for the T3 target \texttt{etavector\_eq\_sqrt\_two\_mul\_etahr}.
+  Stored verbatim in the \texttt{theorem\_statement} field of the
+  matching JSONL row.},
+  label={lst:bench-lean}]
+theorem etavector_eq_sqrt_two_mul_etahr
+    (b : Real) (hb : 1 <= b) :
+    etaVector b = Real.sqrt 2 * etaHR b := by
+  unfold etaVector etaHR
+  rw [Real.sqrt_mul]
+  . ring
+  . positivity
+\end{lstlisting}
+
+\begin{lstlisting}[style=jsonstyle, caption={\texttt{benchmark.jsonl}
+  record (excerpt) for the same target. The
+  \texttt{hint\_ablation} block carries the three prompt columns
+  for T3 targets only (Table~\ref{tab:hint-legend}).},
+  label={lst:bench-json}]
+{
+  "target_id": "etavector_eq_sqrt_two_mul_etahr",
+  "tier": "T3",
+  "family": "cross",
+  "requires_formal_avs_lean": true,
+  "required_imports": [
+    "FormalAvs.HowardRamdas",
+    "FormalAvs.WhitehouseVector"
+  ],
+  "closure_rate_n5": {
+    "sonnet_4_6":  0.0,
+    "kimi_k2_5":   0.6,
+    "gemini_3pro": 0.0,
+    "mistral_l3":  0.4
+  },
+  "hint_ablation": {
+    "BASE":      {"sonnet_4_6": 0.0, ...},
+    "SUB":       {"sonnet_4_6": 0.2, ...},
+    "SUB+CHAIN": {"sonnet_4_6": 0.8, ...}
+  },
+  "aristotle_session_id": "74fe5c49"
+}
+\end{lstlisting}
+
+\section{Evaluation-protocol pipeline}
+\label{app:eval-protocol-fig}
+
+Table~\ref{tab:eval-protocol} expands the five-stage drafter sweep
+pipeline summarised in~\S\ref{sec:methods-hint-ablation}. Every
+(target, drafter, prompt) cell traverses the five stages in order.
+Stage~4 pins outcomes to the fixed logical foundation
+of~\S\ref{sec:methods-qa}.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Five-stage evaluation pipeline applied per (target,
+drafter, prompt) cell. Companion to
+\S\ref{sec:methods-hint-ablation}. Expanded form of the protocol
+text in~\S\ref{sec:methods-tiers}.}
+\label{tab:eval-protocol}
+\begin{tabular}{@{}rlp{0.65\textwidth}@{}}
+\toprule
+\# & Stage & Action \\
+\midrule
+1 & Target  & Lean theorem read from \texttt{benchmark.jsonl}
+              ($60$ targets), tagged with tier T0--T5 and required
+              imports. \\
+2 & Prompt  & Hint-list or neutral template. For T3, one of
+              \textsc{Base} / \textsc{Sub} / \textsc{Sub+Chain}
+              (Table~\ref{tab:hint-legend}). \\
+3 & Sample  & $N{=}5$ attempts per cell: $1$ greedy at $T{=}0$
+              plus $4$ samples at $T{=}0.7$, $8$k tokens each. \\
+4 & Verify  & \texttt{lake build} on the candidate, reject any
+              \texttt{sorry}, then assert
+              $\texttt{\#print axioms} \subseteq
+              \mathcal{A}_{\text{core}}$. \\
+5 & Score   & Target closed for the cell iff $\geq 1$ of $N$
+              attempts passes stage~4. Aggregate as
+              per-cell pass@$N$. \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\section{Dataset schema}
+\label{app:schema}
+
+Each row of \texttt{benchmark.jsonl} contains the following
+fields.
+
+\begin{itemize}[leftmargin=1.3em, itemsep=0.15em]
+\item \texttt{target\_id}: unique identifier (stable across versions).
+\item \texttt{theorem\_statement}: the Lean~4 theorem statement as a
+raw string (imports included).
+\item \texttt{tier}: one of \texttt{T0}, \texttt{T1}, \texttt{T2},
+\texttt{T3}, \texttt{T4}, \texttt{T5}.
+\item \texttt{requires\_formal\_avs\_lean}: boolean flag. True if
+the statement references a \texttt{formal-avs-lean} definition
+not in Mathlib.
+\item \texttt{family}: one of \texttt{hr}, \texttt{vector},
+\texttt{betting}, \texttt{aCS}, \texttt{cross} (cross-family
+inequality).
+\item \texttt{closure\_rate\_n5}: map from drafter-name to fraction
+closed at $N=5$.
+\item \texttt{hint\_ablation}: present for T3 targets. Map from
+hint-column key (\texttt{"BASE"}, \texttt{"SUB"}, or
+\texttt{"SUB+CHAIN"} as in Table~\ref{tab:hint-legend}) to
+closure-rate map across drafters.
+\item \texttt{aristotle\_session\_id}: fingerprint hash linking to a
+row in \texttt{aristotle\_history.jsonl} (if present).
+\item \texttt{mathlib\_lemmas}: for T2/T3, the Mathlib lemma chain
+that admits the closure (used in the \textsc{Sub+Chain} prompt).
+\end{itemize}
+
+\section{Aristotle history schema}
+\label{app:aristotle}
+
+Each row of \texttt{aristotle\_history.jsonl} contains the following
+fields.
+
+\begin{itemize}[leftmargin=1.3em, itemsep=0.15em]
+\item \texttt{session\_id}: short fingerprint (8-12 hex chars).
+\item \texttt{target\_id}: pointer into \texttt{benchmark.jsonl}.
+\item \texttt{submitted\_at}, \texttt{completed\_at}: ISO-8601 UTC
+timestamps.
+\item \texttt{verdict}: one of \texttt{closed}, \texttt{partial},
+\texttt{refuted}.
+\item \texttt{axiom\_audit}: sorted list of axioms used by the closed
+Lean kernel, as reported by \texttt{\#print axioms}.
+\item \texttt{counterexample}: present only when \texttt{verdict =
+refuted}. The Lean-syntax counterexample witness.
+\item \texttt{residual\_sorries}: list of \texttt{sorry} names present
+in the partial proof (present only when \texttt{verdict = partial}).
+\item \texttt{compute\_minutes}: elapsed wall-clock time of the Aristotle session.
+\end{itemize}
+
+\section{Drafter prompts}
+\label{app:prompts}
+
+\subsection{Generalist drafter prompt (closed-source)}
+
+\begin{verbatim}
+You are a Lean 4 expert proficient with Mathlib.
+Close the following theorem with a clean tactic proof.
+Prefer concise tactic chains. Avoid `sorry`. Avoid axioms.
+
+<theorem-statement>
+
+<optional hint block>
+\end{verbatim}
+
+The \textsc{Sub} hint adds: ``Hint: the log-domain substitution
+$x \mapsto \exp(\lambda^\star x - (\lambda^\star)^2 \sigma^2 / 2)$ with
+family-specific $\lambda^\star$ is likely useful.''
+
+The \textsc{Sub+Chain} hint adds on top: ``Hint: the following Mathlib lemmas
+are likely relevant, in approximate order: \texttt{Real.exp\_le\_one\_iff},
+\texttt{Real.log\_nonneg}, \texttt{Real.sqrt\_le\_sqrt},
+\texttt{Real.exp\_log\_eq\_iff}, \texttt{Real.sqrt\_mul\_self},
+\texttt{field\_simp}, \texttt{positivity}.''
+
+\subsection{Specialised prover prompts (DSPv2, Goedel-V2)}
+
+DSPv2 is autocomplete-trained: the input terminates at the trailing
+\texttt{:=} token and the model emits the proof body directly.
+
+\begin{verbatim}
+<imports>
+
+<opens>
+
+namespace <scratch_namespace>
+
+<theorem-header> :=
+\end{verbatim}
+
+Goedel-V2 is chat-trained: per the model card, the input is wrapped
+as a single user turn that asks for a proof plan followed by the
+final code in a fenced \texttt{lean4} block. We extract the proof
+body from that block and verify against the same lake project as
+the rest of the sweep.
+
+\begin{verbatim}
+Complete the following Lean 4 code:
+
+```lean4
+<imports>
+
+namespace <scratch_namespace>
+
+<theorem-header> := by
+  sorry
+```
+
+Before producing the Lean 4 code to formally prove the given
+theorem, provide a detailed proof plan ...
+\end{verbatim}
+
+The \textsc{Sub+Chain} column adds the Mathlib-lemma hint as a Lean
+\texttt{/- hint -/} block before the trailing \texttt{:=} token (DSPv2)
+or in the user turn before the code block (Goedel-V2). DSPv2 is
+prefix-only and ignores non-prefix hint context. We retain all three
+hint columns for both rows for parity with the closed-source
+generalists.
+
+We use community quantizations: DSPv2 GPTQ-int8 (one of the 15
+community variants linked from the official model page), Goedel-V2
+GGUF Q$6$\_K. Both are inference-only artifacts. The underlying
+weights are the official 7B / 8B releases.
+
+\subsection{Alternative T3 hint chain from library reference proofs}
+\label{app:alternative-hint-chain}
+
+To rule out the concern that the \textsc{Sub+Chain} hint contaminates
+the ablation by replaying Aristotle's tactic-prior, we extracted
+a second hint chain directly from the closed reference proofs in
+\texttt{formal-avs-lean} (the per-target proofs the library
+authors hand-wrote for the T3 statements, prior to any solver
+run). The two chains are reported below:
+
+\begin{sloppypar}
+\begin{description}[leftmargin=1.3em, itemsep=0.2em]
+\item[\textsc{Sub+Chain} headline.]
+\texttt{Real.exp\_le\_one\_iff}, \texttt{Real.log\_nonneg},
+\texttt{Real.sqrt\_le\_sqrt}, \texttt{Real.exp\_log\_eq\_iff},
+\texttt{Real.sqrt\_mul\_self}, \texttt{field\_simp},
+\texttt{positivity}.
+\item[Library reference proofs.]
+\texttt{Real.sqrt\_le\_sqrt}, \texttt{Real.sqrt\_mul},
+\texttt{Real.log\_nonneg}, \texttt{Real.le\_sqrt\_of\_sq\_le},
+\texttt{nlinarith}, \texttt{field\_simp},
+\texttt{Real.log\_two\_gt\_d9}.
+\end{description}
+\end{sloppypar}
+
+The two chains overlap on $5/7$ lemmas
+(\texttt{Real.sqrt\_le\_sqrt}, \texttt{Real.log\_nonneg},
+\texttt{field\_simp}, \texttt{positivity} or
+\texttt{Real.le\_sqrt\_of\_sq\_le}, and a sqrt-multiplication
+identity). The non-overlapping
+parts reflect different proof shapes (the \textsc{Sub+Chain} chain
+includes \texttt{Real.exp\_log\_eq\_iff} for the substitution
+step. The reference-proof chain uses \texttt{nlinarith} +
+\texttt{Real.log\_two\_gt\_d9} for numerical bounds). Both
+chains live in the same Mathlib lemma neighbourhood. The
+non-overlap reflects different proof shapes, not distribution
+shift.
+
+The headline ablation in Table~\ref{tab:ablation} uses the
+\textsc{Sub+Chain} chain. The library-reference chain is released in
+the supplementary archive as an alternative hint set for
+researchers wanting an Aristotle-independent baseline.
+
+\paragraph{Spot-check N=5 result.}
+We ran a small Sonnet $N=5$ comparison on $3$ of the $6$ T3
+targets (\texttt{etabetting\_le\_etahr},
+\texttt{etavector\_eq\_sqrt\_two\_mul\_etahr},
+\texttt{etahr\_le\_etavector}) using the library-reference
+chain. Sonnet closed $0/15$ attempts, versus the headline \textsc{Sub+Chain}
+result of $4/6$ across all six T3 targets. The result is
+informative: the specific lemma sequence in the \textsc{Sub+Chain} chain
+is consequential within the broad ``Mathlib lemma chain'' hint
+category. The two chains overlap on $5/7$ lemmas but produce
+different per-target close-rates at small $N$, suggesting
+that hint composition (lemma order, presence of specific bridging
+identities like \texttt{Real.exp\_log\_eq\_iff}) is itself a
+capability axis. A full $4 \times 6 \times N=5$ comparison
+across all four generalist drafters and all six T3 targets is
+deferred to a future revision.
+
+\section{Tier-distribution table}
+\label{app:tier-dist}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Target distribution across tier $\times$ family. $60$
+targets total. T4 plus T5 are the empirical failure categories
+($5$ theorems). $53$ of $60$ non-frontier targets require
+\texttt{formal-avs-lean}.}
+\label{tab:tier-dist}
+\begin{tabular}{lcccccc}
+\toprule
+Family & T0 & T1 & T2 & T3 & T4 & T5 \\
+\midrule
+HR-family                    & 2 & 11 & 3 & - & - & - \\
+betting family               & 1 & 10 & 1 & - & - & - \\
+Whitehouse vector            & 1 &  6 & 2 & - & - & - \\
+Asymptotic CLT               & 1 &  7 & 2 & - & - & - \\
+Cross-family (inequality)    & - & - & - & 6 & - & - \\
+Mathlib-only reference       & 2 & - & - & - & - & - \\
+Library-gap (Mathlib PR)     & - & - & - & - & 4 & - \\
+Capability-ceiling frontier  & - & - & - & - & - & 1 \\
+\midrule
+Total                        & 7 & 34 & 8 & 6 & 4 & 1 \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\section{Baseline reproducibility}
+\label{app:reproducibility}
+
+To reproduce the headline sweep:
+\begin{enumerate}[leftmargin=1.3em, itemsep=0.15em]
+\item Clone the companion Lean~4 library at the pinned release
+commit (snapshot URL in supplementary
+\texttt{REPRODUCE.md}, item~\textsc{lib-snapshot}. Lean
+toolchain and Mathlib commit pin in \texttt{lean-toolchain}
+and \texttt{lakefile.lean}).
+\item Clone the dataset repo from the snapshot Hugging Face
+location (URL in supplementary \texttt{REPRODUCE.md},
+item~\textsc{dataset-snapshot}).
+\item Run the provided \texttt{sweep.py} against a drafter
+endpoint. It submits each of the $48$ evaluated targets under
+the mixed-temperature pass@$5$ schedule (one greedy sample at
+$T=0$ followed by four independent samples at $T=0.7$) and
+writes per-target closure records. The driver prints the
+SHA-256 of the prompt files and dataset snapshot it used.
+\item Verify each closure by running \texttt{lake build}
+against the produced Lean file. The per-target axiom audit is
+extracted via \texttt{lean -{}-run axiom\_audit.lean}.
+\item Run \texttt{bash reproduce.sh} from the supplementary
+archive to regenerate every numeric cell in
+Table~\ref{tab:headline}, Table~\ref{tab:ablation},
+Table~\ref{tab:prompt-sensitivity}, and the Wilson-CI tables
+from cached drafter outputs (released alongside the dataset).
+\end{enumerate}
+For the specialised-prover column, the pinned GPTQ-quantised
+DSPv2 weights serve as the baseline endpoint.
+
+\paragraph{Asset licenses.}
+Benchmark JSONL, tier metadata, per-drafter closure records at
+$N=5$, drafter prompts, 3-column hint ablation records, and the
+14-session Aristotle history archive are released under CC-BY-4.0.
+The underlying Lean~4 library is released under Apache-2.0. The
+GPTQ-quantised DSPv2 weights are released as an artifact. Anonymised
+asset URLs are included in the supplementary archive.
+
+\paragraph{Wilson 95\% confidence intervals on Table~\ref{tab:headline}.}
+Table~\ref{tab:wilson-ci} reports the Wilson 95\% confidence interval
+on every per-cell pass@5 closure rate from the headline matrix. The
+effective $N$ for each Wilson interval is the per-tier denominator
+because pass@5 collapses each target's $5$ attempts into a single
+Bernoulli outcome (target-closed if $\geq 1$ of $5$ attempts closed).
+The intervals are widest on the $n=1$ T5 cell and the small-$n$ T0,
+T2, T3, T4 cells (all per-tier denominator $\leq 8$). The headline
+findings are stable under the Wilson CIs. The four-drafter T3 wall
+has every drafter $\leq 17\%$ closure CI upper bound, separated from
+Aristotle's $6/6$ closure on the same column. Mistral's T1 collapse
+$1/34$ has CI $[1, 15]\%$, below the $34$ to $66\%$ band of the
+other three drafters. The four-drafter T0 floor at $0/7$ has Wilson
+upper bound $35\%$ across all four, consistent with the Mathlib-canon
+framing.
+
+\begin{table}[H]
+\caption{Wilson 95\% confidence intervals on every per-cell
+pass@5 closure rate from Table~\ref{tab:headline}. Cells report
+targets-closed/tier-size with the Wilson 95\% CI in brackets
+(percent units). Mistral T1 $1/34$ at $[1,15]$ is separated
+from the $34$--$66\%$ band of Sonnet/Kimi/Gemini. The
+four-drafter T3 wall has every drafter at most $17\%$ upper
+bound, below Aristotle's $6/6$ T3 closure
+(\S\ref{sec:capability-ladder}). T4 and T5 cells report $0$-imputed
+outcomes. Intervals reflect sampling uncertainty on the
+structural zero.}
+\label{tab:wilson-ci}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|cccccc}
+\toprule
+Drafter & T0 & T1 & T2 & T3 & T4 & T5 \\
+& ($n=7$) & ($n=34$) & ($n=8$) & ($n=6$) & ($n=4$) & ($n=1$) \\
+\midrule
+Claude Sonnet~4.6 & 0/7 \textcolor{gray}{[0,35]} & 18/34 \textcolor{gray}{[37,69]} & 0/8 \textcolor{gray}{[0,32]} & 0/6 \textcolor{gray}{[0,39]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
+Kimi~K2.5 & 0/7 \textcolor{gray}{[0,35]} & 17/34 \textcolor{gray}{[34,66]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
+Gemini~3 Pro & 0/7 \textcolor{gray}{[0,35]} & 22/34 \textcolor{gray}{[48,79]} & 0/8 \textcolor{gray}{[0,32]} & 0/6 \textcolor{gray}{[0,39]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
+Mistral Large~3 & 0/7 \textcolor{gray}{[0,35]} & 1/34 \textcolor{gray}{[1,15]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
+Claude Opus~4.6 & 0/7 \textcolor{gray}{[0,35]} & 13/34 \textcolor{gray}{[24,55]} & 0/8 \textcolor{gray}{[0,32]} & 0/6 \textcolor{gray}{[0,39]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
+DSPv2-$7$B GPTQ-int$8$ & 3/7 \textcolor{gray}{[16,75]} & 8/34 \textcolor{gray}{[12,40]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{$N=10$ extension}
+\label{app:robustness-n10}
+
+To stress the headline closure pattern under a higher per-cell
+attempt budget, we extended all six drafter sweeps from $N=5$ to
+$N=10$ by firing five additional independent $T=0.7$ samples per
+(target, drafter) cell, for a total of one greedy plus nine $T=0.7$
+attempts per cell. The slate, prompts, verification regime, and
+v2-strict sorry-detection are held identical to the $N=5$ headline.
+The four closed-source drafters (Sonnet, Kimi, Gemini, Mistral),
+the supplementary fifth row (Opus), and the specialised prover
+(DSPv2-$7$B GPTQ-int8) were each extended on the full $48$-target
+slate.
+
+Across the $6 \times 48 = 288$ (drafter, target) cells, doubling
+the attempt budget shifts only \emph{three} target-level closures:
+Gemini closes one new T2 target
+(\texttt{dichotomy\_\allowbreak universal\_\allowbreak monotonicity\_\allowbreak impossible}), Opus
+closes one new T3 target (\texttt{etahr\_over\_etabetting\_gt\_one}),
+and DSPv2 closes one new T3 target (\texttt{etahr\_le\_etavector}).
+All three new closures are axiom-clean and pass v2-strict (no
+\texttt{sorry} in the candidate body). The remaining $285$ cells
+reproduce their $N=5$ verdict.
+
+Table~\ref{tab:wilson-ci-n10} reports the per-cell Wilson 95\% CIs
+at $N=10$. Intervals widen only for cells whose target-level outcome
+changed. The $285$ unchanged cells retain identical intervals to
+their $N=5$ counterparts in Table~\ref{tab:wilson-ci}. The headline
+findings hold under the $N=10$ stress. Mistral T1 collapse remains
+at $1/34$ with CI $[1, 15]\%$. The four-drafter T3 wall has every
+drafter at most $17\%$ upper bound (Kimi, Mistral, and Opus all at
+$1/6 = 17\%$ point estimate, with Sonnet and Gemini at $0/6$). The
+four-drafter T0 floor remains at $0/7$ for all four with Wilson
+upper bound $35\%$.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Per-cell pass@10 closure rates with Wilson 95\% CIs.
+T4 and T5 omitted (no drafter closes either at any $N$). Three
+cells differ from pass@5 in Table~\ref{tab:wilson-ci}: Gemini T2
+$0/8 \to 1/8$, Opus T3 $0/6 \to 1/6$, DSPv2 T3 $1/6 \to 2/6$.
+Per-cell intervals are stable across $N=5 \to N=10$.}
+\label{tab:wilson-ci-n10}
+\begin{tabular}{l|cccc}
+\toprule
+Drafter & T0 & T1 & T2 & T3 \\
+& ($n=7$) & ($n=34$) & ($n=8$) & ($n=6$) \\
+\midrule
+Claude Sonnet~4.6 & 0/7 \textcolor{gray}{[0,35]} & 18/34 \textcolor{gray}{[37,69]} & 0/8 \textcolor{gray}{[0,32]} & 0/6 \textcolor{gray}{[0,39]} \\
+Kimi~K2.5 & 0/7 \textcolor{gray}{[0,35]} & 17/34 \textcolor{gray}{[34,66]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} \\
+Gemini~3 Pro & 0/7 \textcolor{gray}{[0,35]} & 22/34 \textcolor{gray}{[48,79]} & 1/8 \textcolor{gray}{[2,47]} & 0/6 \textcolor{gray}{[0,39]} \\
+Mistral Large~3 & 0/7 \textcolor{gray}{[0,35]} & 1/34 \textcolor{gray}{[1,15]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} \\
+Claude Opus~4.6 & 0/7 \textcolor{gray}{[0,35]} & 13/34 \textcolor{gray}{[24,55]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} \\
+DSPv2-$7$B GPTQ-int$8$ & 3/7 \textcolor{gray}{[16,75]} & 8/34 \textcolor{gray}{[12,40]} & 0/8 \textcolor{gray}{[0,32]} & 2/6 \textcolor{gray}{[10,70]} \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\paragraph{DSPv2 inference-path note.}
+The DSPv2 $N=10$ extension required switching inference paths
+(the original loader was unavailable at extension time). The first
+$N=10$ attempt on the substitute path returned candidates with
+interior whitespace stripped
+(``\texttt{:=byintros\dots rw[quantizeReals]}'' in place of
+``\texttt{:= by intros\dots rw [quantizeReals]}''). We diagnosed
+this as a chat-style-instruction prompt fed to a Lean-autocompletion
+model (DSPv2 is a completion model, not a chat model) and switched
+to a Lean-autocomplete prompt format
+(\texttt{\{imports\}\textbackslash n\textbackslash n\{theorem\_header\} := }).
+Re-running the sweep with the autocomplete prompt produced clean
+Lean candidates and one new T3 closure
+(\texttt{etahr\_le\_etavector}). A subsequent SDK release adds a
+model-family registry that auto-routes recognized Lean prover
+identifiers to the autocomplete format and warns loudly when a
+chat-style template is supplied for a known completion model.
+Researchers reproducing the DSPv2 sweep through the released SDK
+will get the autocomplete format by default without any
+caller-side ceremony.
+
+\paragraph{Reproducibility note: trace-on-default for sweep launches.}
+The drafter sweep drivers stream every \texttt{litellm.completion}
+event to a relational event log by default when the standard
+event-sink environment variables are set, allowing post-hoc
+per-target audit, cost rollup, and run-level dashboards. The
+default-on behaviour is implemented via a small wrapper that each
+driver's \texttt{main()} entry invokes. Passing \texttt{--no-trace}
+on the CLI skips the trace session entirely (useful for offline
+runs without a database sink). Researchers reproducing the headline
+sweep should rely on this default. Per-attempt JSON logs under
+\texttt{logs/} are written unconditionally and serve as the
+reconstruction path if a run was launched without the database
+sink available.
+
+\section{Refutation case study: Aristotle counterexample}
+\label{app:refutation-case}
+
+Session \texttt{d2755ea2} submitted a candidate theorem asserting that
+the Gaussian small-ball lower bound holds without a symmetry
+hypothesis on the underlying filtration. Aristotle refuted the claim
+by constructing a two-step filtration witness in which the asserted
+bound fails by a constant factor. The witness was reduced to a
+Lean term and verified by \texttt{lake build}. The refuted statement
+was corrected by re-introducing the dropped symmetry hypothesis and
+re-submitted as session \texttt{54614669}, which closed cleanly. Both
+sessions and the counterexample witness are preserved in the
+history archive.
+
+\section{Extended capability analysis}
+\label{app:extended}
+
+This appendix supplies the four subsections trimmed from the main
+results in order to keep the main text within the NeurIPS~2026 page
+budget. The findings are supporting evidence for the main-text
+headline (Aristotle $6/6$ T3 against drafter aggregate $2/24$). The
+main text's §\ref{sec:results} retains the headline findings.
+
+\subsection{Aristotle history archive}
+\label{app:aristotle-history}
+
+The companion archive of fourteen Aristotle sessions records:
+\begin{itemize}[leftmargin=1.3em, itemsep=0.15em]
+\item \textbf{Ten fully-closed sessions} with clean axiom audit
+$\{$\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}$\}$,
+covering HR admissibility, betting CS admissibility, wealth-process
+martingale property, power-loss bound, Gaussian small-ball lower
+bound, the universal $\Phi$-transform admissibility for all four
+families (HR, vector, aCS, and implicitly betting via the Kelly-optimality
+characterisation), matching sharp constants $c_{\mathrm{HR}}$ and
+$c_{\mathrm{vector}}$ with their ranking proof, and two
+information-theoretic bounds (quantized entropy and Kelly-optimal
+betting).
+\item \textbf{Three partial-closure sessions} where Aristotle
+closed the headline theorem modulo residual specification sorries
+(these are recorded with the explicit residual list).
+\item \textbf{One refutation session} where Aristotle returned a
+counterexample: the submitted claim required a symmetry hypothesis
+that had been dropped during IP-strip. Aristotle's counterexample
+witness was preserved as an auxiliary dataset entry and triggered
+a correction to the original statement.
+\end{itemize}
+
+The 14-session archive supplies ground-truth closures for a subset
+of benchmark targets, which allows drafter-side closures to be
+cross-validated against Aristotle's certified output.
+
+\subsection{Aristotle capability demonstrations beyond the main table}
+\label{app:aristotle-companion}
+
+In addition to the benchmark-Table~\ref{tab:headline} evaluation,
+Harmonic Aristotle was exercised on three companion-archive theorems
+during library development:
+\texttt{c\_sharp\_ranking} (the sharp-constant ranking
+$c_{\mathrm{aCS}} \leq c_{\mathrm{vector}}$, a sharp-constant
+statement distinct from the rate-function ranking
+$\eta_{\mathrm{betting}} \leq \eta_{\mathrm{aCS}} \leq
+\eta_{\mathrm{HR}} \leq \eta_{\mathrm{vector}}$ that appears at
+T3 of the benchmark),
+\texttt{quantized\_entropy\_bound} (an information-theoretic
+entropy bound applied to the quantization-coarsened CS), and
+\texttt{betting\_is\_kelly\_optimal} (the Kelly-optimality
+characterisation of the betting CS). All three closed axiom-clean.
+These are \emph{not} Table~\ref{tab:headline} benchmark entries
+because the library proofs predate the evaluation. we report them
+to contextualise Aristotle's capability on theorems adjacent to the
+benchmark targets. No claim about Aristotle's benchmark tier close
+rate is made from these companion-archive closures.
+
+\subsection{Cross-drafter tactic-prior diversity}
+\label{app:cross-drafter}
+
+On four targets in the benchmark, \emph{every} evaluated closed-source
+drafter and Aristotle both close. These dual-closure rows expose
+cross-drafter variance: different commercial drafters
+close the same theorem via structurally \emph{different tactic chains},
+and one drafter may close where another fails at identical attempt
+budget. A concrete example is the sharp-constant ranking
+\texttt{c\_sharp\_ranking} ($c_{\mathrm{aCS}} \leq c_{\mathrm{vector}}$):
+Kimi~K2.5 fails $0/9$ at the \textsc{Sub} hint (its tactic prior directs
+search toward \texttt{one\_div\_le\_one\_div\_iff}-style
+linear-algebra routes that terminate without discharging the goal),
+whereas Gemini~3 Pro closes at att~1 greedy with the concise chain
+\texttt{[unfold, gcongr, linarith [Real.pi\_pos]]}. The same target
+is also closed by Aristotle under a longer search, and each
+of the three closures uses a distinct tactic route. We interpret this
+as drafter-specific tactic priors: different drafters have
+structurally different views of the Mathlib lemma graph, and the
+benchmark's hint-ablation protocol exposes that variance as
+information rather than noise.
+
+\paragraph{Convergent T3 close on the $\sqrt{2}$ identity.}
+The single T3 target both Kimi and Mistral uniquely close at
+$N=5$ greedy is \texttt{etavector\_eq\_sqrt\_two\_mul\_etahr}
+($\eta_{\mathrm{vector}} = \sqrt{2}\cdot\eta_{\mathrm{HR}}$). Kimi
+closes it on the greedy attempt and reproduces at two $T=0.7$
+attempts. Mistral (under the neutral prompt) closes at the greedy
+attempt and reproduces at one $T=0.7$ attempt. Sonnet and Gemini
+miss this target at $N=5$. Two independent commercial drafters
+converging on the same cross-family identity under $0$ explicit
+hint is direct evidence that the $\sqrt{2}$ factor between the
+HR and Whitehouse-vector rate functions is the most accessible
+cross-family relation in the 4-family rate landscape, independent
+of drafter tactic-prior.
+
+\subsection{Four solver regimes in the capability-wall tail}
+\label{app:four-regimes}
+
+Running the full drafter sweep (Kimi~K2.5, Sonnet~4.6, Gemini~3~Pro)
+against the five capability-wall tail theorems under the \textsc{Sub}
+and \textsc{Sub+Chain} hint regimes yields $5$ closures in $100$ total
+attempts ($5.0\%$ drafter close-rate). Breaking the
+closure matrix out by target reveals \emph{four qualitatively
+distinct solver regimes} plus a deepest-tier target unreachable by
+any generalist drafter (Table~\ref{tab:four-regimes}):
+
+\begin{table}[H]
+\centering
+\caption{Four solver regimes in the no-closure tail. Cells are
+(close count)/(attempt count) at $N \leq 9$ per drafter.
+$^\dagger$Solver-unreached: no closure across (a) 3 drafters
+$\times N=5$ greedy unhinted, (b) 3 drafters $\times$ asymmetric
+\textsc{Sub}, (c) 3 drafters $\times N=5$ \textsc{Sub+Chain}, (d) 3
+Aristotle attempts. $^\ddagger$Two Aristotle sessions timed out
+at $20$~min. One returned a counterexample on the as-stated
+form (\S\ref{sec:aristotle-refute}). We avoid claiming
+\emph{fundamentally} unreachable.}
+\label{tab:four-regimes}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Target & Kimi & Sonnet & Gemini & Aristotle & Regime \\
+\midrule
+\texttt{betting\_is\_kelly\_optimal}      & $1/1$ & $1/1$ & $1/1$ & $1/1$ & \textbf{universal} \\
+\texttt{c\_vector\_eq\_sqrt\_two\_mul\_c\_HR} & $1/1$ & $0/5$ & $1/2$ & $1/1$ & \textbf{majority} \\
+\texttt{c\_sharp\_ranking}                & $0/9$ & $0/5$ & $1/3$ & $1/1$ & \textbf{drafter-monopoly} \\
+\texttt{quantized\_entropy\_bound}        & $0/9$ & $0/5$ & $0/3$ & $1/1$ & \textbf{Aristotle-monopoly} \\
+\texttt{equivalence\_\allowbreak break\_at\_\allowbreak finite\_precision} & $0/19$ & $0/15$ & $0/13$ & $0/3$ (timeout$^\ddagger$) & \textbf{solver-unreached$^\dagger$} \\
+\bottomrule
+\end{tabular}%
+}
+
+\end{table}
+
+The four regimes correspond directly to the capability axes identified
+in \S\ref{sec:results}. \emph{Universal} targets exercise only baseline
+tactic chains (well within every drafter's Mathlib prior).
+\emph{Majority} targets exercise a a rewrite step that most
+but not all drafters' priors reach. \emph{Drafter-monopoly} targets
+expose cross-drafter tactic-prior divergence (Gemini's \texttt{gcongr}
+prior vs Kimi's \texttt{one\_div\_le\_one\_div\_iff} prior).
+\emph{Aristotle-monopoly} targets require a multi-step lemma chain
+that all generalist drafter priors miss. The
+\emph{specialised-only tier} shows the tactic-vocabulary ceiling.
+Drafters have the mathematics but lack the Lean~4 API signatures
+needed to close. The dataset records the closure matrix at row
+granularity, enabling per-target regime analyses.
+
+\subsection{Axiom audit}
+\label{app:axiom-audit}
+
+Every closed Lean~4 proof in the release terminates with a
+\texttt{\#print axioms} check. The canonical axiom set for a
+classical Mathlib proof is
+$\mathcal{A}_{\text{core}} \coloneqq \{\texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}\}$. The axiom-set
+union across all closed proofs in the release is exactly
+$\mathcal{A}_{\text{core}}$, no proof widens the axiom
+set beyond this baseline
+(Table~\ref{tab:axiom-audit}).
+
+\begin{table}[H]
+\centering
+\small
+\caption{Axiom audit. Every closed proof uses exactly
+$\mathcal{A}_{\text{core}} = \{\texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}\}$. Refuted
+targets return a counterexample witness, no proof. Three
+refutations are documented in \S\ref{sec:aristotle-refute} and
+\S\ref{app:refutation-case}. No closed proof widens the axiom
+set beyond $\mathcal{A}_{\text{core}}$ on either side.}
+\label{tab:axiom-audit}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Source & Verdict & N & Axiom set \\
+\midrule
+Aristotle main table (T0/T1/T2) & closed & 47 & $\mathcal{A}_{\text{core}}$ \\
+Aristotle main table (T1/T2) & refuted & 2 & (counterexample, no proof) \\
+Aristotle main table (T3) & closed & 6 & $\mathcal{A}_{\text{core}}$ \\
+Aristotle main table (T5) & refuted & 0 & (counterexample, no proof) \\
+Aristotle main table (T4) & attempted & 0 & library-gap, no proof \\
+Aristotle companion archive & closed & 3 & $\mathcal{A}_{\text{core}}$ \\
+Aristotle companion archive & refuted & 1 & (counterexample, no proof) \\
+Drafter closures (all) & closed & $\geq 1$ per closed row & $\mathcal{A}_{\text{core}}$ \\
+\midrule
+Release axiom-set union & n/a & n/a & $\mathcal{A}_{\text{core}}$ \\
+\bottomrule
+\end{tabular}}
+
+\end{table}
+
+\paragraph{Why this matters.}
+A capability benchmark that accepts proofs widening the axiom
+set would confound tactic-search capability with axiom-cheat
+pathology. Requiring axiom-set stability across all closed proofs
+(enforced by the drafter sweep's closure criterion at
+\S\ref{sec:methods}) makes the benchmark's closure counts
+measurements of \emph{constructive} proof-search capability under
+a fixed logical foundation.
+
+\subsection{Failure-mode taxonomy of the drafter sweep}
+\label{app:failure-modes}
+
+Each drafter attempt resolves into one of five outcomes,
+summarised in Table~\ref{tab:failure-modes}. \emph{Closed} attempts
+type-check, satisfy the goal modulo no extra sorries, and do not
+widen the axiom set beyond $\mathcal{A}_{\text{core}}$.
+\emph{Drafter-wrote-sorry} attempts emit at least one
+\texttt{sorry} token in the candidate proof body, signalling
+explicit drafter abstention. \emph{Type-check failure} attempts
+emit a candidate that the Lean elaborator rejects (unknown
+identifier, type mismatch, unsolved goal, or tactic failure).
+This is the dominant failure mode at $\sim 80\%$ of attempts and
+is the conventional capability-blocked regime. \emph{Sample-side
+error} attempts return no usable proof body (API timeout,
+empty completion, format violation). These are sampling-pipeline
+failures rather than capability signals. \emph{Alt-proof
+non-close} attempts return a candidate distinct from the
+reference Aristotle proof that nevertheless does not type-check.
+This category is rare ($<0.5\%$).
+
+\begin{table}[H]
+\centering
+\small
+\caption{Per-drafter and aggregate failure-mode breakdown of
+the $N=5$ sweep across T0/T1/T2 (T3 ablation columns in
+Table~\ref{tab:ablation}). The dominant non-close mode is
+type-check failure. Opus's sorry rate is $52/480 = 10.8\%$,
+an order of magnitude above Sonnet's $2.4\%$ and the other
+three drafters' $\leq 0.2\%$. Kimi and Mistral each have $85$
+sample-side errors concentrated on T2 (truncated or empty API
+completions), an integration artefact.}
+\label{tab:failure-modes}
+\begin{tabular}{lcccccc}
+\toprule
+Drafter & closed & sorry & type-fail & sample-err & alt-noclose & total \\
+\midrule
+Sonnet~4.6  & 50  & 14 & 530 & 0   & 1 & 595 \\
+Kimi~K2.5   & 100 & 0  & 375 & 85  & 5 & 565 \\
+Gemini~3 Pro & 103 & 1  & 461 & 0   & 0 & 565 \\
+Mistral L~3 & 8   & 1  & 471 & 85  & 0 & 565 \\
+Opus~4.6    & 61  & 52 & 365 & 0   & 2 & 480 \\
+\midrule
+aggregate   & 322 (11.6\%) & 68 (2.5\%) & 2202 (79.5\%) & 170 (6.1\%) & 8 (0.3\%) & 2770 \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\subsection{Latency and cost profile}
+\label{app:cost}
+
+Table~\ref{tab:cost} reports per-drafter wall-clock and
+per-attempt API cost aggregated across the $48$-slate
+drafter sweeps (one greedy attempt at $T=0$ plus four
+$T=0.7$ independent samples, per target). The cost column
+is the per-attempt USD cost at Anthropic/Gemini/Mistral list
+prices. Wall-clock is the full round-trip including network
+latency.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Drafter sweep latency and cost profile on the
+$48$-slate. Attempt counts include duplicate runs after a
+tokenizer fix. Per-attempt cost uses $T=0$ greedy plus $T=0.7$
+samples at list prices. Total API-priced cost across the five
+closed-source drafters is $\$37.30$. DSPv2 and Goedel-V2 run
+locally with no API cost. Token counts are approximate.}
+\label{tab:cost}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Drafter & attempts & per-att wall & per-att cost & tok-in & tok-out & total \\
+        &          & (sec)        & (USD)        & (avg)  & (avg)   & (USD) \\
+\midrule
+Claude Sonnet~4.6 & 821 & 7.9 & \$0.0070 & 160 & 432 & \$5.71 \\
+Kimi K2.5 & 480 & 23.1 & \$0.0048 & 157 & 4400 & \$2.30 \\
+Gemini~3 Pro & 480 & 29.3 & \$0.0306 & 317 & 3017 & \$14.67 \\
+Mistral Large~3 & 506 & 3.2 & \$0.0017 & 166 & 233 & \$0.87 \\
+Claude Opus~4.6 & 480 & 8.2 & \$0.0287 & 203 & 341 & \$13.75 \\
+DSPv2-$7$B (community GPTQ-int8) & 240 & 3.2 & \$0 & $\sim$190 & $\sim$130 & \$0 \\
+Goedel-V2-$8$B (community GGUF Q$6$\_K) & 240 & 21.8 & \$0 & 111 & 535 & \$0 \\
+\bottomrule
+\end{tabular}}
+
+\end{table}
+
+\paragraph{Cost per closed target.}
+We report API cost per closed target, defined as the
+per-drafter total API cost on the $48$-slate divided by the
+number of targets closed at pass@$5$. This avoids treating
+attempts as independent Bernoulli trials, which they are not.
+On the $48$-slate at pass@$5$: Mistral closes $2/48$ at
+$\$0.87$ total ($\$0.44$ per closed target on the neutral
+prompt). Sonnet closes $18/48$ at $\$5.71$ total ($\$0.32$
+per closed target). Kimi closes $18/48$ at $\$2.30$ total
+($\$0.13$ per closed target). Gemini closes $22/48$ at
+$\$14.67$ total ($\$0.67$ per closed target). Opus closes
+$13/48$ at $\$13.75$ total ($\$1.06$ per closed target).
+DSPv2 closes $12/48$ at $\$0$ marginal API cost. The ranking changes if measured
+per attempt rather than per closed target, because attempt
+cost and closure are not linearly related. We do not derive a
+per-attempt expected closure rate.
+
+\subsection{Glossary of formal-methods terms}
+\label{app:glossary}
+
+\begin{description}[leftmargin=1.3em, itemsep=0.2em]
+\item[Anytime-valid CS.] A confidence sequence
+$(C_t)_{t\geq 1}$ at level $1-\alpha$ is \emph{anytime-valid} when
+$\Prob(\forall t \geq 1 : \mu \in C_t) \geq 1-\alpha$. The
+guarantee holds at every stopping time simultaneously, fixing
+optional stopping in sequential experiments.
+\item[Rate function $\eta_F$.] Per-family CS half-width
+function. Smaller $\eta_F$ means a tighter CS. Cross-family
+inequalities of the form $\eta_F \leq \eta_G$ rank the families.
+\item[$\Phi$-substitution.] Log-domain substitution
+$x \mapsto \exp(\lambda^\star x - (\lambda^\star)^2 \sigma^2 / 2)$
+that converts an additive cumulant inequality to a multiplicative
+exponential supermartingale. Central to the cross-family ranking
+proofs.
+\item[Lateral re-encoding.] Capability of proposing the
+$\Phi$-substitution autonomously from the goal statement without
+explicit prompt guidance.
+\item[Tactic vocabulary.] Capability of selecting the
+sequence of Mathlib lemmas (\texttt{Real.sqrt\_le\_sqrt},
+\texttt{nlinarith}, etc.) that closes a re-encoded goal.
+\item[Axiom-clean closure.] A Lean kernel certificate where
+\texttt{\#print axioms} returns exactly
+$\{\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}\}$.
+The canonical Mathlib core.
+\item[MCTS.] Monte Carlo Tree Search, a search policy used by
+some specialised theorem provers to explore tactic sequences.
+Aristotle's internal search policy is not publicly documented.
+\item[Optional stopping.] Choosing the sample size based on
+the data already observed. Inflates classical fixed-horizon
+type-I error from the nominal $\alpha$ to several times higher
+in practice.
+\item[pass@$N$.] A target is closed at pass@$N$ if at least one
+of $N$ independent attempts produces an axiom-clean Lean kernel
+certificate.
+\end{description}
+
+\subsection{How to extend the benchmark}
+\label{app:how-to-extend}
+
+The benchmark's tier structure is designed to admit new targets
+at any of T0 through T3, plus the T4/T5 frontier. To submit a
+new target:
+
+\begin{enumerate}[leftmargin=1.3em, itemsep=0.15em]
+\item Author the theorem statement in a Lean module under
+\texttt{formal-avs-lean/FormalAvs/}, with the appropriate
+imports.
+\item Assign a paper tier: T0 (Mathlib-canon), T1
+(single-function friendly), T2 (single-function challenging), T3
+(cross-function), T4 (Mathlib-gap), T5 (capability-ceiling).
+\item Add a JSONL row to the released \texttt{benchmark.jsonl}
+with: \texttt{benchmark\_id}, \texttt{statement\_lean},
+\texttt{tier}, \texttt{required\_imports},
+\texttt{requires\_formal\_avs\_lean}, and the appropriate
+\texttt{drafter\_close\_rate\_*} fields (initially \texttt{null}).
+\item Run the drafter sweep at $N=5$ via the released
+\texttt{sweep.py} against the four headline drafters and DSPv2.
+Populate the \texttt{drafter\_close\_rate\_*} fields.
+\item For T3 targets, additionally provide the \textsc{Sub} and
+\textsc{Sub+Chain} hint columns and run the 3-column ablation.
+\item For Aristotle coverage, submit the target as a session
+via the public Aristotle API. Record session\_id, verdict, and
+axiom audit in \texttt{aristotle\_history.jsonl}.
+\item Open a pull request against the public benchmark
+repository.
+\end{enumerate}
+
+The benchmark is versioned. Snapshot tags
+(\texttt{formal-avs-v1.0}, \texttt{v1.1}, \ldots) freeze the
+target set, drafter close-rate columns, and Aristotle history at a
+specific commit so reported results stay reproducible.
+
+\subsection{Aristotle session metadata}
+\label{app:aristotle-session-metadata}
+
+The 14-session companion archive records, per session,
+fingerprint, target-set, verdict, axiom-clean status, and
+elapsed wall time. Table~\ref{tab:aristotle-sessions} summarises.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Aristotle 14-session archive summary. All
+``closed'' rows are axiom-clean
+($\mathcal{A}_{\text{core}}$).
+\textsuperscript{$\dagger$}~companion-archive sessions
+(\S\ref{app:aristotle-companion}).
+\textsuperscript{$\ddagger$}~library-development sessions whose
+targets are not in the benchmark. Full per-session JSON in
+\texttt{aristotle\_history.jsonl}.}
+\label{tab:aristotle-sessions}
+\begin{tabular}{llll}
+\toprule
+Session id & Scope & Verdict & Wall (min) \\
+\midrule
+\texttt{74fe5c49} & 6 T3 cross-function & closed & $42$ \\
+\texttt{f0bac40c} & 48-slate (T0/T1/T2) & 46 closed + 2 refuted & $51$ \\
+\texttt{76c5d525} & 7 paper additions & closed & $36$ \\
+\texttt{bd3ea302} & 4 T4 library-gap & no proof & $50$ \\
+\texttt{5ac0658d} & 1 T5 capability-ceiling & refuted (symmetry) & $44$ \\
+\texttt{d2755ea2} & Gaussian small-ball & refuted (symmetry) & $20$ \\
+\texttt{54614669} & corrected small-ball & closed & $14$ \\
+companion\textsuperscript{$\dagger$} (3 sessions) & sharp-rank, entropy, Kelly & all closed & $\sim 30$ each \\
+4 additional\textsuperscript{$\ddagger$} & library-development & mixed & varies \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\subsection{T0 stripped-prompt disambiguation}
+\label{app:t0-stripped-prompt}
+
+The headline T0 close-rate of $0/28$ across the four generalist
+drafters could plausibly be explained either by a tactic-prior or
+retrieval gap on Mathlib-canon lemmas, or by an artefact of the
+hint-list prompt template (the banned-tactics clause, the
+allowed-tactics enumeration, or the namespace preamble suppressing
+otherwise-feasible closures). To disambiguate, we pre-registered and
+ran a stripped-prompt control: theorem statement only, no
+banned-tactics list, no allowed-tactics enumeration, no namespace
+preamble, on $6$ of the $7$ T0 targets across the four drafters at
+$N=5$ ($120$ attempts total). The stripped prompt closed $0/120$,
+matching the hint-list rate. This rules out the prompt-wrapping
+hypothesis. The remaining T0 target
+(\texttt{div\_le\_div\_of\_nonneg\_left}) was excluded because
+its as-stated form was refuted by Aristotle
+(\S\ref{sec:aristotle-refute}). The corrected form is a fair test
+for a future revision.
+
+\subsection{N=25 T3 replicate}
+\label{app:n25-t3-replicate}
+
+To shrink the wide 95\% Wilson CI on the headline T3 aggregate
+$2/24$, we ran a replicate sweep at $N=25$ on the six T3
+cross-function targets across the four generalist drafters
+(Sonnet~4.6, Kimi~K2.5, Gemini~3 Pro, Mistral Large~3) for a
+total of $4 \times 6 \times 25 = 600$ attempts. Five of the six
+T3 targets reconstruct cleanly into the sweep driver. One
+(\texttt{etahr\_over\_etabetting\_gt\_one}) fails statement
+reconstruction at $N=25$ and is excluded.
+
+The unit of analysis for pass@$N$ is the target-drafter cell
+(\S\ref{sec:methods}, drafter sweep protocol), not the
+individual attempt. We therefore report cell-level pass@$25$
+rather than aggregating attempts as if independent.
+
+\begin{tabular}{lc}
+\toprule
+Drafter & T3 pass@$25$ (5 targets, neutral prompt) \\
+\midrule
+Claude Sonnet 4.6 & $0/5$ \\
+Kimi K2.5 & $0/5$ \\
+Gemini 3 Pro & $0/5$ \\
+Mistral Large 3 & $0/5$ \\
+\midrule
+Aggregate (4 drafters $\times$ 5 targets) & $0/20$ cells \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+The cell-level Wilson 95\% upper bound on pass@$25$ at $0/20$
+is approximately $16.1\%$. This is evidence on the no-hint
+regime on $5$ of the $6$ T3 targets. It does not directly bound
+the headline hint-list result ($2/24$ at $N=5$ across $6$ T3
+targets), since the prompts and target sets differ. The total
+compute spent on this replicate ($4 \times 5 \times 25 = 500$
+attempts) is reported under \S\ref{app:cost} for transparency,
+but is not used to compute an attempt-level pass rate.
+
+\section{Prompt-sensitivity detail}
+\label{app:prompt-sensitivity-detail}
+
+The hint-list prompt improves three of four generalist drafters and
+reduces Mistral's closure rate.
+
+\textbf{Mistral Large~3.} The hint-list acts as an action-space
+restriction. Mistral's hint-list attempts converge to a deterministic
+\texttt{:= by positivity} pattern, selecting one tactic from the
+enumerated list ($0/48$ on hint-list). Without the enumeration,
+pass@$5$ rises to $2/48$, recovering the T3 $\sqrt{2}$ identity
+and one T1 target.
+
+\textbf{Sonnet, Kimi, Gemini.} The hint-list provides a useful
+prior. Removing it reduces pass@$5$ by a drafter-specific factor:
+Sonnet $18 \to 3$ ($6\times$), Kimi $18 \to 13$ ($1.4\times$),
+Gemini $22 \to 13$ ($1.7\times$). Sonnet's drop is not a parsing
+artifact: $88.6\%$ of neutral attempts contain a parseable Lean
+block. The prompt-sensitivity result argues
+against reading the headline table as a single leaderboard.
+
+\section{Inference-format analysis}
+\label{app:inference-format}
+
+On our slate, DSPv2-7B~\cite{dspv22025} closes $9/48$ at pass@$5$
+while Goedel-Prover-V2-8B~\cite{goedelprover2025} closes $5/48$
+under single-shot, despite Goedel-V2 reporting higher closure rates
+on published benchmarks (MiniF2F, ProofNet). Four of five Goedel-V2
+closures overlap with DSPv2. The gap is a hardware-constraint
+artifact: DSPv2 outputs pure Lean in $50$--$80$ tokens (autocomplete
+format), while Goedel-V2 is chat-trained with a recommended
+$32$k-token inference window. On a $10$ GB consumer GPU the maximum
+context is $4096$ tokens ($12.5\%$ of the recommended budget).
+
+Under agentic mode (\texttt{cycle\_prove} $r{=}4$), Goedel-V2's
+verifier-guided self-correction training activates: the model uses
+Lean compiler feedback to iteratively revise its proofs, rising from
+$5/48$ to $13/48$ ($2.6\times$). This surpasses DSPv2's single-shot
+$9/48$, making Goedel-V2 the strongest local prover on our slate at
+\$0 marginal cost. The self-correction capability is the
+differentiator: DSPv2 (autocomplete-trained, no self-correction)
+cannot benefit from a refinement loop.

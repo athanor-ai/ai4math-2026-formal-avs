@@ -1,0 +1,40 @@
+venue = "neurips"
+
+# NOTE: the athanor-builder NeurIPS venue preset
+# (tools/paper_lint/venues/neurips.toml) still has TODO caps — the
+# NeurIPS 2026 CFP has not been finalized in the shared kit yet. We
+# inherit the preset as-is; fill in abstract/main-text/references caps
+# on this repo's preset once the CFP numbers publish.
+
+[layout]
+min_words_per_page = 120
+page_ink_density_min = 0.02
+page_ink_density_top = 0.08
+max_overfull_pt = 5.0
+
+[figures]
+root = "figures"
+allowed_extensions = ["pdf"]
+
+[hygiene]
+root_markdown_whitelist = ["README.md", "HF_DATASET_README.md"]
+data_readme_required = false
+
+[voice]
+disabled_rules = []
+strict = false
+
+[numbers]
+# No numerical-claims manifest yet — populate during writing phase.
+enabled = false
+
+[repo_specific_gates]
+modules = []
+
+[claim_code.numbers_consistency_intra_paper]
+skip_pairs = [["4", "60", "theorems"], ["4", "29", "theorems"]]
+
+
+[voice.undefined_acronyms]
+allowlist = ["GGUF", "GPTQ", "GPU", "VRAM", "API"]
+

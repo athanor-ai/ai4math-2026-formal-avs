@@ -1,0 +1,1075 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/tmp/ai4math-formal-avs/styles/icml2026.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/tmp/ai4math-formal-avs/styles/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/tmp/ai4math-formal-avs/styles/algorithm.sty
+Document Style `algorithm' - floating environment
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty))
+(/tmp/ai4math-formal-avs/styles/algorithmic.sty
+Document Style `algorithmic' - environment
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/forloop/forloop.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 49.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+Package hyperref Warning: Ignoring empty anchor on input line 51.
+
+(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex
+(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
+Underfull \hbox (badness 1024) in paragraph at lines 2--14
+\OT1/lmr/m/n/10 (+20) The com-pan-ion li-brary \OT1/lmtt/m/n/10 formal-avs-lean
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 15--30
+\OT1/lmr/m/n/10 (+20) single-shot to $13\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20)
+ 48$ agen-tic, sur-pass-ing
+) (./sections/intro.tex (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
+b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `app:bench-format-fig' on page 2 undefined on input li
+ne 97.
+
+
+LaTeX Warning: Reference `lst:bench-lean' on page 2 undefined on input line 98.
+
+
+
+LaTeX Warning: Reference `lst:bench-json' on page 2 undefined on input line 98.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/related.tex
+Underfull \hbox (badness 10000) in paragraph at lines 102--1
+[]\OT1/lmr/m/n/10 (+20) This pa-per re-leases three ar-ti-facts. (i)
+
+Underfull \hbox (badness 1253) in paragraph at lines 102--1
+\OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/m/n/10 (+20) , an Apache-2.0 Lean 4 li
+-brary
+
+Underfull \vbox (badness 10000) has occurred while \output is active [2]
+Underfull \hbox (badness 1019) in paragraph at lines 36--54
+\OT1/lmr/m/n/10 (+20) and counterexample-extraction hooks, and dis-tin-
+
+LaTeX Warning: Reference `app:schema' on page 3 undefined on input line 82.
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 70--85
+ \OT1/lmr/bx/n/10 (+20) Agent-style eval-u-a-tion of code and proof
+) (./sections/methods.tex
+Underfull \hbox (badness 3557) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) ting fam-ily, White-house vec-tor, or asymp-totic
+
+Underfull \hbox (badness 1253) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) CLT confidence-sequence fam-i-lies. The math-lib
+
+Underfull \hbox (badness 1406) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) mu-nity[], []2026[]) sup-plies Doob de-com-po-si-tion and
+
+
+LaTeX Warning: Reference `app:bench-format-fig' on page 3 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Reference `lst:bench-lean' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `lst:bench-json' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `app:schema' on page 3 undefined on input line 11.
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 15--29
+\OT1/lmr/m/n/10 (+20) ules (\OT1/lmtt/m/n/10 Basic\OT1/lmr/m/n/10 (+20) , \OT1/
+lmtt/m/n/10 HowardRamdas\OT1/lmr/m/n/10 (+20) , \OT1/lmtt/m/n/10 WaudbySmithBet
+ting\OT1/lmr/m/n/10 (+20) ,
+[3]
+
+LaTeX Warning: Reference `app:axiom-audit' on page 4 undefined on input line 63
+.
+
+
+LaTeX Warning: Reference `app:reproducibility' on page 4 undefined on input lin
+e 77.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 1371) in paragraph at lines 115--128
+ \OT1/lmr/bx/n/10 (+20) Em-pir-i-cal fail-ure cat-e-gories (T4, T5).[] T4
+[4]
+
+LaTeX Warning: Reference `app:prompts' on page 5 undefined on input line 193.
+
+
+LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
+(Font)              using `OT1/lmr/bx/n' instead on input line 203.
+
+
+LaTeX Warning: Reference `tab:hint-legend' on page 5 undefined on input line 21
+2.
+
+
+LaTeX Warning: Reference `app:hint-legend-table' on page 5 undefined on input l
+ine 213.
+
+
+LaTeX Warning: Reference `tab:eval-protocol' on page 5 undefined on input line 
+214.
+
+
+LaTeX Warning: Reference `app:eval-protocol-fig' on page 5 undefined on input l
+ine 215.
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 201--216
+\OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
+/lmr/m/n/10 (+20) : goal state-ment
+
+LaTeX Warning: Reference `app:alternative-hint-chain' on page 5 undefined on in
+put line 220.
+
+
+Underfull \vbox (badness 2237) has occurred while \output is active [5])
+(./sections/results.tex
+
+LaTeX Warning: Reference `app:t0-stripped-prompt' on page 6 undefined on input 
+line 21.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `app:robustness-n10' on page 6 undefined on input line
+ 39.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `app:robustness-n10' on page 6 undefined on input line
+ 39.
+
+
+Overfull \hbox (252.96283pt too wide) in paragraph at lines 41--56
+ [][] 
+
+LaTeX Warning: Reference `app:hint-ablation-table' on page 6 undefined on input
+ line 72.
+
+
+LaTeX Warning: Reference `app:alternative-hint-chain' on page 6 undefined on in
+put line 77.
+
+
+LaTeX Warning: Reference `app:prompt-sensitivity-detail' on page 6 undefined on
+ input line 134.
+
+
+LaTeX Warning: Reference `app:extended' on page 6 undefined on input line 137.
+
+
+LaTeX Warning: Reference `app:aristotle-companion' on page 6 undefined on input
+ line 151.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [6]
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 183.
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 190--199
+[]\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
+
+Underfull \hbox (badness 7047) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) i-cally false, re-turn-ing machine-checkable coun-
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) terex-am-ples on each: \OT1/lmtt/m/n/10 equivalence[]brea
+k[]at[]
+
+Underfull \hbox (badness 7576) in paragraph at lines 190--199
+\OT1/lmtt/m/n/10 finite[]precision \OT1/lmr/m/n/10 (+20) (T5, miss-ing sym-me-t
+ry hy-
+
+Underfull \hbox (badness 1210) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) poth-e-sis), \OT1/lmtt/m/n/10 slack[]antitone[]in[]scale 
+\OT1/lmr/m/n/10 (+20) (T2, miss-ing
+
+Underfull \hbox (badness 1502) in paragraph at lines 190--199
+\OT1/lmtt/m/n/10 bp$[]$=(2,1)\OT1/lmr/m/n/10 (+20) ), and \OT1/lmtt/m/n/10 div[
+]le[]div[]of[]nonneg[]left \OT1/lmr/m/n/10 (+20) (T1,
+) (./sections/discussion.tex
+Underfull \hbox (badness 2772) in paragraph at lines 209--1
+\OT1/lmr/m/it/10 (+20) statement-correctness clas-si-fi-ca-tion \OT1/lmr/m/n/10
+ (+20) via refu-ta-tion.
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 11.
+
+
+Underfull \vbox (badness 4940) has occurred while \output is active [7]
+
+LaTeX Warning: Reference `app:inference-format' on page 8 undefined on input li
+ne 36.
+
+
+LaTeX Warning: Reference `app:hint-ablation-table' on page 8 undefined on input
+ line 39.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 8 undefined on input line 48.
+
+) (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 53--60
+\OT1/lmtt/m/n/10 co / Goedel-[]LM / Goedel-[]Prover-[]V2-[]8B$[]\OT1/lmr/m/n/10
+ (+20) , 2025.
+
+Underfull \hbox (badness 2990) in paragraph at lines 53--60
+\OT1/lmr/m/n/10 (+20) Princeton-led re-lease. 8B base, GGUF Q6[]K
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+[]\OT1/lmr/m/n/10 (+20) The Math-lib Com-mu-nity.  Math-lib4
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+\OT1/lmtt/m/n/10 Probability.Martingale \OT1/lmr/m/n/10 (+20) mod-ule.  []$\OT1
+/lmtt/m/n/10 https :
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+\OT1/lmtt/m/n/10 / / leanprover-[]community . github . io / mathlib4 _
+) [9] (./main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/
+share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
+m-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (9 pages, 460304 bytes).
+Transcript written on main.log.
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+The top-level auxiliary file: main.aux
+The style file: icml2026.bst
+Database file #1: references.bib
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/tmp/ai4math-formal-avs/styles/icml2026.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/tmp/ai4math-formal-avs/styles/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/tmp/ai4math-formal-avs/styles/algorithm.sty
+Document Style `algorithm' - floating environment
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty))
+(/tmp/ai4math-formal-avs/styles/algorithmic.sty
+Document Style `algorithmic' - environment
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/forloop/forloop.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 49.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+Package hyperref Warning: Ignoring empty anchor on input line 51.
+
+(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex
+(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
+Underfull \hbox (badness 1024) in paragraph at lines 2--14
+\OT1/lmr/m/n/10 (+20) The com-pan-ion li-brary \OT1/lmtt/m/n/10 formal-avs-lean
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 15--30
+\OT1/lmr/m/n/10 (+20) single-shot to $13\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20)
+ 48$ agen-tic, sur-pass-ing
+) (./sections/intro.tex (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
+b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `app:bench-format-fig' on page 2 undefined on input li
+ne 97.
+
+
+LaTeX Warning: Reference `lst:bench-lean' on page 2 undefined on input line 98.
+
+
+
+LaTeX Warning: Reference `lst:bench-json' on page 2 undefined on input line 98.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/related.tex
+Underfull \hbox (badness 10000) in paragraph at lines 102--1
+[]\OT1/lmr/m/n/10 (+20) This pa-per re-leases three ar-ti-facts. (i)
+
+Underfull \hbox (badness 1253) in paragraph at lines 102--1
+\OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/m/n/10 (+20) , an Apache-2.0 Lean 4 li
+-brary
+
+Underfull \vbox (badness 10000) has occurred while \output is active [2]
+Underfull \hbox (badness 1019) in paragraph at lines 36--54
+\OT1/lmr/m/n/10 (+20) and counterexample-extraction hooks, and dis-tin-
+
+LaTeX Warning: Reference `app:schema' on page 3 undefined on input line 82.
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 70--85
+ \OT1/lmr/bx/n/10 (+20) Agent-style eval-u-a-tion of code and proof
+) (./sections/methods.tex
+Underfull \hbox (badness 3557) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) ting fam-ily, White-house vec-tor, or asymp-totic
+
+Underfull \hbox (badness 1253) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) CLT confidence-sequence fam-i-lies. The math-lib
+
+Underfull \hbox (badness 1406) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) mu-nity[], []2026[]) sup-plies Doob de-com-po-si-tion and
+
+
+LaTeX Warning: Reference `app:bench-format-fig' on page 3 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Reference `lst:bench-lean' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `lst:bench-json' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `app:schema' on page 3 undefined on input line 11.
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 15--29
+\OT1/lmr/m/n/10 (+20) ules (\OT1/lmtt/m/n/10 Basic\OT1/lmr/m/n/10 (+20) , \OT1/
+lmtt/m/n/10 HowardRamdas\OT1/lmr/m/n/10 (+20) , \OT1/lmtt/m/n/10 WaudbySmithBet
+ting\OT1/lmr/m/n/10 (+20) ,
+[3]
+
+LaTeX Warning: Reference `app:axiom-audit' on page 4 undefined on input line 63
+.
+
+
+LaTeX Warning: Reference `app:reproducibility' on page 4 undefined on input lin
+e 77.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 1371) in paragraph at lines 115--128
+ \OT1/lmr/bx/n/10 (+20) Em-pir-i-cal fail-ure cat-e-gories (T4, T5).[] T4
+[4]
+
+LaTeX Warning: Reference `app:prompts' on page 5 undefined on input line 193.
+
+
+LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
+(Font)              using `OT1/lmr/bx/n' instead on input line 203.
+
+
+LaTeX Warning: Reference `tab:hint-legend' on page 5 undefined on input line 21
+2.
+
+
+LaTeX Warning: Reference `app:hint-legend-table' on page 5 undefined on input l
+ine 213.
+
+
+LaTeX Warning: Reference `tab:eval-protocol' on page 5 undefined on input line 
+214.
+
+
+LaTeX Warning: Reference `app:eval-protocol-fig' on page 5 undefined on input l
+ine 215.
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 201--216
+\OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
+/lmr/m/n/10 (+20) : goal state-ment
+
+LaTeX Warning: Reference `app:alternative-hint-chain' on page 5 undefined on in
+put line 220.
+
+
+Underfull \vbox (badness 2237) has occurred while \output is active [5])
+(./sections/results.tex
+
+LaTeX Warning: Reference `app:t0-stripped-prompt' on page 6 undefined on input 
+line 21.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `app:robustness-n10' on page 6 undefined on input line
+ 39.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `app:robustness-n10' on page 6 undefined on input line
+ 39.
+
+
+Overfull \hbox (252.96283pt too wide) in paragraph at lines 41--56
+ [][] 
+
+LaTeX Warning: Reference `app:hint-ablation-table' on page 6 undefined on input
+ line 72.
+
+
+LaTeX Warning: Reference `app:alternative-hint-chain' on page 6 undefined on in
+put line 77.
+
+
+LaTeX Warning: Reference `app:prompt-sensitivity-detail' on page 6 undefined on
+ input line 134.
+
+
+LaTeX Warning: Reference `app:extended' on page 6 undefined on input line 137.
+
+
+LaTeX Warning: Reference `app:aristotle-companion' on page 6 undefined on input
+ line 151.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [6]
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 183.
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 190--199
+[]\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
+
+Underfull \hbox (badness 7047) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) i-cally false, re-turn-ing machine-checkable coun-
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) terex-am-ples on each: \OT1/lmtt/m/n/10 equivalence[]brea
+k[]at[]
+
+Underfull \hbox (badness 7576) in paragraph at lines 190--199
+\OT1/lmtt/m/n/10 finite[]precision \OT1/lmr/m/n/10 (+20) (T5, miss-ing sym-me-t
+ry hy-
+
+Underfull \hbox (badness 1210) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) poth-e-sis), \OT1/lmtt/m/n/10 slack[]antitone[]in[]scale 
+\OT1/lmr/m/n/10 (+20) (T2, miss-ing
+
+Underfull \hbox (badness 1502) in paragraph at lines 190--199
+\OT1/lmtt/m/n/10 bp$[]$=(2,1)\OT1/lmr/m/n/10 (+20) ), and \OT1/lmtt/m/n/10 div[
+]le[]div[]of[]nonneg[]left \OT1/lmr/m/n/10 (+20) (T1,
+) (./sections/discussion.tex
+Underfull \hbox (badness 2772) in paragraph at lines 209--1
+\OT1/lmr/m/it/10 (+20) statement-correctness clas-si-fi-ca-tion \OT1/lmr/m/n/10
+ (+20) via refu-ta-tion.
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 11.
+
+
+Underfull \vbox (badness 4940) has occurred while \output is active [7]
+
+LaTeX Warning: Reference `app:inference-format' on page 8 undefined on input li
+ne 36.
+
+
+LaTeX Warning: Reference `app:hint-ablation-table' on page 8 undefined on input
+ line 39.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 8 undefined on input line 48.
+
+) (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 53--60
+\OT1/lmtt/m/n/10 co / Goedel-[]LM / Goedel-[]Prover-[]V2-[]8B$[]\OT1/lmr/m/n/10
+ (+20) , 2025.
+
+Underfull \hbox (badness 2990) in paragraph at lines 53--60
+\OT1/lmr/m/n/10 (+20) Princeton-led re-lease. 8B base, GGUF Q6[]K
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+[]\OT1/lmr/m/n/10 (+20) The Math-lib Com-mu-nity.  Math-lib4
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+\OT1/lmtt/m/n/10 Probability.Martingale \OT1/lmr/m/n/10 (+20) mod-ule.  []$\OT1
+/lmtt/m/n/10 https :
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+\OT1/lmtt/m/n/10 / / leanprover-[]community . github . io / mathlib4 _
+) [9] (./main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/
+share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
+m-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (9 pages, 460304 bytes).
+Transcript written on main.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/tmp/ai4math-formal-avs/styles/icml2026.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/tmp/ai4math-formal-avs/styles/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/tmp/ai4math-formal-avs/styles/algorithm.sty
+Document Style `algorithm' - floating environment
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty))
+(/tmp/ai4math-formal-avs/styles/algorithmic.sty
+Document Style `algorithmic' - environment
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/forloop/forloop.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 49.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+Package hyperref Warning: Ignoring empty anchor on input line 51.
+
+(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex
+(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
+Underfull \hbox (badness 1024) in paragraph at lines 2--14
+\OT1/lmr/m/n/10 (+20) The com-pan-ion li-brary \OT1/lmtt/m/n/10 formal-avs-lean
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 15--30
+\OT1/lmr/m/n/10 (+20) single-shot to $13\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20)
+ 48$ agen-tic, sur-pass-ing
+) (./sections/intro.tex (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
+b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `app:bench-format-fig' on page 2 undefined on input li
+ne 97.
+
+
+LaTeX Warning: Reference `lst:bench-lean' on page 2 undefined on input line 98.
+
+
+
+LaTeX Warning: Reference `lst:bench-json' on page 2 undefined on input line 98.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/related.tex
+Underfull \hbox (badness 10000) in paragraph at lines 102--1
+[]\OT1/lmr/m/n/10 (+20) This pa-per re-leases three ar-ti-facts. (i)
+
+Underfull \hbox (badness 1253) in paragraph at lines 102--1
+\OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/m/n/10 (+20) , an Apache-2.0 Lean 4 li
+-brary
+
+Underfull \vbox (badness 10000) has occurred while \output is active [2]
+Underfull \hbox (badness 1019) in paragraph at lines 36--54
+\OT1/lmr/m/n/10 (+20) and counterexample-extraction hooks, and dis-tin-
+
+LaTeX Warning: Reference `app:schema' on page 3 undefined on input line 82.
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 70--85
+ \OT1/lmr/bx/n/10 (+20) Agent-style eval-u-a-tion of code and proof
+) (./sections/methods.tex
+Underfull \hbox (badness 3557) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) ting fam-ily, White-house vec-tor, or asymp-totic
+
+Underfull \hbox (badness 1253) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) CLT confidence-sequence fam-i-lies. The math-lib
+
+Underfull \hbox (badness 1406) in paragraph at lines 87--1
+\OT1/lmr/m/n/10 (+20) mu-nity[], []2026[]) sup-plies Doob de-com-po-si-tion and
+
+
+LaTeX Warning: Reference `app:bench-format-fig' on page 3 undefined on input li
+ne 8.
+
+
+LaTeX Warning: Reference `lst:bench-lean' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `lst:bench-json' on page 3 undefined on input line 9.
+
+
+LaTeX Warning: Reference `app:schema' on page 3 undefined on input line 11.
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 15--29
+\OT1/lmr/m/n/10 (+20) ules (\OT1/lmtt/m/n/10 Basic\OT1/lmr/m/n/10 (+20) , \OT1/
+lmtt/m/n/10 HowardRamdas\OT1/lmr/m/n/10 (+20) , \OT1/lmtt/m/n/10 WaudbySmithBet
+ting\OT1/lmr/m/n/10 (+20) ,
+[3]
+
+LaTeX Warning: Reference `app:axiom-audit' on page 4 undefined on input line 63
+.
+
+
+LaTeX Warning: Reference `app:reproducibility' on page 4 undefined on input lin
+e 77.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 1371) in paragraph at lines 115--128
+ \OT1/lmr/bx/n/10 (+20) Em-pir-i-cal fail-ure cat-e-gories (T4, T5).[] T4
+[4]
+
+LaTeX Warning: Reference `app:prompts' on page 5 undefined on input line 193.
+
+
+LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
+(Font)              using `OT1/lmr/bx/n' instead on input line 203.
+
+
+LaTeX Warning: Reference `tab:hint-legend' on page 5 undefined on input line 21
+2.
+
+
+LaTeX Warning: Reference `app:hint-legend-table' on page 5 undefined on input l
+ine 213.
+
+
+LaTeX Warning: Reference `tab:eval-protocol' on page 5 undefined on input line 
+214.
+
+
+LaTeX Warning: Reference `app:eval-protocol-fig' on page 5 undefined on input l
+ine 215.
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 201--216
+\OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
+/lmr/m/n/10 (+20) : goal state-ment
+
+LaTeX Warning: Reference `app:alternative-hint-chain' on page 5 undefined on in
+put line 220.
+
+
+Underfull \vbox (badness 2237) has occurred while \output is active [5])
+(./sections/results.tex
+
+LaTeX Warning: Reference `app:t0-stripped-prompt' on page 6 undefined on input 
+line 21.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `app:robustness-n10' on page 6 undefined on input line
+ 39.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 6 undefined on input line 39.
+
+
+LaTeX Warning: Reference `app:robustness-n10' on page 6 undefined on input line
+ 39.
+
+
+Overfull \hbox (252.96283pt too wide) in paragraph at lines 41--56
+ [][] 
+
+LaTeX Warning: Reference `app:hint-ablation-table' on page 6 undefined on input
+ line 72.
+
+
+LaTeX Warning: Reference `app:alternative-hint-chain' on page 6 undefined on in
+put line 77.
+
+
+LaTeX Warning: Reference `app:prompt-sensitivity-detail' on page 6 undefined on
+ input line 134.
+
+
+LaTeX Warning: Reference `app:extended' on page 6 undefined on input line 137.
+
+
+LaTeX Warning: Reference `app:aristotle-companion' on page 6 undefined on input
+ line 151.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [6]
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 183.
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 190--199
+[]\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
+
+Underfull \hbox (badness 7047) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) i-cally false, re-turn-ing machine-checkable coun-
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) terex-am-ples on each: \OT1/lmtt/m/n/10 equivalence[]brea
+k[]at[]
+
+Underfull \hbox (badness 7576) in paragraph at lines 190--199
+\OT1/lmtt/m/n/10 finite[]precision \OT1/lmr/m/n/10 (+20) (T5, miss-ing sym-me-t
+ry hy-
+
+Underfull \hbox (badness 1210) in paragraph at lines 190--199
+\OT1/lmr/m/n/10 (+20) poth-e-sis), \OT1/lmtt/m/n/10 slack[]antitone[]in[]scale 
+\OT1/lmr/m/n/10 (+20) (T2, miss-ing
+
+Underfull \hbox (badness 1502) in paragraph at lines 190--199
+\OT1/lmtt/m/n/10 bp$[]$=(2,1)\OT1/lmr/m/n/10 (+20) ), and \OT1/lmtt/m/n/10 div[
+]le[]div[]of[]nonneg[]left \OT1/lmr/m/n/10 (+20) (T1,
+) (./sections/discussion.tex
+Underfull \hbox (badness 2772) in paragraph at lines 209--1
+\OT1/lmr/m/it/10 (+20) statement-correctness clas-si-fi-ca-tion \OT1/lmr/m/n/10
+ (+20) via refu-ta-tion.
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 11.
+
+
+Underfull \vbox (badness 4940) has occurred while \output is active [7]
+
+LaTeX Warning: Reference `app:inference-format' on page 8 undefined on input li
+ne 36.
+
+
+LaTeX Warning: Reference `app:hint-ablation-table' on page 8 undefined on input
+ line 39.
+
+
+LaTeX Warning: Reference `tab:wilson-ci' on page 8 undefined on input line 48.
+
+) (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 53--60
+\OT1/lmtt/m/n/10 co / Goedel-[]LM / Goedel-[]Prover-[]V2-[]8B$[]\OT1/lmr/m/n/10
+ (+20) , 2025.
+
+Underfull \hbox (badness 2990) in paragraph at lines 53--60
+\OT1/lmr/m/n/10 (+20) Princeton-led re-lease. 8B base, GGUF Q6[]K
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+[]\OT1/lmr/m/n/10 (+20) The Math-lib Com-mu-nity.  Math-lib4
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+\OT1/lmtt/m/n/10 Probability.Martingale \OT1/lmr/m/n/10 (+20) mod-ule.  []$\OT1
+/lmtt/m/n/10 https :
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+\OT1/lmtt/m/n/10 / / leanprover-[]community . github . io / mathlib4 _
+) [9] (./main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/
+share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
+m-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (9 pages, 460304 bytes).
+Transcript written on main.log.

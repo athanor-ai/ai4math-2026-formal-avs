@@ -1,0 +1,169 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Achim et~al.(2025)Achim, Best, Bietti, Der, F{\'e}d{\'e}rico, Gukov,
+  Halpern-Leistner, Henningsgard, Kudryashov, Meiburg, Michelsen, Patterson,
+  Rodriguez, Scharff, Shanker, Sicca, Sowrirajan, Swope, Tamas, Tenev, Thomm,
+  Williams, and Wu]{aristotle2025}
+Achim, T., Best, A., Bietti, A., Der, K., F{\'e}d{\'e}rico, M., Gukov, S.,
+  Halpern-Leistner, D., Henningsgard, K., Kudryashov, Y., Meiburg, A.,
+  Michelsen, M., Patterson, R., Rodriguez, E., Scharff, L., Shanker, V., Sicca,
+  V., Sowrirajan, H., Swope, A., Tamas, M., Tenev, V., Thomm, J., Williams, H.,
+  and Wu, L.
+\newblock Aristotle: {IMO}-level automated theorem proving, 2025.
+\newblock URL \url{https://arxiv.org/abs/2510.01346}.
+
+\bibitem[Anonymous(2026)]{formalavslean2026}
+Anonymous.
+\newblock {formal-avs-lean}: a {L}ean 4 library for anytime-valid statistics.
+\newblock anonymised URL in supplementary archive, 2026.
+
+\bibitem[Azerbayev et~al.(2023)Azerbayev, Piotrowski, Schoelkopf, Ayers, Radev,
+  and Avigad]{azerbayev2023proofnet}
+Azerbayev, Z., Piotrowski, B., Schoelkopf, H., Ayers, E.~W., Radev, D., and
+  Avigad, J.
+\newblock {ProofNet}: autoformalizing and formally proving undergraduate-level
+  mathematics.
+\newblock In \emph{arXiv preprint}, 2023.
+
+\bibitem[Chowdhury et~al.(2024)Chowdhury, Aleman, Wu, and
+  Edwards]{chowdhury2024swebenchverified}
+Chowdhury, N., Aleman, J., Wu, J., and Edwards, C.
+\newblock Introducing {SWE-bench Verified}: a human-validated subset of
+  {SWE-bench}.
+\newblock OpenAI technical report, 2024.
+
+\bibitem[{FormalMATH Authors}(2025)]{formalmath2025}
+{FormalMATH Authors}.
+\newblock {FormalMATH}: benchmarking formal mathematical reasoning of large
+  language models, 2025.
+
+\bibitem[Freer \& {Math Inc.}(2025)Freer and {Math Inc.}]{opengauss2025}
+Freer, C. and {Math Inc.}
+\newblock {OpenGauss}: multi-agent {Lean 4} theorem proving via cycle-engine
+  refinement.
+\newblock \url{https://github.com/math-inc/OpenGauss}, 2025.
+\newblock Lean4-skills cycle-engine default: \texttt{max\_rounds=4}.
+
+\bibitem[{Goedel-LM Authors}(2025)]{goedelprover2025}
+{Goedel-LM Authors}.
+\newblock {Goedel-Prover-V2}: an open-source language model for {Lean 4}
+  theorem proving.
+\newblock Hugging Face model card,
+  \url{https://huggingface.co/Goedel-LM/Goedel-Prover-V2-8B}, 2025.
+\newblock Princeton-led release. 8B base, GGUF Q6\_K quantization used in this
+  benchmark.
+
+\bibitem[Han et~al.(2022)Han, Rute, Wu, Ayers, and Polu]{han2022proof}
+Han, J.~M., Rute, J., Wu, Y., Ayers, E.~W., and Polu, S.
+\newblock Proof artifact co-training for theorem proving with language models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2022.
+
+\bibitem[Howard et~al.(2021)Howard, Ramdas, McAuliffe, and
+  Sekhon]{howard2021time}
+Howard, S.~R., Ramdas, A., McAuliffe, J., and Sekhon, J.
+\newblock Time-uniform, nonparametric, nonasymptotic confidence sequences.
+\newblock \emph{Annals of Statistics}, 49\penalty0 (2):\penalty0 1055--1080,
+  2021.
+\newblock \doi{10.1214/20-AOS1991}.
+
+\bibitem[Jiang et~al.(2023)Jiang, Welleck, Zhou, Li, Liu, Jamnik, Lacroix, Wu,
+  and Lample]{jiang2023draftsketchandprove}
+Jiang, A.~Q., Welleck, S., Zhou, J.~P., Li, W., Liu, J., Jamnik, M., Lacroix,
+  T., Wu, Y., and Lample, G.
+\newblock Draft, sketch, and prove: guiding formal theorem provers with
+  informal proofs.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2023.
+
+\bibitem[Jimenez et~al.(2024)Jimenez, Yang, Wettig, Yao, Pei, Press, and
+  Narasimhan]{jimenez2024swebench}
+Jimenez, C.~E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O., and
+  Narasimhan, K.
+\newblock {SWE-bench}: can language models resolve real-world {GitHub} issues?
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2024.
+
+\bibitem[{LeanAgent Authors}(2024)]{leanagent2024}
+{LeanAgent Authors}.
+\newblock {LeanAgent}: lifelong learning for formal theorem proving.
+\newblock arXiv preprint, 2024.
+
+\bibitem[Liu et~al.(2024)Liu, Yu, Zhang, Xu, Lei, Lai, Gu, Ding, Men, Yang,
+  Zhang, Deng, Zeng, Du, Zhang, Shen, Zhang, Su, Sun, Huang, Dong, and
+  Tang]{liu2024agentbench}
+Liu, X., Yu, H., Zhang, H., Xu, Y., Lei, X., Lai, H., Gu, Y., Ding, H., Men,
+  K., Yang, K., Zhang, S., Deng, X., Zeng, A., Du, Z., Zhang, C., Shen, S.,
+  Zhang, T., Su, Y., Sun, H., Huang, M., Dong, Y., and Tang, J.
+\newblock {AgentBench}: evaluating {LLMs} as agents, 2024.
+
+\bibitem[Polu \& Sutskever(2020)Polu and Sutskever]{polu2020gpt}
+Polu, S. and Sutskever, I.
+\newblock Generative language modeling for automated theorem proving.
+\newblock In \emph{arXiv preprint}, 2020.
+
+\bibitem[{REAL-Prover Authors}(2024)]{realprover2024}
+{REAL-Prover Authors}.
+\newblock {REAL-Prover}: retrieval-augmented {L}ean theorem-proving.
+\newblock arXiv preprint, 2024.
+
+\bibitem[Ren et~al.(2025)Ren, Shao, Song, Xin, Wang, Zhao, Zhang, Fu, Zhu,
+  Yang, et~al.]{dspv22025}
+Ren, Z.~Z., Shao, Z., Song, J., Xin, H., Wang, H., Zhao, W., Zhang, L., Fu, Z.,
+  Zhu, Q., Yang, D., et~al.
+\newblock {DeepSeek-Prover-V2}: Advancing formal mathematical reasoning via
+  reinforcement learning for subgoal decomposition.
+\newblock \emph{arXiv preprint}, 2025.
+
+\bibitem[{The Mathlib Community}(2026)]{mathlib4-probability}
+{The Mathlib Community}.
+\newblock Mathlib4 \texttt{Probability.Martingale} module.
+\newblock \url{https://leanprover-community.github.io/mathlib4_docs/}, 2026.
+
+\bibitem[Wang et~al.(2024)Wang, Ren, Zhou, Lu, Luo, Shi, Zhang, Song, Zhan, and
+  Li]{wang2024mathcoder}
+Wang, K., Ren, H., Zhou, A., Lu, Z., Luo, S., Shi, W., Zhang, R., Song, L.,
+  Zhan, M., and Li, H.
+\newblock {MathCoder}: seamless code integration in {LLMs} for enhanced
+  mathematical reasoning, 2024.
+
+\bibitem[Waudby-Smith \& Ramdas(2024)Waudby-Smith and
+  Ramdas]{waudbysmith2024estimating}
+Waudby-Smith, I. and Ramdas, A.
+\newblock Estimating means of bounded random variables by betting.
+\newblock \emph{Journal of the Royal Statistical Society Series B}, 86\penalty0
+  (1):\penalty0 1--27, 2024.
+
+\bibitem[Whitehouse et~al.(2025)Whitehouse, Ramdas, Wu, and
+  Sutton]{whitehouse2025timeuniform}
+Whitehouse, J., Ramdas, A., Wu, Z.~S., and Sutton, R.
+\newblock Time-uniform self-normalized concentration for vector-valued
+  processes.
+\newblock In \emph{Proceedings of the 38th Conference on Learning Theory
+  (COLT)}, volume 291, pp.\  5714--5715, 2025.
+
+\bibitem[Yang et~al.(2023)Yang, Swope, Gu, Chalamala, Song, Yu, Godil, Prenger,
+  and Anandkumar]{yang2023leandojo}
+Yang, K., Swope, A., Gu, A., Chalamala, R., Song, P., Yu, S., Godil, S.,
+  Prenger, R., and Anandkumar, A.
+\newblock {LeanDojo}: theorem proving with retrieval-augmented language models.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+
+\bibitem[Ye et~al.(2025)Ye, Yan, He, Kasriel, Yang, and Song]{sunblazeverina}
+Ye, Z., Yan, Z., He, J., Kasriel, T., Yang, K., and Song, D.
+\newblock {Verina}: benchmarking verifiable code generation, 2025.
+
+\bibitem[Zheng et~al.(2022)Zheng, Han, and Polu]{zheng2022minif2f}
+Zheng, K., Han, J.~M., and Polu, S.
+\newblock {miniF2F}: a cross-system benchmark for formal {O}lympiad-level
+  mathematics.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2022.
+
+\end{thebibliography}

@@ -1,0 +1,30 @@
+\begin{abstract}
+Anytime-valid confidence sequences (CS) give confidence
+intervals valid at every stopping time, removing the
+optional-stopping problem in A/B testing and clinical trial
+interim analyses. A Lean 4 proof pinned against a fixed
+Mathlib commit removes the class of implementation bugs
+that invalidate the nominal type-I guarantee. We release
+\textsc{Formal-AVS}: $60$ Lean 4 theorems on anytime-valid CS
+across four families (Howard-Ramdas, betting, Whitehouse
+vector, asymptotic CLT), grouped into four pre-evaluation
+tiers T0--T3 and two empirical failure categories T4--T5.
+The companion library \texttt{formal-avs-lean} supplies the
+rate functions Mathlib does not yet provide.
+
+We evaluate four closed-source generalists, two open-weights
+provers (DSPv2-7B, Goedel-V2-8B), and Harmonic Aristotle
+across three capability levels on a $48$-target slate.
+Single-shot generalist closure peaks at $22/48$ (Gemini,
+hint-list prompt). Under agentic mode (\texttt{cycle\_prove}
+$r{=}4$), Gemini reaches $19/48$ and closes the first
+non-Aristotle T3 cross-function target. Goedel-V2, trained
+with verifier-guided self-correction, rises from $5/48$
+single-shot to $13/48$ agentic, surpassing DSPv2's $9/48$.
+The hint-list advantage narrows under agentic mode: Gemini's
+gain vanishes ($19 = 19$), suggesting per-target compiler
+errors substitute for static prompt engineering. Aristotle
+closes $53/60$ axiom-clean and refutes three false-as-stated
+targets. We release a 14-session Aristotle history archive
+and a 3-column T3 hint ablation alongside the benchmark.
+\end{abstract}

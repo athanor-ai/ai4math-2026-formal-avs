@@ -1,0 +1,96 @@
+\section{Background and related work}
+\label{sec:related}
+
+\paragraph{Anytime-valid confidence sequences.}
+A confidence sequence $(C_t)_{t \geq 1}$ at level $1 - \alpha$ for a
+parameter $\mu$ is a sequence of random intervals satisfying
+$\Prob(\forall t \geq 1: \mu \in C_t) \geq 1 - \alpha$. The four
+canonical constructions for bounded-mean or sub-Gaussian settings
+each specify an exponential supermartingale
+$M_t = \exp(\lambda S_t - \psi_F(\lambda) t)$ with a family-specific
+cumulant-bound function $\psi_F$. Ville's inequality applied to
+$M_t$ produces a $1-\alpha$ CS with half-width
+$\eta_F(\alpha, t) = (\psi_F^{-1} \circ \text{lin})(\alpha, t)$. The
+benchmark targets theorems about these four
+$\eta_F$~\cite{howard2021time, waudbysmith2024estimating,
+whitehouse2025timeuniform}, their monotonicity, sign, and
+cross-family inequalities.
+
+\paragraph{Lean proof benchmarks.}
+MiniF2F~\cite{zheng2022minif2f} covers competition arithmetic.
+ProofNet~\cite{azerbayev2023proofnet} covers undergraduate
+analysis, algebra, and topology.
+Verina~\cite{sunblazeverina} targets verifiable code generation
+with $189$ Lean tasks. \textsc{FormalMATH}~\cite{formalmath2025}
+contains $5{,}560$ Lean~4 theorems from olympiad to
+undergraduate level. LeanDojo~\cite{yang2023leandojo} extracts
+training and evaluation theorems from Mathlib.
+REAL-Prover~\cite{realprover2024} and
+LeanAgent~\cite{leanagent2024} mine Mathlib-adjacent
+undergraduate content. \textsc{Formal-AVS} differs in target
+domain: a Lean benchmark focused on a research subfield not
+currently represented in Mathlib, with axiom-audited dependency
+proofs and a cross-family inequality tier.
+
+\paragraph{Harmonic Aristotle and prover-history archives.}
+The companion archive uses Harmonic's Aristotle
+prover~\cite{aristotle2025}, a closed-source proprietary Lean~4
+proof-search engine with axiom-audit and counterexample-extraction
+hooks, and distinguishes genuine closures from drafter
+hallucinations via machine-checked Lean kernel certificates.
+Aristotle is not an open-weights model. We accessed it through
+the public API at \url{aristotle.harmonic.fun} at no cost during
+benchmark construction. Closure verdicts and counterexample
+witnesses are reproducible from the released session IDs, but
+re-running an Aristotle session against the released library
+requires a Harmonic API key. The closest prior
+artefact is LeanDojo's tactic-trace dataset. Our companion artefact
+differs in three ways: (i) Aristotle sessions rather than Mathlib
+commits, (ii) refutation traces with counterexample witnesses, and
+(iii) per-session axiom-audits (Lean \texttt{\#print axioms}
+output). The third property is important for evaluating prover
+trustworthiness: drafter-produced Lean proofs may close the goal but
+widen the axiom set~\cite{yang2023leandojo}.
+
+\paragraph{Hint-ablation methodology.}
+Prompt-hint ablation for Lean drafters has been studied in the
+context of tactic-premise selection~\cite{polu2020gpt, han2022proof,
+jiang2023draftsketchandprove} and proof-sketch scaffolding. Most
+prior studies treat hints as a single ``context'' axis and measure
+gross closure-rate gain. \textsc{Formal-AVS} decomposes the hint
+into two orthogonal components, a log-domain substitution hint
+(\emph{lateral re-encoding}) and a Mathlib-lemma-chain hint
+(\emph{tactic vocabulary}), and measures their effects independently
+across four drafter classes plus one specialised $7$B prover. The
+3-column ablation (\S\ref{sec:results}) shows neither component alone
+is sufficient; closure rates increase only when both are supplied to
+mid-tier generalists.
+
+\paragraph{Agent-style evaluation of code and proof drafters.}
+Single-shot benchmarks understate drafter capability: the same
+models close many more issues when granted file navigation, multi-step
+tool calls, and execution feedback, as shown by
+SWE-bench~\cite{jimenez2024swebench, chowdhury2024swebenchverified}.
+Agentic frameworks for theorem proving and code/database
+editing are emerging in
+parallel~\cite{liu2024agentbench, wang2024mathcoder}. \textsc{Formal-AVS} supports both completion- and
+agent-style evaluation. A target's JSON record exposes the tier
+shape, required imports, and the $\mathcal{A}_{\text{core}}$ axiom
+audit, which are the inputs an agentic evaluation loop consumes when delegating
+to a Lean kernel. The headline sweep is the completion-style baseline
+against which any agentic-mode gain can be measured. We do not run
+an agent loop in this submission, but the schema (\S\ref{app:schema})
+and \texttt{sweep.py} driver are designed so the same target slate
+can be re-run under one without re-curation.
+
+\paragraph{Anytime-valid CS formalisations.}
+No prior public Lean~4 library formalises the HR-family, betting
+family, Whitehouse vector, or asymptotic CLT confidence-sequence
+families. The mathlib \texttt{Probability.Martingale}
+module~\cite{mathlib4-probability} supplies Doob decomposition and
+Azuma's inequality but does not instantiate the four CS families or
+their sharp-constant comparison inequalities. The
+\texttt{formal-avs-lean} library (released with this benchmark)
+instantiates all four families, supplies Ville's inequality and the
+quantization-transport lemma, and exposes 29 theorems that require
+library-specific definitions.

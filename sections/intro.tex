@@ -39,6 +39,16 @@ about that structure, and can those capabilities be decomposed into
 prompt-level interventions? To answer this we release \textsc{Formal-AVS},
 a benchmark of $60$ Lean~4 theorems on anytime-valid confidence
 sequences (CS)~\cite{howard2021time, waudbysmith2024estimating}.
+
+\paragraph{Main finding.}
+The T3 tier --- cross-family inequalities between rate functions ---
+is a \emph{reasoning gap}, not a knowledge gap. Supplying the
+log-domain substitution and the Mathlib lemma chain closes T3 to
+$3$--$5/6$ per drafter; no drafter finds the chain autonomously
+($0$--$1/6$ at baseline). This decomposition is the benchmark's
+central result: the capability that separates Aristotle ($6/6$) from
+the best generalist ($1/6$) is not access to the right lemmas but the
+ability to discover the right rewrite without being told.
 The targets cover sign and monotonicity of family-specific rate
 functions, cross-function inequalities between the
 HR-family~\cite{howard2021time}, betting

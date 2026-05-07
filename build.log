@@ -7,17 +7,17 @@ L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
-(/tmp/ai4math-formal-avs/styles/icml2026.sty
+(/tmp/ai4math-2026-formal-avs/styles/icml2026.sty
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
-(/tmp/ai4math-formal-avs/styles/fancyhdr.sty)
+(/tmp/ai4math-2026-formal-avs/styles/fancyhdr.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
-(/tmp/ai4math-formal-avs/styles/algorithm.sty
+(/tmp/ai4math-2026-formal-avs/styles/algorithm.sty
 Document Style `algorithm' - floating environment
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty))
-(/tmp/ai4math-formal-avs/styles/algorithmic.sty
+(/tmp/ai4math-2026-formal-avs/styles/algorithmic.sty
 Document Style `algorithmic' - environment
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
@@ -102,95 +102,107 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Ignoring empty anchor on input line 93.
 
-(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex
+(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex)
+(./sections/intro.tex
+
+Package natbib Warning: Citation `johari2017peeking' on page 1 undefined on inp
+ut line 9.
+
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
-Underfull \hbox (badness 1024) in paragraph at lines 2--14
-\OT1/lmr/m/n/10 (+20) The com-pan-ion li-brary \OT1/lmtt/m/n/10 formal-avs-lean
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[][][][]$\OT1/lmtt/m/n/9 https : / / anonymous . 4open . science / r /
 
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/lmtt/m/n/9 neurips-[]2026-[]dataset-[]paper-[]replication-[]2604 /
 
-Underfull \hbox (badness 2096) in paragraph at lines 15--30
-\OT1/lmr/m/n/10 (+20) single-shot to $13\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20)
- 48$ agen-tic, sur-pass-ing
-) (./sections/intro.tex
 Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
 b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)) (./sections/related.tex
-Underfull \hbox (badness 10000) in paragraph at lines 112--1
-[]\OT1/lmr/m/n/10 (+20) This pa-per re-leases three ar-ti-facts. (i)
-
-Underfull \hbox (badness 1253) in paragraph at lines 112--1
-\OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/m/n/10 (+20) , an Apache-2.0 Lean 4 li
--brary
-
-Underfull \vbox (badness 10000) has occurred while \output is active [2]
 Underfull \hbox (badness 1019) in paragraph at lines 36--54
 \OT1/lmr/m/n/10 (+20) and counterexample-extraction hooks, and dis-tin-
 
-Underfull \hbox (badness 2103) in paragraph at lines 70--85
+Underfull \hbox (badness 2103) in paragraph at lines 70--83
  \OT1/lmr/bx/n/10 (+20) Agent-style eval-u-a-tion of code and proof
-
-Underfull \vbox (badness 4673) has occurred while \output is active)
-(./sections/methods.tex
-Underfull \hbox (badness 3557) in paragraph at lines 87--1
+[2]) (./sections/methods.tex
+Underfull \hbox (badness 3557) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) ting fam-ily, White-house vec-tor, or asymp-totic
 
-Underfull \hbox (badness 1253) in paragraph at lines 87--1
+Underfull \hbox (badness 1253) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) CLT confidence-sequence fam-i-lies. The math-lib
 
-Underfull \hbox (badness 1406) in paragraph at lines 87--1
+Underfull \hbox (badness 1406) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) mu-nity[], []2026[]) sup-plies Doob de-com-po-si-tion and
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 15--29
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[][][]\OT1/lmr/m/n/9 (+20) Source at []$\OT1/lmtt/m/n/9 https : / / anonymous .
+ 4open . science /
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\OT1/lmtt/m/n/9 r / neurips-[]2026-[]dataset-[]paper-[]replication-[]2604 /
+
+Underfull \hbox (badness 2426) in paragraph at lines 15--30
+[]\OT1/lmr/m/n/10 (+20) We con-struct \OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/
+m/n/10 (+20) ,[][][] an Apache-2.0
+
+Underfull \hbox (badness 1102) in paragraph at lines 15--30
 \OT1/lmr/m/n/10 (+20) ules (\OT1/lmtt/m/n/10 Basic\OT1/lmr/m/n/10 (+20) , \OT1/
 lmtt/m/n/10 HowardRamdas\OT1/lmr/m/n/10 (+20) , \OT1/lmtt/m/n/10 WaudbySmithBet
 ting\OT1/lmr/m/n/10 (+20) ,
 
-Underfull \vbox (badness 4940) has occurred while \output is active [3]
-Underfull \hbox (badness 1371) in paragraph at lines 115--128
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [3]
+Underfull \hbox (badness 1371) in paragraph at lines 116--129
  \OT1/lmr/bx/n/10 (+20) Em-pir-i-cal fail-ure cat-e-gories (T4, T5).[] T4
-[4]
 
 LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
-(Font)              using `OT1/lmr/bx/n' instead on input line 203.
+(Font)              using `OT1/lmr/bx/n' instead on input line 202.
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 201--216
+Underfull \hbox (badness 1661) in paragraph at lines 200--215
 \OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
 /lmr/m/n/10 (+20) : goal state-ment
 
-Underfull \vbox (badness 2237) has occurred while \output is active [5])
-(./sections/results.tex
-Overfull \hbox (252.96283pt too wide) in paragraph at lines 41--56
- [][] 
-[6]
-Underfull \hbox (badness 4242) in paragraph at lines 190--199
+Underfull \vbox (badness 1264) has occurred while \output is active [4]
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/results.tex [5]
+Underfull \hbox (badness 4242) in paragraph at lines 185--194
 []\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
 
-Underfull \hbox (badness 7047) in paragraph at lines 190--199
+Underfull \hbox (badness 7047) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) i-cally false, re-turn-ing machine-checkable coun-
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--199
+Underfull \hbox (badness 10000) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) terex-am-ples on each: \OT1/lmtt/m/n/10 equivalence[]brea
 k[]at[]
 
-Underfull \hbox (badness 7576) in paragraph at lines 190--199
+Underfull \hbox (badness 7576) in paragraph at lines 185--194
 \OT1/lmtt/m/n/10 finite[]precision \OT1/lmr/m/n/10 (+20) (T5, miss-ing sym-me-t
 ry hy-
 
-Underfull \hbox (badness 1210) in paragraph at lines 190--199
+Underfull \hbox (badness 1210) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) poth-e-sis), \OT1/lmtt/m/n/10 slack[]antitone[]in[]scale 
 \OT1/lmr/m/n/10 (+20) (T2, miss-ing
 
-Underfull \hbox (badness 1502) in paragraph at lines 190--199
+Underfull \hbox (badness 1502) in paragraph at lines 185--194
 \OT1/lmtt/m/n/10 bp$[]$=(2,1)\OT1/lmr/m/n/10 (+20) ), and \OT1/lmtt/m/n/10 div[
 ]le[]div[]of[]nonneg[]left \OT1/lmr/m/n/10 (+20) (T1,
 ) (./sections/discussion.tex
-Underfull \hbox (badness 2772) in paragraph at lines 209--1
+Underfull \hbox (badness 2772) in paragraph at lines 204--1
 \OT1/lmr/m/it/10 (+20) statement-correctness clas-si-fi-ca-tion \OT1/lmr/m/n/10
  (+20) via refu-ta-tion.
 
-Underfull \vbox (badness 10000) has occurred while \output is active [7])
+Underfull \vbox (badness 10000) has occurred while \output is active [6]
+Underfull \vbox (badness 6961) has occurred while \output is active
+Underfull \hbox (badness 1019) in paragraph at lines 20--32
+ \OT1/lmr/bx/sc/10 (+20) Cur-rent provers are mem-o-ri-sa-tion en-gines,
+
+Underfull \hbox (badness 2894) in paragraph at lines 20--32
+\OT1/lmr/m/n/10 (+20) thors[], []2025[]), trained on Math-lib, re-sponds to
+[7])
+Underfull \hbox (badness 2582) in paragraph at lines 56--101
+ \OT1/lmr/bx/sc/10 (+20) Broader im-pact.[] \OT1/lmr/m/n/10 (+20) Anytime-valid
+ con-fi-dence se-
 (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 53--60
 \OT1/lmtt/m/n/10 co / Goedel-[]LM / Goedel-[]Prover-[]V2-[]8B$[]\OT1/lmr/m/n/10
@@ -198,7 +210,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--60
 
 Underfull \hbox (badness 2990) in paragraph at lines 53--60
 \OT1/lmr/m/n/10 (+20) Princeton-led re-lease. 8B base, GGUF Q6[]K
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 124--127
 []\OT1/lmr/m/n/10 (+20) The Math-lib Com-mu-nity.  Math-lib4
 
@@ -208,7 +220,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--127
 
 Underfull \hbox (badness 10000) in paragraph at lines 124--127
 \OT1/lmtt/m/n/10 / / leanprover-[]community . github . io / mathlib4 _
-) (./sections/appendix.tex
+[8]) (./sections/appendix.tex
 Underfull \hbox (badness 2573) in paragraph at lines 50--55
 []\OT1/lmr/m/sc/9 (+20) Sub \OT1/lmr/m/n/9 (+20) plus an ex-plicit Math-lib lem
 ma chain (\OT1/lmtt/m/n/9 Real.exp[]le[]one[]iff\OT1/lmr/m/n/9 (+20) , \OT1/lmt
@@ -216,10 +228,11 @@ t/m/n/9 Real.log[]nonneg\OT1/lmr/m/n/9 (+20) ,
 
 Overfull \hbox (203.81653pt too wide) in paragraph at lines 42--57
  [][] 
-[9]
+
 Overfull \hbox (136.8936pt too wide) in paragraph at lines 129--150
  [][] 
 
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
 Underfull \hbox (badness 2662) in paragraph at lines 179--181
 \OT1/lmr/m/n/10 (+20) chain that ad-mits the clo-sure (used in the
 
@@ -293,12 +306,13 @@ Underfull \hbox (badness 5696) in paragraph at lines 323--338
 Overfull \hbox (23.2399pt too wide) in paragraph at lines 350--366
  [][] 
 
-Underfull \vbox (badness 10000) has occurred while \output is active [11]
 Underfull \hbox (badness 4832) in paragraph at lines 379--382
 []\OT1/lmr/m/n/10 (+20) Clone the dataset repo from the snap-shot
-
+[11]
 Overfull \hbox (252.94467pt too wide) in paragraph at lines 438--452
  [][] 
+
+Underfull \vbox (badness 4886) has occurred while \output is active
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 454.
@@ -322,15 +336,18 @@ ini closes one
 Underfull \hbox (badness 3954) in paragraph at lines 468--477
 \OT1/lmtt/m/n/10 impossible\OT1/lmr/m/n/10 (+20) ), Opus closes one new T3 tar-
 get
-[12]
+
 Overfull \hbox (93.94835pt too wide) in paragraph at lines 498--511
  [][] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [12]
 
 LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 524.
 
-[13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active [13]
 Underfull \hbox (badness 3735) in paragraph at lines 604--622
 []\OT1/lmr/m/n/10 (+20) In ad-di-tion to the benchmark-Table []1[] eval-u-a-
 
@@ -339,21 +356,19 @@ Underfull \hbox (badness 1005) in paragraph at lines 604--622
 
 Overfull \hbox (252.95335pt too wide) in paragraph at lines 682--695
  [][] 
-[14]
+
 Underfull \hbox (badness 1776) in paragraph at lines 715--724
 \OT1/lmr/m/n/10 (+20) i-cal ax-iom set for a clas-si-cal Math-lib proof is
-
+[14]
 Overfull \hbox (252.97131pt too wide) in paragraph at lines 736--753
  [][] 
 
-Underfull \vbox (badness 10000) has occurred while \output is active
 Overfull \hbox (149.75775pt too wide) in paragraph at lines 798--811
  [][] 
 
 Overfull \hbox (252.9635pt too wide) in paragraph at lines 835--850
  [][] 
-
-Underfull \vbox (badness 10000) has occurred while \output is active [15]
+[15]
 Underfull \hbox (badness 6094) in paragraph at lines 882--887
 []\OT1/lmr/m/n/10 (+20) Log-domain sub-sti-tu-tion $\OML/lmm/m/it/10 x \OMS/lms
 y/m/n/10 7!
@@ -382,23 +397,34 @@ Underfull \hbox (badness 4454) in paragraph at lines 933--936
 
 Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
-[16]
+
 Overfull \hbox (146.10716pt too wide) in paragraph at lines 964--979
  [][] 
-
+[16]
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
 
-Underfull \vbox (badness 4608) has occurred while \output is active [17])
-[18] (./main.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active)
+
+Package natbib Warning: There were undefined citations.
+
+[17] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
  )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/
+hare/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/
 fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/p
@@ -416,7 +442,7 @@ onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 573397 bytes).
+Output written on main.pdf (17 pages, 568682 bytes).
 Transcript written on main.log.
 This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 The top-level auxiliary file: main.aux
@@ -431,17 +457,17 @@ L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
-(/tmp/ai4math-formal-avs/styles/icml2026.sty
+(/tmp/ai4math-2026-formal-avs/styles/icml2026.sty
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
-(/tmp/ai4math-formal-avs/styles/fancyhdr.sty)
+(/tmp/ai4math-2026-formal-avs/styles/fancyhdr.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
-(/tmp/ai4math-formal-avs/styles/algorithm.sty
+(/tmp/ai4math-2026-formal-avs/styles/algorithm.sty
 Document Style `algorithm' - floating environment
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty))
-(/tmp/ai4math-formal-avs/styles/algorithmic.sty
+(/tmp/ai4math-2026-formal-avs/styles/algorithmic.sty
 Document Style `algorithmic' - environment
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
@@ -526,113 +552,125 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Ignoring empty anchor on input line 93.
 
-(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex
+(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex)
+(./sections/intro.tex
+
+Package natbib Warning: Citation `johari2017peeking' on page 1 undefined on inp
+ut line 9.
+
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
-Underfull \hbox (badness 1024) in paragraph at lines 2--14
-\OT1/lmr/m/n/10 (+20) The com-pan-ion li-brary \OT1/lmtt/m/n/10 formal-avs-lean
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[][][][]$\OT1/lmtt/m/n/9 https : / / anonymous . 4open . science / r /
 
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/lmtt/m/n/9 neurips-[]2026-[]dataset-[]paper-[]replication-[]2604 /
 
-Underfull \hbox (badness 2096) in paragraph at lines 15--30
-\OT1/lmr/m/n/10 (+20) single-shot to $13\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20)
- 48$ agen-tic, sur-pass-ing
-) (./sections/intro.tex
 Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
 b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)) (./sections/related.tex
-Underfull \hbox (badness 10000) in paragraph at lines 112--1
-[]\OT1/lmr/m/n/10 (+20) This pa-per re-leases three ar-ti-facts. (i)
-
-Underfull \hbox (badness 1253) in paragraph at lines 112--1
-\OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/m/n/10 (+20) , an Apache-2.0 Lean 4 li
--brary
-
-Underfull \vbox (badness 10000) has occurred while \output is active [2]
 Underfull \hbox (badness 1019) in paragraph at lines 36--54
 \OT1/lmr/m/n/10 (+20) and counterexample-extraction hooks, and dis-tin-
 
-Underfull \hbox (badness 2103) in paragraph at lines 70--85
+Underfull \hbox (badness 2103) in paragraph at lines 70--83
  \OT1/lmr/bx/n/10 (+20) Agent-style eval-u-a-tion of code and proof
-
-Underfull \vbox (badness 4673) has occurred while \output is active)
-(./sections/methods.tex
-Underfull \hbox (badness 3557) in paragraph at lines 87--1
+[2]) (./sections/methods.tex
+Underfull \hbox (badness 3557) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) ting fam-ily, White-house vec-tor, or asymp-totic
 
-Underfull \hbox (badness 1253) in paragraph at lines 87--1
+Underfull \hbox (badness 1253) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) CLT confidence-sequence fam-i-lies. The math-lib
 
-Underfull \hbox (badness 1406) in paragraph at lines 87--1
+Underfull \hbox (badness 1406) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) mu-nity[], []2026[]) sup-plies Doob de-com-po-si-tion and
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 15--29
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[][][]\OT1/lmr/m/n/9 (+20) Source at []$\OT1/lmtt/m/n/9 https : / / anonymous .
+ 4open . science /
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\OT1/lmtt/m/n/9 r / neurips-[]2026-[]dataset-[]paper-[]replication-[]2604 /
+
+Underfull \hbox (badness 2426) in paragraph at lines 15--30
+[]\OT1/lmr/m/n/10 (+20) We con-struct \OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/
+m/n/10 (+20) ,[][][] an Apache-2.0
+
+Underfull \hbox (badness 1102) in paragraph at lines 15--30
 \OT1/lmr/m/n/10 (+20) ules (\OT1/lmtt/m/n/10 Basic\OT1/lmr/m/n/10 (+20) , \OT1/
 lmtt/m/n/10 HowardRamdas\OT1/lmr/m/n/10 (+20) , \OT1/lmtt/m/n/10 WaudbySmithBet
 ting\OT1/lmr/m/n/10 (+20) ,
 
-Underfull \vbox (badness 4940) has occurred while \output is active [3]
-Underfull \hbox (badness 1371) in paragraph at lines 115--128
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [3]
+Underfull \hbox (badness 1371) in paragraph at lines 116--129
  \OT1/lmr/bx/n/10 (+20) Em-pir-i-cal fail-ure cat-e-gories (T4, T5).[] T4
-[4]
 
 LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
-(Font)              using `OT1/lmr/bx/n' instead on input line 203.
+(Font)              using `OT1/lmr/bx/n' instead on input line 202.
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 201--216
+Underfull \hbox (badness 1661) in paragraph at lines 200--215
 \OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
 /lmr/m/n/10 (+20) : goal state-ment
 
-Underfull \vbox (badness 2237) has occurred while \output is active [5])
-(./sections/results.tex
-Overfull \hbox (252.96283pt too wide) in paragraph at lines 41--56
- [][] 
-[6]
-Underfull \hbox (badness 4242) in paragraph at lines 190--199
+Underfull \vbox (badness 1264) has occurred while \output is active [4]
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/results.tex [5]
+Underfull \hbox (badness 4242) in paragraph at lines 185--194
 []\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
 
-Underfull \hbox (badness 7047) in paragraph at lines 190--199
+Underfull \hbox (badness 7047) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) i-cally false, re-turn-ing machine-checkable coun-
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--199
+Underfull \hbox (badness 10000) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) terex-am-ples on each: \OT1/lmtt/m/n/10 equivalence[]brea
 k[]at[]
 
-Underfull \hbox (badness 7576) in paragraph at lines 190--199
+Underfull \hbox (badness 7576) in paragraph at lines 185--194
 \OT1/lmtt/m/n/10 finite[]precision \OT1/lmr/m/n/10 (+20) (T5, miss-ing sym-me-t
 ry hy-
 
-Underfull \hbox (badness 1210) in paragraph at lines 190--199
+Underfull \hbox (badness 1210) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) poth-e-sis), \OT1/lmtt/m/n/10 slack[]antitone[]in[]scale 
 \OT1/lmr/m/n/10 (+20) (T2, miss-ing
 
-Underfull \hbox (badness 1502) in paragraph at lines 190--199
+Underfull \hbox (badness 1502) in paragraph at lines 185--194
 \OT1/lmtt/m/n/10 bp$[]$=(2,1)\OT1/lmr/m/n/10 (+20) ), and \OT1/lmtt/m/n/10 div[
 ]le[]div[]of[]nonneg[]left \OT1/lmr/m/n/10 (+20) (T1,
 ) (./sections/discussion.tex
-Underfull \hbox (badness 2772) in paragraph at lines 209--1
+Underfull \hbox (badness 2772) in paragraph at lines 204--1
 \OT1/lmr/m/it/10 (+20) statement-correctness clas-si-fi-ca-tion \OT1/lmr/m/n/10
  (+20) via refu-ta-tion.
 
-Underfull \vbox (badness 10000) has occurred while \output is active [7])
+Underfull \vbox (badness 10000) has occurred while \output is active [6]
+Underfull \vbox (badness 6961) has occurred while \output is active
+Underfull \hbox (badness 1019) in paragraph at lines 20--32
+ \OT1/lmr/bx/sc/10 (+20) Cur-rent provers are mem-o-ri-sa-tion en-gines,
+
+Underfull \hbox (badness 2894) in paragraph at lines 20--32
+\OT1/lmr/m/n/10 (+20) thors[], []2025[]), trained on Math-lib, re-sponds to
+[7])
+Underfull \hbox (badness 2582) in paragraph at lines 56--101
+ \OT1/lmr/bx/sc/10 (+20) Broader im-pact.[] \OT1/lmr/m/n/10 (+20) Anytime-valid
+ con-fi-dence se-
 (./main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 53--60
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
 \OT1/lmtt/m/n/10 co / Goedel-[]LM / Goedel-[]Prover-[]V2-[]8B$[]\OT1/lmr/m/n/10
  (+20) , 2025.
 
-Underfull \hbox (badness 2990) in paragraph at lines 53--60
+Underfull \hbox (badness 2990) in paragraph at lines 48--55
 \OT1/lmr/m/n/10 (+20) Princeton-led re-lease. 8B base, GGUF Q6[]K
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 []\OT1/lmr/m/n/10 (+20) The Math-lib Com-mu-nity.  Math-lib4
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 \OT1/lmtt/m/n/10 Probability.Martingale \OT1/lmr/m/n/10 (+20) mod-ule.  []$\OT1
 /lmtt/m/n/10 https :
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 \OT1/lmtt/m/n/10 / / leanprover-[]community . github . io / mathlib4 _
-) (./sections/appendix.tex
+[8]) (./sections/appendix.tex
 Underfull \hbox (badness 2573) in paragraph at lines 50--55
 []\OT1/lmr/m/sc/9 (+20) Sub \OT1/lmr/m/n/9 (+20) plus an ex-plicit Math-lib lem
 ma chain (\OT1/lmtt/m/n/9 Real.exp[]le[]one[]iff\OT1/lmr/m/n/9 (+20) , \OT1/lmt
@@ -640,10 +678,11 @@ t/m/n/9 Real.log[]nonneg\OT1/lmr/m/n/9 (+20) ,
 
 Overfull \hbox (203.81653pt too wide) in paragraph at lines 42--57
  [][] 
-[9]
+
 Overfull \hbox (136.8936pt too wide) in paragraph at lines 129--150
  [][] 
 
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
 Underfull \hbox (badness 2662) in paragraph at lines 179--181
 \OT1/lmr/m/n/10 (+20) chain that ad-mits the clo-sure (used in the
 
@@ -717,12 +756,13 @@ Underfull \hbox (badness 5696) in paragraph at lines 323--338
 Overfull \hbox (23.2399pt too wide) in paragraph at lines 350--366
  [][] 
 
-Underfull \vbox (badness 10000) has occurred while \output is active [11]
 Underfull \hbox (badness 4832) in paragraph at lines 379--382
 []\OT1/lmr/m/n/10 (+20) Clone the dataset repo from the snap-shot
-
+[11]
 Overfull \hbox (252.94467pt too wide) in paragraph at lines 438--452
  [][] 
+
+Underfull \vbox (badness 4886) has occurred while \output is active
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 454.
@@ -746,15 +786,18 @@ ini closes one
 Underfull \hbox (badness 3954) in paragraph at lines 468--477
 \OT1/lmtt/m/n/10 impossible\OT1/lmr/m/n/10 (+20) ), Opus closes one new T3 tar-
 get
-[12]
+
 Overfull \hbox (93.94835pt too wide) in paragraph at lines 498--511
  [][] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [12]
 
 LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 524.
 
-[13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active [13]
 Underfull \hbox (badness 3735) in paragraph at lines 604--622
 []\OT1/lmr/m/n/10 (+20) In ad-di-tion to the benchmark-Table []1[] eval-u-a-
 
@@ -763,21 +806,19 @@ Underfull \hbox (badness 1005) in paragraph at lines 604--622
 
 Overfull \hbox (252.95335pt too wide) in paragraph at lines 682--695
  [][] 
-[14]
+
 Underfull \hbox (badness 1776) in paragraph at lines 715--724
 \OT1/lmr/m/n/10 (+20) i-cal ax-iom set for a clas-si-cal Math-lib proof is
-
+[14]
 Overfull \hbox (252.97131pt too wide) in paragraph at lines 736--753
  [][] 
 
-Underfull \vbox (badness 10000) has occurred while \output is active
 Overfull \hbox (149.75775pt too wide) in paragraph at lines 798--811
  [][] 
 
 Overfull \hbox (252.9635pt too wide) in paragraph at lines 835--850
  [][] 
-
-Underfull \vbox (badness 10000) has occurred while \output is active [15]
+[15]
 Underfull \hbox (badness 6094) in paragraph at lines 882--887
 []\OT1/lmr/m/n/10 (+20) Log-domain sub-sti-tu-tion $\OML/lmm/m/it/10 x \OMS/lms
 y/m/n/10 7!
@@ -806,23 +847,31 @@ Underfull \hbox (badness 4454) in paragraph at lines 933--936
 
 Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
-[16]
+
 Overfull \hbox (146.10716pt too wide) in paragraph at lines 964--979
  [][] 
-
+[16]
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
 
-Underfull \vbox (badness 4608) has occurred while \output is active [17])
-[18] (./main.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active)
+
+Package natbib Warning: There were undefined citations.
+
+[17] (./main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/
+hare/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/
 fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/p
@@ -840,7 +889,7 @@ onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 573397 bytes).
+Output written on main.pdf (17 pages, 569719 bytes).
 Transcript written on main.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -851,17 +900,17 @@ L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
-(/tmp/ai4math-formal-avs/styles/icml2026.sty
+(/tmp/ai4math-2026-formal-avs/styles/icml2026.sty
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
-(/tmp/ai4math-formal-avs/styles/fancyhdr.sty)
+(/tmp/ai4math-2026-formal-avs/styles/fancyhdr.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
-(/tmp/ai4math-formal-avs/styles/algorithm.sty
+(/tmp/ai4math-2026-formal-avs/styles/algorithm.sty
 Document Style `algorithm' - floating environment
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty))
-(/tmp/ai4math-formal-avs/styles/algorithmic.sty
+(/tmp/ai4math-2026-formal-avs/styles/algorithmic.sty
 Document Style `algorithmic' - environment
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
@@ -946,113 +995,119 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Ignoring empty anchor on input line 93.
 
-(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex
-(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
-Underfull \hbox (badness 1024) in paragraph at lines 2--14
-\OT1/lmr/m/n/10 (+20) The com-pan-ion li-brary \OT1/lmtt/m/n/10 formal-avs-lean
+(/usr/share/texmf/tex/latex/lm/omllmr.fd) (./sections/abstract.tex)
+(./sections/intro.tex (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[][][][]$\OT1/lmtt/m/n/9 https : / / anonymous . 4open . science / r /
 
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/lmtt/m/n/9 neurips-[]2026-[]dataset-[]paper-[]replication-[]2604 /
 
-Underfull \hbox (badness 2096) in paragraph at lines 15--30
-\OT1/lmr/m/n/10 (+20) single-shot to $13\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20)
- 48$ agen-tic, sur-pass-ing
-) (./sections/intro.tex
 Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
 b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)) (./sections/related.tex
-Underfull \hbox (badness 10000) in paragraph at lines 112--1
-[]\OT1/lmr/m/n/10 (+20) This pa-per re-leases three ar-ti-facts. (i)
-
-Underfull \hbox (badness 1253) in paragraph at lines 112--1
-\OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/m/n/10 (+20) , an Apache-2.0 Lean 4 li
--brary
-
-Underfull \vbox (badness 10000) has occurred while \output is active [2]
 Underfull \hbox (badness 1019) in paragraph at lines 36--54
 \OT1/lmr/m/n/10 (+20) and counterexample-extraction hooks, and dis-tin-
 
-Underfull \hbox (badness 2103) in paragraph at lines 70--85
+Underfull \hbox (badness 2103) in paragraph at lines 70--83
  \OT1/lmr/bx/n/10 (+20) Agent-style eval-u-a-tion of code and proof
-
-Underfull \vbox (badness 4673) has occurred while \output is active)
-(./sections/methods.tex
-Underfull \hbox (badness 3557) in paragraph at lines 87--1
+[2]) (./sections/methods.tex
+Underfull \hbox (badness 3557) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) ting fam-ily, White-house vec-tor, or asymp-totic
 
-Underfull \hbox (badness 1253) in paragraph at lines 87--1
+Underfull \hbox (badness 1253) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) CLT confidence-sequence fam-i-lies. The math-lib
 
-Underfull \hbox (badness 1406) in paragraph at lines 87--1
+Underfull \hbox (badness 1406) in paragraph at lines 85--1
 \OT1/lmr/m/n/10 (+20) mu-nity[], []2026[]) sup-plies Doob de-com-po-si-tion and
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 15--29
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[][][]\OT1/lmr/m/n/9 (+20) Source at []$\OT1/lmtt/m/n/9 https : / / anonymous .
+ 4open . science /
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\OT1/lmtt/m/n/9 r / neurips-[]2026-[]dataset-[]paper-[]replication-[]2604 /
+
+Underfull \hbox (badness 2426) in paragraph at lines 15--30
+[]\OT1/lmr/m/n/10 (+20) We con-struct \OT1/lmtt/m/n/10 formal-avs-lean\OT1/lmr/
+m/n/10 (+20) ,[][][] an Apache-2.0
+
+Underfull \hbox (badness 1102) in paragraph at lines 15--30
 \OT1/lmr/m/n/10 (+20) ules (\OT1/lmtt/m/n/10 Basic\OT1/lmr/m/n/10 (+20) , \OT1/
 lmtt/m/n/10 HowardRamdas\OT1/lmr/m/n/10 (+20) , \OT1/lmtt/m/n/10 WaudbySmithBet
 ting\OT1/lmr/m/n/10 (+20) ,
 
-Underfull \vbox (badness 4940) has occurred while \output is active [3]
-Underfull \hbox (badness 1371) in paragraph at lines 115--128
+Underfull \vbox (badness 10000) has occurred while \output is active [3]
+Underfull \hbox (badness 1371) in paragraph at lines 116--129
  \OT1/lmr/bx/n/10 (+20) Em-pir-i-cal fail-ure cat-e-gories (T4, T5).[] T4
-[4]
 
 LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
-(Font)              using `OT1/lmr/bx/n' instead on input line 203.
+(Font)              using `OT1/lmr/bx/n' instead on input line 202.
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 201--216
+Underfull \hbox (badness 1661) in paragraph at lines 200--215
 \OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
 /lmr/m/n/10 (+20) : goal state-ment
 
-Underfull \vbox (badness 2237) has occurred while \output is active [5])
-(./sections/results.tex
-Overfull \hbox (252.96283pt too wide) in paragraph at lines 41--56
- [][] 
-[6]
-Underfull \hbox (badness 4242) in paragraph at lines 190--199
+Underfull \vbox (badness 1264) has occurred while \output is active [4]
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/results.tex [5]
+Underfull \hbox (badness 4242) in paragraph at lines 185--194
 []\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
 
-Underfull \hbox (badness 7047) in paragraph at lines 190--199
+Underfull \hbox (badness 7047) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) i-cally false, re-turn-ing machine-checkable coun-
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--199
+Underfull \hbox (badness 10000) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) terex-am-ples on each: \OT1/lmtt/m/n/10 equivalence[]brea
 k[]at[]
 
-Underfull \hbox (badness 7576) in paragraph at lines 190--199
+Underfull \hbox (badness 7576) in paragraph at lines 185--194
 \OT1/lmtt/m/n/10 finite[]precision \OT1/lmr/m/n/10 (+20) (T5, miss-ing sym-me-t
 ry hy-
 
-Underfull \hbox (badness 1210) in paragraph at lines 190--199
+Underfull \hbox (badness 1210) in paragraph at lines 185--194
 \OT1/lmr/m/n/10 (+20) poth-e-sis), \OT1/lmtt/m/n/10 slack[]antitone[]in[]scale 
 \OT1/lmr/m/n/10 (+20) (T2, miss-ing
 
-Underfull \hbox (badness 1502) in paragraph at lines 190--199
+Underfull \hbox (badness 1502) in paragraph at lines 185--194
 \OT1/lmtt/m/n/10 bp$[]$=(2,1)\OT1/lmr/m/n/10 (+20) ), and \OT1/lmtt/m/n/10 div[
 ]le[]div[]of[]nonneg[]left \OT1/lmr/m/n/10 (+20) (T1,
 ) (./sections/discussion.tex
-Underfull \hbox (badness 2772) in paragraph at lines 209--1
+Underfull \hbox (badness 2772) in paragraph at lines 204--1
 \OT1/lmr/m/it/10 (+20) statement-correctness clas-si-fi-ca-tion \OT1/lmr/m/n/10
  (+20) via refu-ta-tion.
 
-Underfull \vbox (badness 10000) has occurred while \output is active [7])
+Underfull \vbox (badness 10000) has occurred while \output is active [6]
+Underfull \vbox (badness 6961) has occurred while \output is active
+Underfull \hbox (badness 1019) in paragraph at lines 20--32
+ \OT1/lmr/bx/sc/10 (+20) Cur-rent provers are mem-o-ri-sa-tion en-gines,
+
+Underfull \hbox (badness 2894) in paragraph at lines 20--32
+\OT1/lmr/m/n/10 (+20) thors[], []2025[]), trained on Math-lib, re-sponds to
+[7])
+Underfull \hbox (badness 2582) in paragraph at lines 56--101
+ \OT1/lmr/bx/sc/10 (+20) Broader im-pact.[] \OT1/lmr/m/n/10 (+20) Anytime-valid
+ con-fi-dence se-
 (./main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 53--60
+Underfull \hbox (badness 10000) in paragraph at lines 48--55
 \OT1/lmtt/m/n/10 co / Goedel-[]LM / Goedel-[]Prover-[]V2-[]8B$[]\OT1/lmr/m/n/10
  (+20) , 2025.
 
-Underfull \hbox (badness 2990) in paragraph at lines 53--60
+Underfull \hbox (badness 2990) in paragraph at lines 48--55
 \OT1/lmr/m/n/10 (+20) Princeton-led re-lease. 8B base, GGUF Q6[]K
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 []\OT1/lmr/m/n/10 (+20) The Math-lib Com-mu-nity.  Math-lib4
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 \OT1/lmtt/m/n/10 Probability.Martingale \OT1/lmr/m/n/10 (+20) mod-ule.  []$\OT1
 /lmtt/m/n/10 https :
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 \OT1/lmtt/m/n/10 / / leanprover-[]community . github . io / mathlib4 _
-) (./sections/appendix.tex
+[8]) (./sections/appendix.tex
 Underfull \hbox (badness 2573) in paragraph at lines 50--55
 []\OT1/lmr/m/sc/9 (+20) Sub \OT1/lmr/m/n/9 (+20) plus an ex-plicit Math-lib lem
 ma chain (\OT1/lmtt/m/n/9 Real.exp[]le[]one[]iff\OT1/lmr/m/n/9 (+20) , \OT1/lmt
@@ -1060,10 +1115,11 @@ t/m/n/9 Real.log[]nonneg\OT1/lmr/m/n/9 (+20) ,
 
 Overfull \hbox (203.81653pt too wide) in paragraph at lines 42--57
  [][] 
-[9]
+
 Overfull \hbox (136.8936pt too wide) in paragraph at lines 129--150
  [][] 
 
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
 Underfull \hbox (badness 2662) in paragraph at lines 179--181
 \OT1/lmr/m/n/10 (+20) chain that ad-mits the clo-sure (used in the
 
@@ -1137,12 +1193,13 @@ Underfull \hbox (badness 5696) in paragraph at lines 323--338
 Overfull \hbox (23.2399pt too wide) in paragraph at lines 350--366
  [][] 
 
-Underfull \vbox (badness 10000) has occurred while \output is active [11]
 Underfull \hbox (badness 4832) in paragraph at lines 379--382
 []\OT1/lmr/m/n/10 (+20) Clone the dataset repo from the snap-shot
-
+[11]
 Overfull \hbox (252.94467pt too wide) in paragraph at lines 438--452
  [][] 
+
+Underfull \vbox (badness 4886) has occurred while \output is active
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 454.
@@ -1166,15 +1223,18 @@ ini closes one
 Underfull \hbox (badness 3954) in paragraph at lines 468--477
 \OT1/lmtt/m/n/10 impossible\OT1/lmr/m/n/10 (+20) ), Opus closes one new T3 tar-
 get
-[12]
+
 Overfull \hbox (93.94835pt too wide) in paragraph at lines 498--511
  [][] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [12]
 
 LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 524.
 
-[13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active [13]
 Underfull \hbox (badness 3735) in paragraph at lines 604--622
 []\OT1/lmr/m/n/10 (+20) In ad-di-tion to the benchmark-Table []1[] eval-u-a-
 
@@ -1183,21 +1243,19 @@ Underfull \hbox (badness 1005) in paragraph at lines 604--622
 
 Overfull \hbox (252.95335pt too wide) in paragraph at lines 682--695
  [][] 
-[14]
+
 Underfull \hbox (badness 1776) in paragraph at lines 715--724
 \OT1/lmr/m/n/10 (+20) i-cal ax-iom set for a clas-si-cal Math-lib proof is
-
+[14]
 Overfull \hbox (252.97131pt too wide) in paragraph at lines 736--753
  [][] 
 
-Underfull \vbox (badness 10000) has occurred while \output is active
 Overfull \hbox (149.75775pt too wide) in paragraph at lines 798--811
  [][] 
 
 Overfull \hbox (252.9635pt too wide) in paragraph at lines 835--850
  [][] 
-
-Underfull \vbox (badness 10000) has occurred while \output is active [15]
+[15]
 Underfull \hbox (badness 6094) in paragraph at lines 882--887
 []\OT1/lmr/m/n/10 (+20) Log-domain sub-sti-tu-tion $\OML/lmm/m/it/10 x \OMS/lms
 y/m/n/10 7!
@@ -1226,23 +1284,23 @@ Underfull \hbox (badness 4454) in paragraph at lines 933--936
 
 Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
-[16]
+
 Overfull \hbox (146.10716pt too wide) in paragraph at lines 964--979
  [][] 
-
+[16]
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
 
-Underfull \vbox (badness 4608) has occurred while \output is active [17])
-[18] (./main.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active) [17]
+(./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/
+hare/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/
 fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/p
@@ -1260,5 +1318,5 @@ onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 573397 bytes).
+Output written on main.pdf (17 pages, 569590 bytes).
 Transcript written on main.log.

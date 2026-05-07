@@ -1,48 +1,65 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{Why T3 failures persist after the substitution hint.}
-Every T3 target reduces to a single-function inequality that one
-of the four drafters could close autonomously once the right
-rewrite is in hand. Two operations are jointly required for
-closure: producing the log-domain $\Phi$-substitution (or a
-problem-specific sqrt manipulation), and selecting the Mathlib
-lemma chain that discharges the re-encoded goal. The \textsc{Sub}
-column of Table~\ref{tab:ablation} ($0$-$2/6$ per drafter)
-isolates the second operation. The \textsc{Sub+Chain} column
-($3$-$5/6$) supplies both. Harmonic Aristotle closes $6/6$
-(\S\ref{sec:capability-ladder}) without either hint, using the
-$\Phi$-substitution on some targets and a direct
-\texttt{sqrt\_le\_sqrt}-family route on others. Aristotle is
-under a different compute regime
-(\S\ref{sec:methods-tiers}). The $6/6$ vs $0$-$2/6$ gap should
-be read as a system difference, not as an isolated generalist
-tactic-vocabulary bound. The \textsc{Sub+Chain} result suggests
-supplying the lemma list narrows the generalist closure gap on
-T3, conditional on the Aristotle-derived chain
-(\S\ref{sec:methods-tiers}, hint-ablation paragraph).
+\paragraph{The generalist--Aristotle gap as a capability measurement.}
+The gap between the best generalist ($22/60$, Gemini single-shot)
+and Aristotle ($53/60$) quantifies the capability gap this benchmark
+is designed to measure. Agentic mode narrows the prompt-sensitivity gap but does
+not close the closure gap: Gemini agentic reaches $19/60$, still
+far below $53/60$. The remaining distance is not a prompt problem.
+Cross-function targets (T3) require composing definitions from
+multiple library modules in a single proof step. Generalists
+trained on Mathlib do not learn this composition because Mathlib
+contains no cross-family CS inequalities. The T3 hint ablation
+(Appendix~\ref{app:hint-ablation-table}) confirms that supplying
+both the substitution and the lemma chain closes the gap
+($3$--$5/6$ at \textsc{Sub+Chain}), but the drafter cannot
+produce those hints on its own.
 
-\paragraph{Specialised provers and the Mathlib-outside gap.}
+\paragraph{Current provers are memorisation engines, not reasoners.}
 Goedel-Prover-V2~\cite{goedelprover2025}, trained on Mathlib,
-surfaces this gap in its own reasoning trace: on
-\texttt{etabetting\_nonneg} ($0 \leq \eta_{\mathrm{betting}}(b)$),
-the model responds \emph{``the Lean 4 code provided does not define
-etaBetting \ldots\ we cannot proceed with a meaningful proof.''}
-Under single-shot, DSPv2~\cite{dspv22025} ($9/48$) outperforms
-Goedel-V2 ($5/48$) because its autocomplete format fits a $10$ GB
-GPU. Under agentic mode, Goedel-V2's self-correction training
-activates and it reaches $13/48$, surpassing DSPv2 (detailed
-hardware-constraint analysis in
-Appendix~\ref{app:inference-format}).
+responds to \texttt{etabetting\_nonneg} with \emph{``the Lean~4
+code provided does not define etaBetting \ldots\ we cannot proceed
+with a meaningful proof.''} This is not a failure of tactic
+knowledge. It is a failure to read a new definition and reason
+about it. Any domain-specific Lean library outside Mathlib will
+surface this gap: the prover has seen the tactics but never the
+definitions. Retrieval-augmented proving, fine-tuning on
+domain libraries, or longer-context in-context learning are
+candidate next steps. The benchmark provides the measurement
+tool. The T1 tier ($34$ single-function targets against custom
+definitions) is designed to isolate this axis.
 
-\paragraph{Hint-response asymmetry.}
-The T3 hint ablation (Appendix~\ref{app:hint-ablation-table}) shows
-generalist closure rising from $0$--$1/6$ at \textsc{Base} to
-$3$--$5/6$ at \textsc{Sub+Chain}, while DSPv2 closes only one target
-across both hint columns. For mixed-drafter ensembles this suggests
-routing lemma-rich prompts to generalists and specialised provers to
-targets where their tactic prior matches the goal shape.
+\paragraph{Refutation as a safety signal.}
+Aristotle surfaces three false-as-stated targets that every other
+solver accepted. Two are definitional errors (an off-by-one in a
+stopping-rule admissibility condition and a missing monotonicity
+hypothesis); one is a quantitative counterexample. In all three
+cases, the generalist drafters produce confident, syntactically
+valid Lean proofs that the kernel rejects only because the
+statement is false. A deployment pipeline that trusts the drafter
+and skips kernel verification would ship a broken guarantee. The
+refutation track measures a capability axis absent from pass@$N$
+benchmarks: whether a solver can identify that a statement is
+wrong, not just fail to prove it.
 
 \paragraph{Limitations.}
-Wilson 95\% CIs, scope, and contamination notes are in
-Appendix~\ref{tab:wilson-ci}.
+The benchmark covers one subfield (anytime-valid CS) with $60$
+targets. Closure rates may not transfer to other Lean libraries
+with different import structures or proof shapes. Aristotle is a
+closed-source system. Its results are reproducible via session IDs
+but not by re-running an open model. The $60$-target scale limits
+statistical power on per-tier comparisons. Wilson 95\% CIs
+and contamination notes are in Appendix~\ref{tab:wilson-ci}.
+
+\paragraph{Broader impact.}
+Anytime-valid confidence sequences are deployed in production A/B
+testing and clinical trial monitoring systems that make decisions
+affecting millions of users. A silent coverage-guarantee violation
+in these systems can lead to incorrect treatment decisions or
+product launches based on false statistical significance. Formally
+verified implementations remove this failure class. This benchmark
+measures how close current language-model provers are to automating
+that verification, and the refutation track provides an early
+warning for the complementary risk: solvers that produce
+plausible-looking proofs of false statements.

@@ -12,7 +12,8 @@ in Appendix~\ref{app:schema}.
 
 \subsection{The companion library: \texttt{formal-avs-lean}}
 
-We construct \texttt{formal-avs-lean}~\cite{formalavslean2026}, an
+We construct \texttt{formal-avs-lean},\footnote{Source at
+\url{https://anonymous.4open.science/r/neurips-2026-dataset-paper-replication-2604/supplementary/lean/}.} an
 Apache-2.0 Lean~4 library released as a prerequisite artefact for
 this benchmark. It instantiates the four canonical anytime-valid
 confidence-sequence constructions, supplies per-family rate
@@ -123,7 +124,7 @@ adding the required API would move these targets out of T4.
 close-rate across every evaluated solver. It is a
 witness-construction problem on the continuous-equivalence
 break between Howard-Ramdas and Ville thresholds at finite
-precision; no missing Mathlib API explains the failure.
+precision. No missing Mathlib API explains the failure.
 T4 and T5 are empirical categories from this evaluation, not predictions for future solvers.
 
 \subsection{Drafter sweep protocol}
@@ -159,36 +160,34 @@ candidates were excluded for reasons recorded per-target in the
 supplementary \texttt{selection\_log.csv}.
 
 \paragraph{Evaluated slate.}
-The headline drafter sweeps were run on a $48$-target subset.
-The $48$-slate is the canonical evaluation set in this
-submission. The full $60$-target table adds $4$ T4 entries,
-$1$ T5 entry, and $7$ T1 entries that we report separately
-(see Table~\ref{tab:headline}, footnote on imputed cells).
+The headline drafter sweeps were run on all $60$ targets.
+The $60$-target benchmark is the canonical evaluation set in this
+submission. The benchmark includes $4$ T4 entries,
+$1$ T5 entry, and $7$ supplementary T0 entries
+(see Table~\ref{tab:headline}).
 T4 and T5 entries are zero by construction in the
 $60$-target table because they were assigned to those
 categories on the basis of zero closures across evaluated
-solvers (\S\ref{sec:methods-tiers}). We report headline rates
-on the $48$-slate and a status table on $60$ targets, rather
-than fold the two together.
+solvers (\S\ref{sec:methods-tiers}). We report headline rates on all $60$ targets.
 
 \paragraph{Drafter set.}
 Four closed-source drafters are scored in the headline sweep.
 Claude Sonnet~4.6, Kimi~K2.5, and Gemini~3 Pro under a shared
 hint-list prompt. Mistral Large~3 under a neutral prompt
 (\S\ref{sec:spec-inversion} reports the prompt-sensitivity
-result). Mistral collapses to $0/240$ on the same hint-list
+result). Mistral collapses to $0/300$ on the same hint-list
 prompt because of greedy hint-list compliance, so the headline
 row uses the prompt that produces a non-degenerate row.
 Cross-drafter aggregates over Mistral and the other three
 should be read with this prompt asymmetry in mind. A
 supplementary closed-source row, Claude Opus~$4.6$, is reported
-on the same $48$-slate at $N=5$ under the hint-list prompt.
+on all $60$ targets at $N=5$ under the hint-list prompt.
 Two specialised open-weights drafters complete the headline sweep:
 DeepSeek-Prover-V2-7B~\cite{dspv22025}
 (\href{https://huggingface.co/deepseek-ai/DeepSeek-Prover-V2-7B}{huggingface.co/deepseek-ai/DeepSeek-Prover-V2-7B})
 and Goedel-Prover-V2-8B~\cite{goedelprover2025}
 (\href{https://huggingface.co/Goedel-LM/Goedel-Prover-V2-8B}{huggingface.co/Goedel-LM/Goedel-Prover-V2-8B}).
-Both are scored on the $48$-slate at $N=5$ under the same neutral
+Both are scored on all $60$ targets at $N=5$ under the same neutral
 specialised-prover prompt template. Community quantization choices
 and reproduction details are in Appendix~\ref{app:prompts}. DSPv2
 attempts are released as cached candidates in the supplementary

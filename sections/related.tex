@@ -63,7 +63,7 @@ into two orthogonal components, a log-domain substitution hint
 (\emph{tactic vocabulary}), and measures their effects independently
 across four drafter classes plus one specialised $7$B prover. The
 3-column ablation (\S\ref{sec:results}) shows neither component alone
-is sufficient; closure rates increase only when both are supplied to
+is sufficient. Closure rates increase only when both are supplied to
 mid-tier generalists.
 
 \paragraph{Agent-style evaluation of code and proof drafters.}
@@ -78,10 +78,8 @@ agent-style evaluation. A target's JSON record exposes the tier
 shape, required imports, and the $\mathcal{A}_{\text{core}}$ axiom
 audit, which are the inputs an agentic evaluation loop consumes when delegating
 to a Lean kernel. The headline sweep is the completion-style baseline
-against which any agentic-mode gain can be measured. We do not run
-an agent loop in this submission, but the schema (\S\ref{app:schema})
-and \texttt{sweep.py} driver are designed so the same target slate
-can be re-run under one without re-curation.
+against which the agentic-mode gain reported in
+Table~\ref{tab:prompt-sensitivity} is measured.
 
 \paragraph{Anytime-valid CS formalisations.}
 No prior public Lean~4 library formalises the HR-family, betting

@@ -17,11 +17,6 @@ Achim, T., Best, A., Bietti, A., Der, K., F{\'e}d{\'e}rico, M., Gukov, S.,
 \newblock Aristotle: {IMO}-level automated theorem proving, 2025.
 \newblock URL \url{https://arxiv.org/abs/2510.01346}.
 
-\bibitem[Anonymous(2026)]{formalavslean2026}
-Anonymous.
-\newblock {formal-avs-lean}: a {L}ean 4 library for anytime-valid statistics.
-\newblock anonymised URL in supplementary archive, 2026.
-
 \bibitem[Azerbayev et~al.(2023)Azerbayev, Piotrowski, Schoelkopf, Ayers, Radev,
   and Avigad]{azerbayev2023proofnet}
 Azerbayev, Z., Piotrowski, B., Schoelkopf, H., Ayers, E.~W., Radev, D., and
@@ -88,6 +83,13 @@ Jimenez, C.~E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O., and
 \newblock {SWE-bench}: can language models resolve real-world {GitHub} issues?
 \newblock In \emph{International Conference on Learning Representations
   (ICLR)}, 2024.
+
+\bibitem[Johari et~al.(2017)Johari, Koomen, Pekelis, and
+  Walsh]{johari2017peeking}
+Johari, R., Koomen, P., Pekelis, L., and Walsh, D.
+\newblock Peeking at {A/B} tests: Why it matters, and what to do about it.
+\newblock In \emph{Proceedings of the 23rd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pp.\  1517--1525. ACM, 2017.
 
 \bibitem[{LeanAgent Authors}(2024)]{leanagent2024}
 {LeanAgent Authors}.

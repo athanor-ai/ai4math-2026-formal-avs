@@ -5,42 +5,42 @@ The style file: icml2026.bst
 Database file #1: references.bib
 You've used 23 entries,
             2773 wiz_defined-function locations,
-            690 strings with 9911 characters,
-and the built_in function-call counts, 13320 in all, are:
-= -- 1018
-> -- 1271
+            693 strings with 10043 characters,
+and the built_in function-call counts, 13750 in all, are:
+= -- 1063
+> -- 1300
 < -- 11
-+ -- 428
-- -- 405
-* -- 1155
-:= -- 2131
-add.period$ -- 68
++ -- 437
+- -- 414
+* -- 1197
+:= -- 2184
+add.period$ -- 69
 call.type$ -- 23
-change.case$ -- 203
+change.case$ -- 206
 chr.to.int$ -- 23
 cite$ -- 46
-duplicate$ -- 448
-empty$ -- 844
-format.name$ -- 434
-if$ -- 2700
+duplicate$ -- 468
+empty$ -- 869
+format.name$ -- 443
+if$ -- 2801
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 11
+missing$ -- 12
 newline$ -- 122
 num.names$ -- 92
-pop$ -- 474
+pop$ -- 479
 preamble$ -- 1
-purify$ -- 180
+purify$ -- 183
 quote$ -- 0
-skip$ -- 438
+skip$ -- 455
 stack$ -- 0
-substring$ -- 133
-swap$ -- 43
-text.length$ -- 2
+substring$ -- 173
+swap$ -- 55
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 253
 warning$ -- 0
-while$ -- 76
+while$ -- 79
 width$ -- 0
-write$ -- 285
+write$ -- 287

@@ -2,7 +2,7 @@
 \section{T3 hint-ablation results}
 \label{app:hint-ablation-table}
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{3-column hint study on T3 cross-function inequalities
@@ -27,12 +27,12 @@ Claude Opus~4.6$^{\ddagger\ddagger}$ & 0/6 & 2/6 & 5/6 \\
 DSPv2-$7$B GPTQ-int$8$ & 0/6 & 1/6 & 1/6 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \section{Hint-ablation legend table}
 \label{app:hint-legend-table}
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \setlength{\tabcolsep}{4pt}
@@ -55,7 +55,7 @@ inline legend in~\S\ref{sec:methods-hint-ablation}.}
 \bottomrule
 \end{tabular}
 
-\end{table}
+\end{table*}
 
 \section{Benchmark format}
 \label{app:bench-format-fig}
@@ -207,7 +207,7 @@ in the partial proof (present only when \texttt{verdict = partial}).
 
 \subsection{Generalist drafter prompt (closed-source)}
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true,breakautoindent=false,columns=flexible]
 You are a Lean 4 expert proficient with Mathlib.
 Close the following theorem with a clean tactic proof.
 Prefer concise tactic chains. Avoid `sorry`. Avoid axioms.
@@ -215,7 +215,7 @@ Prefer concise tactic chains. Avoid `sorry`. Avoid axioms.
 <theorem-statement>
 
 <optional hint block>
-\end{verbatim}
+\end{lstlisting}
 
 The \textsc{Sub} hint adds: ``Hint: the log-domain substitution
 $x \mapsto \exp(\lambda^\star x - (\lambda^\star)^2 \sigma^2 / 2)$ with
@@ -232,7 +232,7 @@ are likely relevant, in approximate order: \texttt{Real.exp\_le\_one\_iff},
 DSPv2 is autocomplete-trained: the input terminates at the trailing
 \texttt{:=} token and the model emits the proof body directly.
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true,breakautoindent=false,columns=flexible]
 <imports>
 
 <opens>
@@ -240,7 +240,7 @@ DSPv2 is autocomplete-trained: the input terminates at the trailing
 namespace <scratch_namespace>
 
 <theorem-header> :=
-\end{verbatim}
+\end{lstlisting}
 
 Goedel-V2 is chat-trained: per the model card, the input is wrapped
 as a single user turn that asks for a proof plan followed by the
@@ -248,7 +248,7 @@ final code in a fenced \texttt{lean4} block. We extract the proof
 body from that block and verify against the same lake project as
 the rest of the sweep.
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true,breakautoindent=false,columns=flexible]
 Complete the following Lean 4 code:
 
 ```lean4
@@ -262,7 +262,7 @@ namespace <scratch_namespace>
 
 Before producing the Lean 4 code to formally prove the given
 theorem, provide a detailed proof plan ...
-\end{verbatim}
+\end{lstlisting}
 
 The \textsc{Sub+Chain} column adds the Mathlib-lemma hint as a Lean
 \texttt{/- hint -/} block before the trailing \texttt{:=} token (DSPv2)
@@ -421,7 +421,7 @@ other three drafters. The four-drafter T0 floor at $0/7$ has Wilson
 upper bound $35\%$ across all four, consistent with the Mathlib-canon
 framing.
 
-\begin{table}[H]
+\begin{table*}[H]
 \caption{Wilson 95\% confidence intervals on every per-cell
 pass@5 closure rate from Table~\ref{tab:headline}. Cells report
 targets-closed/tier-size with the Wilson 95\% CI in brackets
@@ -449,7 +449,7 @@ Claude Opus~4.6 & 0/7 \textcolor{gray}{[0,35]} & 13/34 \textcolor{gray}{[24,55]}
 DSPv2-$7$B GPTQ-int$8$ & 3/7 \textcolor{gray}{[16,75]} & 8/34 \textcolor{gray}{[12,40]} & 0/8 \textcolor{gray}{[0,32]} & 1/6 \textcolor{gray}{[3,56]} & 0/4 \textcolor{gray}{[0,49]} & 0/1 \textcolor{gray}{[0,79]} \\
 \bottomrule
 \end{tabular}}
-\end{table}
+\end{table*}
 
 \subsection{$N=10$ extension}
 \label{app:robustness-n10}
@@ -722,7 +722,7 @@ $\mathcal{A}_{\text{core}}$, no proof widens the axiom
 set beyond this baseline
 (Table~\ref{tab:axiom-audit}).
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{Axiom audit. Every closed proof uses exactly
@@ -751,7 +751,7 @@ Release axiom-set union & n/a & n/a & $\mathcal{A}_{\text{core}}$ \\
 \bottomrule
 \end{tabular}}
 
-\end{table}
+\end{table*}
 
 \paragraph{Why this matters.}
 A capability benchmark that accepts proofs widening the axiom
@@ -783,7 +783,7 @@ non-close} attempts return a candidate distinct from the
 reference Aristotle proof that nevertheless does not type-check.
 This category is rare ($<0.5\%$).
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{Per-drafter and aggregate failure-mode breakdown of
@@ -809,7 +809,7 @@ aggregate   & 322 (11.6\%) & 68 (2.5\%) & 2202 (79.5\%) & 170 (6.1\%) & 8 (0.3\%
 \bottomrule
 \end{tabular}
 
-\end{table}
+\end{table*}
 
 \subsection{Latency and cost profile}
 \label{app:cost}
@@ -822,7 +822,7 @@ is the per-attempt USD cost at Anthropic/Gemini/Mistral list
 prices. Wall-clock is the full round-trip including network
 latency.
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{Drafter sweep latency and cost profile on the
@@ -848,7 +848,7 @@ Goedel-V2-$8$B (community GGUF Q$6$\_K) & 240 & 21.8 & \$0 & 111 & 535 & \$0 \\
 \bottomrule
 \end{tabular}}
 
-\end{table}
+\end{table*}
 
 \paragraph{Cost per closed target.}
 We report API cost per closed target, defined as the
@@ -949,7 +949,7 @@ The 14-session companion archive records, per session,
 fingerprint, target-set, verdict, axiom-clean status, and
 elapsed wall time. Table~\ref{tab:aristotle-sessions} summarises.
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{Aristotle 14-session archive summary. All
@@ -977,7 +977,7 @@ companion\textsuperscript{$\dagger$} (3 sessions) & sharp-rank, entropy, Kelly &
 \bottomrule
 \end{tabular}
 
-\end{table}
+\end{table*}
 
 \subsection{T0 stripped-prompt disambiguation}
 \label{app:t0-stripped-prompt}

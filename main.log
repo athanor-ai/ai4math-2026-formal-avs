@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.8)  7 MAY 2026 05:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.8)  7 MAY 2026 05:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -788,6 +788,10 @@ LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
 (Font)              using `OT1/lmr/bx/n' instead on input line 202.
 
 
+LaTeX Warning: Reference `tab:eval-protocol' on page 4 undefined on input line 
+213.
+
+
 Underfull \hbox (badness 1661) in paragraph at lines 200--215
 \OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
 /lmr/m/n/10 (+20) : goal state-ment
@@ -906,14 +910,10 @@ nput line 72.
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 73.
 
-Overfull \hbox (136.8936pt too wide) in paragraph at lines 129--150
- [][] 
- []
+LaTeX Warning: Reference `tab:eval-protocol' on page 9 undefined on input line 
+114.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
+[9]
 Underfull \hbox (badness 2662) in paragraph at lines 179--181
 \OT1/lmr/m/n/10 (+20) chain that ad-mits the clo-sure (used in the
  []
@@ -952,13 +952,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--229
 al.exp[]log[]eq[]iff\OT1/lmr/m/n/10 (+20) ,
  []
 
-[10]
+
 Overfull \hbox (80.12158pt too wide) in paragraph at lines 265--265
 []\OT1/lmtt/m/n/10 Before producing the Lean 4 code to formally prove the given
 [] 
  []
 
-
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 292--296
 []\OT1/lmtt/m/n/10 Real.exp[]le[]one[]iff\OT1/lmr/m/n/10 (+20) ,
  []
@@ -1022,24 +1022,11 @@ Underfull \hbox (badness 5696) in paragraph at lines 323--338
  []
 
 
-Overfull \hbox (23.2399pt too wide) in paragraph at lines 350--366
- [][] 
- []
-
-
 Underfull \hbox (badness 4832) in paragraph at lines 379--382
 []\OT1/lmr/m/n/10 (+20) Clone the dataset repo from the snap-shot
  []
 
 [11]
-Overfull \hbox (252.94467pt too wide) in paragraph at lines 438--452
- [][] 
- []
-
-
-Underfull \vbox (badness 4886) has occurred while \output is active []
-
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 454.
@@ -1072,27 +1059,18 @@ get
  []
 
 
-Overfull \hbox (93.94835pt too wide) in paragraph at lines 498--511
- [][] 
- []
+LaTeX Warning: Reference `tab:wilson-ci-n10' on page 12 undefined on input line
+ 478.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
 LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
 524.
 LaTeX Font Info:    No file OMSlmtt.fd. on input line 524.
-
 
 LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 524.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
+[12]
 Underfull \hbox (badness 3735) in paragraph at lines 604--622
 []\OT1/lmr/m/n/10 (+20) In ad-di-tion to the benchmark-Table []1[] eval-u-a-
  []
@@ -1103,31 +1081,27 @@ Underfull \hbox (badness 1005) in paragraph at lines 604--622
  []
 
 
-Overfull \hbox (252.95335pt too wide) in paragraph at lines 682--695
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+
+LaTeX Warning: Reference `tab:four-regimes' on page 14 undefined on input line 
+668.
 
 
 Underfull \hbox (badness 1776) in paragraph at lines 715--724
 \OT1/lmr/m/n/10 (+20) i-cal ax-iom set for a clas-si-cal Math-lib proof is
  []
 
-[14]
-Overfull \hbox (252.97131pt too wide) in paragraph at lines 736--753
- [][] 
- []
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (149.75775pt too wide) in paragraph at lines 798--811
  [][] 
  []
 
-
-Overfull \hbox (252.9635pt too wide) in paragraph at lines 835--850
- [][] 
- []
-
-[15]
+[14]
 Underfull \hbox (badness 6094) in paragraph at lines 882--887
 []\OT1/lmr/m/n/10 (+20) Log-domain sub-sti-tu-tion $\OML/lmm/m/it/10 x \OMS/lms
 y/m/n/10 7!
@@ -1172,12 +1146,12 @@ Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
  []
 
-
+[15]
 Overfull \hbox (146.10716pt too wide) in paragraph at lines 964--979
  [][] 
  []
 
-[16]
+
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
  []
@@ -1185,20 +1159,25 @@ Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) [17]
-(./main.aux)
+ [16])
+[17
+
+] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 874906D207B34699CE2BAA6C02836292;9019.
  ) 
 Here is how much of TeX's memory you used:
- 17967 strings out of 480247
- 284980 string characters out of 5896152
- 667505 words of memory out of 5000000
- 35200 multiletter control sequences out of 15000+600000
- 539749 words of font info for 213 fonts, out of 8000000 for 9000
+ 17954 strings out of 480247
+ 284825 string characters out of 5896152
+ 665304 words of memory out of 5000000
+ 35199 multiletter control sequences out of 15000+600000
+ 539420 words of font info for 209 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,15n,77p,1001b,1310s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
@@ -1221,10 +1200,10 @@ lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (17 pages, 569590 bytes).
+Output written on main.pdf (17 pages, 561399 bytes).
 PDF statistics:
- 739 PDF objects out of 1000 (max. 8388607)
- 644 compressed objects within 7 object streams
- 146 named destinations out of 1000 (max. 500000)
+ 729 PDF objects out of 1000 (max. 8388607)
+ 629 compressed objects within 7 object streams
+ 142 named destinations out of 1000 (max. 500000)
  41313 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -148,10 +148,8 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2}\texttt  {benchmark.jsonl} record (excerpt) for the same target. The \texttt  {hint\_ablation} block carries the three prompt columns for T3 targets only (Table\nobreakspace  {}\ref  {tab:hint-legend}).}{9}{lstlisting.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {D}Evaluation-protocol pipeline}{9}{appendix.D}\protected@file@percent }
 \newlabel{app:eval-protocol-fig}{{D}{9}{}{appendix.D}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Five-stage evaluation pipeline applied per (target, drafter, prompt) cell. Companion to \S  \ref  {sec:methods-hint-ablation}. Expanded form of the protocol text in\nobreakspace  {}\S  \ref  {sec:methods-tiers}.\relax }}{10}{table.caption.7}\protected@file@percent }
-\newlabel{tab:eval-protocol}{{5}{10}{Five-stage evaluation pipeline applied per (target, drafter, prompt) cell. Companion to \S \ref {sec:methods-hint-ablation}. Expanded form of the protocol text in~\S \ref {sec:methods-tiers}.\relax }{table.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Dataset schema}{10}{appendix.E}\protected@file@percent }
-\newlabel{app:schema}{{E}{10}{}{appendix.E}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}Dataset schema}{9}{appendix.E}\protected@file@percent }
+\newlabel{app:schema}{{E}{9}{}{appendix.E}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {F}Aristotle history schema}{10}{appendix.F}\protected@file@percent }
 \newlabel{app:aristotle}{{F}{10}{}{appendix.F}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {G}Drafter prompts}{10}{appendix.G}\protected@file@percent }
@@ -163,65 +161,59 @@
 \@writefile{toc}{\contentsline {paragraph}{Spot-check N=5 result.}{11}{subsection.G.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {H}Tier-distribution table}{11}{appendix.H}\protected@file@percent }
 \newlabel{app:tier-dist}{{H}{11}{}{appendix.H}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Target distribution across tier $\times $ family. $60$ targets total. T4 plus T5 are the empirical failure categories ($5$ theorems). $53$ of $60$ non-frontier targets require \texttt  {formal-avs-lean}.\relax }}{11}{table.caption.8}\protected@file@percent }
-\newlabel{tab:tier-dist}{{6}{11}{Target distribution across tier $\times $ family. $60$ targets total. T4 plus T5 are the empirical failure categories ($5$ theorems). $53$ of $60$ non-frontier targets require \texttt {formal-avs-lean}.\relax }{table.caption.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Baseline reproducibility}{11}{appendix.I}\protected@file@percent }
 \newlabel{app:reproducibility}{{I}{11}{}{appendix.I}{}}
-\@writefile{toc}{\contentsline {paragraph}{Asset licenses.}{12}{Item.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Wilson 95\% confidence intervals on Table\nobreakspace  {}\ref  {tab:headline}.}{12}{Item.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Asset licenses.}{11}{Item.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Wilson 95\% confidence intervals on Table\nobreakspace  {}\ref  {tab:headline}.}{11}{Item.5}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Wilson 95\% confidence intervals on every per-cell pass@5 closure rate from Table\nobreakspace  {}\ref  {tab:headline}. Cells report targets-closed/tier-size with the Wilson 95\% CI in brackets (percent units). Mistral T1 $1/34$ at $[1,15]$ is separated from the $34$--$66\%$ band of Sonnet/Kimi/Gemini. The four-drafter T3 wall has every drafter at most $17\%$ upper bound, below Aristotle's $6/6$ T3 closure (\S  \ref  {sec:capability-ladder}). T4 and T5 cells report $0$-imputed outcomes. Intervals reflect sampling uncertainty on the structural zero.\relax }}{12}{table.caption.9}\protected@file@percent }
 \newlabel{tab:wilson-ci}{{7}{12}{Wilson 95\% confidence intervals on every per-cell pass@5 closure rate from Table~\ref {tab:headline}. Cells report targets-closed/tier-size with the Wilson 95\% CI in brackets (percent units). Mistral T1 $1/34$ at $[1,15]$ is separated from the $34$--$66\%$ band of Sonnet/Kimi/Gemini. The four-drafter T3 wall has every drafter at most $17\%$ upper bound, below Aristotle's $6/6$ T3 closure (\S \ref {sec:capability-ladder}). T4 and T5 cells report $0$-imputed outcomes. Intervals reflect sampling uncertainty on the structural zero.\relax }{table.caption.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.1}$N=10$ extension}{12}{subsection.I.1}\protected@file@percent }
 \newlabel{app:robustness-n10}{{I.1}{12}{}{subsection.I.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Per-cell pass@10 closure rates with Wilson 95\% CIs. T4 and T5 omitted (no drafter closes either at any $N$). Three cells differ from pass@5 in Table\nobreakspace  {}\ref  {tab:wilson-ci}: Gemini T2 $0/8 \to 1/8$, Opus T3 $0/6 \to 1/6$, DSPv2 T3 $1/6 \to 2/6$. Per-cell intervals are stable across $N=5 \to N=10$.\relax }}{13}{table.caption.10}\protected@file@percent }
-\newlabel{tab:wilson-ci-n10}{{8}{13}{Per-cell pass@10 closure rates with Wilson 95\% CIs. T4 and T5 omitted (no drafter closes either at any $N$). Three cells differ from pass@5 in Table~\ref {tab:wilson-ci}: Gemini T2 $0/8 \to 1/8$, Opus T3 $0/6 \to 1/6$, DSPv2 T3 $1/6 \to 2/6$. Per-cell intervals are stable across $N=5 \to N=10$.\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{DSPv2 inference-path note.}{13}{table.caption.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Reproducibility note: trace-on-default for sweep launches.}{13}{table.caption.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {J}Refutation case study: Aristotle counterexample}{13}{appendix.J}\protected@file@percent }
-\newlabel{app:refutation-case}{{J}{13}{}{appendix.J}{}}
+\@writefile{toc}{\contentsline {paragraph}{DSPv2 inference-path note.}{12}{table.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reproducibility note: trace-on-default for sweep launches.}{12}{table.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {J}Refutation case study: Aristotle counterexample}{12}{appendix.J}\protected@file@percent }
+\newlabel{app:refutation-case}{{J}{12}{}{appendix.J}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {K}Extended capability analysis}{13}{appendix.K}\protected@file@percent }
 \newlabel{app:extended}{{K}{13}{}{appendix.K}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.1}Aristotle history archive}{13}{subsection.K.1}\protected@file@percent }
 \newlabel{app:aristotle-history}{{K.1}{13}{}{subsection.K.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.2}Aristotle capability demonstrations beyond the main table}{14}{subsection.K.2}\protected@file@percent }
-\newlabel{app:aristotle-companion}{{K.2}{14}{}{subsection.K.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.3}Cross-drafter tactic-prior diversity}{14}{subsection.K.3}\protected@file@percent }
-\newlabel{app:cross-drafter}{{K.3}{14}{}{subsection.K.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Convergent T3 close on the $\sqrt  {2}$ identity.}{14}{subsection.K.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.2}Aristotle capability demonstrations beyond the main table}{13}{subsection.K.2}\protected@file@percent }
+\newlabel{app:aristotle-companion}{{K.2}{13}{}{subsection.K.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.3}Cross-drafter tactic-prior diversity}{13}{subsection.K.3}\protected@file@percent }
+\newlabel{app:cross-drafter}{{K.3}{13}{}{subsection.K.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Convergent T3 close on the $\sqrt  {2}$ identity.}{13}{subsection.K.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.4}Four solver regimes in the capability-wall tail}{14}{subsection.K.4}\protected@file@percent }
 \newlabel{app:four-regimes}{{K.4}{14}{}{subsection.K.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Four solver regimes in the no-closure tail. Cells are (close count)/(attempt count) at $N \leq 9$ per drafter. $^\dagger $Solver-unreached: no closure across (a) 3 drafters $\times N=5$ greedy unhinted, (b) 3 drafters $\times $ asymmetric \textsc  {Sub}, (c) 3 drafters $\times N=5$ \textsc  {Sub+Chain}, (d) 3 Aristotle attempts. $^\ddagger $Two Aristotle sessions timed out at $20$\nobreakspace  {}min. One returned a counterexample on the as-stated form (\S  \ref  {sec:aristotle-refute}). We avoid claiming \emph  {fundamentally} unreachable.\relax }}{14}{table.caption.11}\protected@file@percent }
-\newlabel{tab:four-regimes}{{9}{14}{Four solver regimes in the no-closure tail. Cells are (close count)/(attempt count) at $N \leq 9$ per drafter. $^\dagger $Solver-unreached: no closure across (a) 3 drafters $\times N=5$ greedy unhinted, (b) 3 drafters $\times $ asymmetric \textsc {Sub}, (c) 3 drafters $\times N=5$ \textsc {Sub+Chain}, (d) 3 Aristotle attempts. $^\ddagger $Two Aristotle sessions timed out at $20$~min. One returned a counterexample on the as-stated form (\S \ref {sec:aristotle-refute}). We avoid claiming \emph {fundamentally} unreachable.\relax }{table.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.5}Axiom audit}{14}{subsection.K.5}\protected@file@percent }
 \newlabel{app:axiom-audit}{{K.5}{14}{}{subsection.K.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Axiom audit. Every closed proof uses exactly $\mathcal  {A}_{\text  {core}} = \{\texttt  {propext}, \texttt  {Classical.choice}, \texttt  {Quot.sound}\}$. Refuted targets return a counterexample witness, no proof. Three refutations are documented in \S  \ref  {sec:aristotle-refute} and \S  \ref  {app:refutation-case}. No closed proof widens the axiom set beyond $\mathcal  {A}_{\text  {core}}$ on either side.\relax }}{15}{table.caption.12}\protected@file@percent }
-\newlabel{tab:axiom-audit}{{10}{15}{Axiom audit. Every closed proof uses exactly $\mathcal {A}_{\text {core}} = \{\texttt {propext}, \texttt {Classical.choice}, \texttt {Quot.sound}\}$. Refuted targets return a counterexample witness, no proof. Three refutations are documented in \S \ref {sec:aristotle-refute} and \S \ref {app:refutation-case}. No closed proof widens the axiom set beyond $\mathcal {A}_{\text {core}}$ on either side.\relax }{table.caption.12}{}}
-\@writefile{toc}{\contentsline {paragraph}{Why this matters.}{15}{table.caption.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.6}Failure-mode taxonomy of the drafter sweep}{15}{subsection.K.6}\protected@file@percent }
-\newlabel{app:failure-modes}{{K.6}{15}{}{subsection.K.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Per-drafter and aggregate failure-mode breakdown of the $N=5$ sweep across T0/T1/T2 (T3 ablation columns in Table\nobreakspace  {}\ref  {tab:ablation}). The dominant non-close mode is type-check failure. Opus's sorry rate is $52/480 = 10.8\%$, an order of magnitude above Sonnet's $2.4\%$ and the other three drafters' $\leq 0.2\%$. Kimi and Mistral each have $85$ sample-side errors concentrated on T2 (truncated or empty API completions), an integration artefact.\relax }}{15}{table.caption.13}\protected@file@percent }
-\newlabel{tab:failure-modes}{{11}{15}{Per-drafter and aggregate failure-mode breakdown of the $N=5$ sweep across T0/T1/T2 (T3 ablation columns in Table~\ref {tab:ablation}). The dominant non-close mode is type-check failure. Opus's sorry rate is $52/480 = 10.8\%$, an order of magnitude above Sonnet's $2.4\%$ and the other three drafters' $\leq 0.2\%$. Kimi and Mistral each have $85$ sample-side errors concentrated on T2 (truncated or empty API completions), an integration artefact.\relax }{table.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.7}Latency and cost profile}{15}{subsection.K.7}\protected@file@percent }
-\newlabel{app:cost}{{K.7}{15}{}{subsection.K.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Axiom audit. Every closed proof uses exactly $\mathcal  {A}_{\text  {core}} = \{\texttt  {propext}, \texttt  {Classical.choice}, \texttt  {Quot.sound}\}$. Refuted targets return a counterexample witness, no proof. Three refutations are documented in \S  \ref  {sec:aristotle-refute} and \S  \ref  {app:refutation-case}. No closed proof widens the axiom set beyond $\mathcal  {A}_{\text  {core}}$ on either side.\relax }}{14}{table.caption.12}\protected@file@percent }
+\newlabel{tab:axiom-audit}{{10}{14}{Axiom audit. Every closed proof uses exactly $\mathcal {A}_{\text {core}} = \{\texttt {propext}, \texttt {Classical.choice}, \texttt {Quot.sound}\}$. Refuted targets return a counterexample witness, no proof. Three refutations are documented in \S \ref {sec:aristotle-refute} and \S \ref {app:refutation-case}. No closed proof widens the axiom set beyond $\mathcal {A}_{\text {core}}$ on either side.\relax }{table.caption.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why this matters.}{14}{table.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.6}Failure-mode taxonomy of the drafter sweep}{14}{subsection.K.6}\protected@file@percent }
+\newlabel{app:failure-modes}{{K.6}{14}{}{subsection.K.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Per-drafter and aggregate failure-mode breakdown of the $N=5$ sweep across T0/T1/T2 (T3 ablation columns in Table\nobreakspace  {}\ref  {tab:ablation}). The dominant non-close mode is type-check failure. Opus's sorry rate is $52/480 = 10.8\%$, an order of magnitude above Sonnet's $2.4\%$ and the other three drafters' $\leq 0.2\%$. Kimi and Mistral each have $85$ sample-side errors concentrated on T2 (truncated or empty API completions), an integration artefact.\relax }}{14}{table.caption.13}\protected@file@percent }
+\newlabel{tab:failure-modes}{{11}{14}{Per-drafter and aggregate failure-mode breakdown of the $N=5$ sweep across T0/T1/T2 (T3 ablation columns in Table~\ref {tab:ablation}). The dominant non-close mode is type-check failure. Opus's sorry rate is $52/480 = 10.8\%$, an order of magnitude above Sonnet's $2.4\%$ and the other three drafters' $\leq 0.2\%$. Kimi and Mistral each have $85$ sample-side errors concentrated on T2 (truncated or empty API completions), an integration artefact.\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.7}Latency and cost profile}{14}{subsection.K.7}\protected@file@percent }
+\newlabel{app:cost}{{K.7}{14}{}{subsection.K.7}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Drafter sweep latency and cost profile on the $48$-slate. Attempt counts include duplicate runs after a tokenizer fix. Per-attempt cost uses $T=0$ greedy plus $T=0.7$ samples at list prices. Total API-priced cost across the five closed-source drafters is $\$37.30$. DSPv2 and Goedel-V2 run locally with no API cost. Token counts are approximate.\relax }}{15}{table.caption.14}\protected@file@percent }
 \newlabel{tab:cost}{{12}{15}{Drafter sweep latency and cost profile on the $48$-slate. Attempt counts include duplicate runs after a tokenizer fix. Per-attempt cost uses $T=0$ greedy plus $T=0.7$ samples at list prices. Total API-priced cost across the five closed-source drafters is $\$37.30$. DSPv2 and Goedel-V2 run locally with no API cost. Token counts are approximate.\relax }{table.caption.14}{}}
 \@writefile{toc}{\contentsline {paragraph}{Cost per closed target.}{15}{table.caption.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.8}Glossary of formal-methods terms}{16}{subsection.K.8}\protected@file@percent }
-\newlabel{app:glossary}{{K.8}{16}{}{subsection.K.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.9}How to extend the benchmark}{16}{subsection.K.9}\protected@file@percent }
-\newlabel{app:how-to-extend}{{K.9}{16}{}{subsection.K.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.8}Glossary of formal-methods terms}{15}{subsection.K.8}\protected@file@percent }
+\newlabel{app:glossary}{{K.8}{15}{}{subsection.K.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.9}How to extend the benchmark}{15}{subsection.K.9}\protected@file@percent }
+\newlabel{app:how-to-extend}{{K.9}{15}{}{subsection.K.9}{}}
+\citation{dspv22025}
+\citation{goedelprover2025}
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.10}Aristotle session metadata}{16}{subsection.K.10}\protected@file@percent }
 \newlabel{app:aristotle-session-metadata}{{K.10}{16}{}{subsection.K.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Aristotle 14-session archive summary. All ``closed'' rows are axiom-clean ($\mathcal  {A}_{\text  {core}}$). \textsuperscript  {$\dagger $}\nobreakspace  {}companion-archive sessions (\S  \ref  {app:aristotle-companion}). \textsuperscript  {$\ddagger $}\nobreakspace  {}library-development sessions whose targets are not in the benchmark. Full per-session JSON in \texttt  {aristotle\_history.jsonl}.\relax }}{16}{table.caption.15}\protected@file@percent }
 \newlabel{tab:aristotle-sessions}{{13}{16}{Aristotle 14-session archive summary. All ``closed'' rows are axiom-clean ($\mathcal {A}_{\text {core}}$). \textsuperscript {$\dagger $}~companion-archive sessions (\S \ref {app:aristotle-companion}). \textsuperscript {$\ddagger $}~library-development sessions whose targets are not in the benchmark. Full per-session JSON in \texttt {aristotle\_history.jsonl}.\relax }{table.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {K.11}T0 stripped-prompt disambiguation}{16}{subsection.K.11}\protected@file@percent }
 \newlabel{app:t0-stripped-prompt}{{K.11}{16}{}{subsection.K.11}{}}
-\citation{dspv22025}
-\citation{goedelprover2025}
-\@writefile{toc}{\contentsline {subsection}{\numberline {K.12}N=25 T3 replicate}{17}{subsection.K.12}\protected@file@percent }
-\newlabel{app:n25-t3-replicate}{{K.12}{17}{}{subsection.K.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {L}Prompt-sensitivity detail}{17}{appendix.L}\protected@file@percent }
-\newlabel{app:prompt-sensitivity-detail}{{L}{17}{}{appendix.L}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {M}Inference-format analysis}{17}{appendix.M}\protected@file@percent }
-\newlabel{app:inference-format}{{M}{17}{}{appendix.M}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {K.12}N=25 T3 replicate}{16}{subsection.K.12}\protected@file@percent }
+\newlabel{app:n25-t3-replicate}{{K.12}{16}{}{subsection.K.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {L}Prompt-sensitivity detail}{16}{appendix.L}\protected@file@percent }
+\newlabel{app:prompt-sensitivity-detail}{{L}{16}{}{appendix.L}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {M}Inference-format analysis}{16}{appendix.M}\protected@file@percent }
+\newlabel{app:inference-format}{{M}{16}{}{appendix.M}{}}
 \gdef \@abspage@last{17}

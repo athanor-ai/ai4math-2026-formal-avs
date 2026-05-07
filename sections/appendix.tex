@@ -117,7 +117,7 @@ pipeline summarised in~\S\ref{sec:methods-hint-ablation}. Every
 Stage~4 pins outcomes to the fixed logical foundation
 of~\S\ref{sec:methods-qa}.
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \setlength{\tabcolsep}{4pt}
@@ -148,7 +148,7 @@ text in~\S\ref{sec:methods-tiers}.}
 \bottomrule
 \end{tabular}
 
-\end{table}
+\end{table*}
 
 \section{Dataset schema}
 \label{app:schema}
@@ -339,7 +339,7 @@ deferred to a future revision.
 \section{Tier-distribution table}
 \label{app:tier-dist}
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{Target distribution across tier $\times$ family. $60$
@@ -364,7 +364,7 @@ Total                        & 7 & 34 & 8 & 6 & 4 & 1 \\
 \bottomrule
 \end{tabular}
 
-\end{table}
+\end{table*}
 
 \section{Baseline reproducibility}
 \label{app:reproducibility}
@@ -435,7 +435,7 @@ structural zero.}
 \label{tab:wilson-ci}
 \centering
 \small
-\resizebox{\textwidth}{!}{%
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{l|cccccc}
 \toprule
 Drafter & T0 & T1 & T2 & T3 & T4 & T5 \\
@@ -486,7 +486,7 @@ $1/6 = 17\%$ point estimate, with Sonnet and Gemini at $0/6$). The
 four-drafter T0 floor remains at $0/7$ for all four with Wilson
 upper bound $35\%$.
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \small
 \caption{Per-cell pass@10 closure rates with Wilson 95\% CIs.
@@ -509,7 +509,7 @@ DSPv2-$7$B GPTQ-int$8$ & 3/7 \textcolor{gray}{[16,75]} & 8/34 \textcolor{gray}{[
 \bottomrule
 \end{tabular}
 
-\end{table}
+\end{table*}
 
 \paragraph{DSPv2 inference-path note.}
 The DSPv2 $N=10$ extension required switching inference paths
@@ -667,7 +667,7 @@ closure matrix out by target reveals \emph{four qualitatively
 distinct solver regimes} plus a deepest-tier target unreachable by
 any generalist drafter (Table~\ref{tab:four-regimes}):
 
-\begin{table}[H]
+\begin{table*}[H]
 \centering
 \caption{Four solver regimes in the no-closure tail. Cells are
 (close count)/(attempt count) at $N \leq 9$ per drafter.
@@ -679,7 +679,7 @@ at $20$~min. One returned a counterexample on the as-stated
 form (\S\ref{sec:aristotle-refute}). We avoid claiming
 \emph{fundamentally} unreachable.}
 \label{tab:four-regimes}
-\resizebox{\textwidth}{!}{%
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lccccc}
 \toprule
 Target & Kimi & Sonnet & Gemini & Aristotle & Regime \\
@@ -693,7 +693,7 @@ Target & Kimi & Sonnet & Gemini & Aristotle & Regime \\
 \end{tabular}%
 }
 
-\end{table}
+\end{table*}
 
 The four regimes correspond directly to the capability axes identified
 in \S\ref{sec:results}. \emph{Universal} targets exercise only baseline
@@ -733,7 +733,7 @@ refutations are documented in \S\ref{sec:aristotle-refute} and
 \S\ref{app:refutation-case}. No closed proof widens the axiom
 set beyond $\mathcal{A}_{\text{core}}$ on either side.}
 \label{tab:axiom-audit}
-\resizebox{\textwidth}{!}{%
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Source & Verdict & N & Axiom set \\
@@ -832,7 +832,7 @@ samples at list prices. Total API-priced cost across the five
 closed-source drafters is $\$37.30$. DSPv2 and Goedel-V2 run
 locally with no API cost. Token counts are approximate.}
 \label{tab:cost}
-\resizebox{\textwidth}{!}{%
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrrrrr}
 \toprule
 Drafter & attempts & per-att wall & per-att cost & tok-in & tok-out & total \\

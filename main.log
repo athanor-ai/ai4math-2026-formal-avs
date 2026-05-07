@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.8)  7 MAY 2026 05:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.8)  7 MAY 2026 05:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,6 +1116,11 @@ Underfull \hbox (badness 4217) in paragraph at lines 940--944
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 975--975
+[]\OT1/lmr/m/n/9 (+20) sharp-rank, en-tropy,
+ []
+
+
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
  []
@@ -1162,7 +1167,7 @@ lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 571318 bytes).
+Output written on main.pdf (18 pages, 571371 bytes).
 PDF statistics:
  778 PDF objects out of 1000 (max. 8388607)
  682 compressed objects within 7 object streams

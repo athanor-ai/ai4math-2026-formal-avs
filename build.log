@@ -153,32 +153,13 @@ LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
 (Font)              using `OT1/lmr/bx/n' instead on input line 202.
 
 
-LaTeX Warning: Reference `tab:hint-legend' on page 4 undefined on input line 21
-1.
-
-
-LaTeX Warning: Reference `tab:eval-protocol' on page 4 undefined on input line 
-213.
-
-
 Underfull \hbox (badness 1661) in paragraph at lines 200--215
 \OT1/lmr/m/n/10 (+20) er-able from the la-bel. \OT1/lmr/bx/sc/10 (+20) Base\OT1
 /lmr/m/n/10 (+20) : goal state-ment
 
 Underfull \vbox (badness 1264) has occurred while \output is active [4]
 Underfull \vbox (badness 10000) has occurred while \output is active)
-(./sections/results.tex
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 5 undefined on input line 39.
-
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 5 undefined on input line 39.
-
-[5]
-
-LaTeX Warning: Reference `tab:ablation' on page 6 undefined on input line 178.
-
-
+(./sections/results.tex [5]
 Underfull \hbox (badness 4242) in paragraph at lines 185--194
 []\OT1/lmr/m/n/10 (+20) Beyond clo-sure, Aris-to-tle re-futed three bench-
 
@@ -212,9 +193,6 @@ Underfull \hbox (badness 1019) in paragraph at lines 20--32
 
 Underfull \hbox (badness 2894) in paragraph at lines 20--32
 \OT1/lmr/m/n/10 (+20) thors[], []2025[]), trained on Math-lib, re-sponds to
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 7 undefined on input line 53.
-
 [7])
 Underfull \hbox (badness 2582) in paragraph at lines 56--101
  \OT1/lmr/bx/sc/10 (+20) Broader im-pact.[] \OT1/lmr/m/n/10 (+20) Anytime-valid
@@ -241,26 +219,6 @@ Underfull \hbox (badness 2573) in paragraph at lines 50--55
 []\OT1/lmr/m/sc/9 (+20) Sub \OT1/lmr/m/n/9 (+20) plus an ex-plicit Math-lib lem
 ma chain (\OT1/lmtt/m/n/9 Real.exp[]le[]one[]iff\OT1/lmr/m/n/9 (+20) , \OT1/lmt
 t/m/n/9 Real.log[]nonneg\OT1/lmr/m/n/9 (+20) ,
-
-LaTeX Warning: Reference `tab:hint-legend' on page 9 undefined on input line 86
-.
-
-
-LaTeX Warning: Reference `tab:hint-legend' on page 9 undefined on input line 86
-.
-
-
-LaTeX Warning: Reference `tab:eval-protocol' on page 9 undefined on input line 
-114.
-
-
-LaTeX Warning: Reference `tab:hint-legend' on page 9 undefined on input line 13
-8.
-
-
-LaTeX Warning: Reference `tab:hint-legend' on page 9 undefined on input line 17
-5.
-
 
 Underfull \hbox (badness 2662) in paragraph at lines 179--181
 \OT1/lmr/m/n/10 (+20) chain that ad-mits the clo-sure (used in the
@@ -300,10 +258,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--316
 []\OT1/lmr/m/n/10 (+20) The two chains over-lap on $5\OML/lmm/m/it/10 =\OT1/lmr
 /m/n/10 (+20) 7$ lem-mas
 
-LaTeX Warning: Reference `tab:ablation' on page 11 undefined on input line 317.
-
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 323--338
  \OT1/lmr/bx/sc/10 (+20) Spot-check N=5 re-sult.[] \OT1/lmr/m/n/10 (+20) We ran
  a
@@ -325,14 +279,6 @@ Underfull \hbox (badness 5696) in paragraph at lines 323--338
 [11]
 Underfull \hbox (badness 4832) in paragraph at lines 379--382
 []\OT1/lmr/m/n/10 (+20) Clone the dataset repo from the snap-shot
-
-LaTeX Warning: Reference `tab:ablation' on page 12 undefined on input line 393.
-
-
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 12 undefined on input line 409
-.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 454.
@@ -357,23 +303,7 @@ Underfull \hbox (badness 3954) in paragraph at lines 468--477
 \OT1/lmtt/m/n/10 impossible\OT1/lmr/m/n/10 (+20) ), Opus closes one new T3 tar-
 get
 
-LaTeX Warning: Reference `tab:wilson-ci-n10' on page 12 undefined on input line
- 478.
-
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 12 undefined on input line 481
-.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active [12]
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 13 undefined on input line 496
-.
-
-
-LaTeX Warning: Reference `tab:wilson-ci' on page 13 undefined on input line 496
-.
-
 
 LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
@@ -386,35 +316,10 @@ Underfull \hbox (badness 3735) in paragraph at lines 604--622
 Underfull \hbox (badness 1005) in paragraph at lines 604--622
 \OT1/lmr/m/n/10 (+20) tion, Har-monic Aris-to-tle was ex-er-cised on three
 [14]
-
-LaTeX Warning: Reference `tab:four-regimes' on page 15 undefined on input line 
-668.
-
-
-LaTeX Warning: Reference `tab:axiom-audit' on page 15 undefined on input line 7
-23.
-
-
 Underfull \hbox (badness 1776) in paragraph at lines 715--724
 \OT1/lmr/m/n/10 (+20) i-cal ax-iom set for a clas-si-cal Math-lib proof is
 
-LaTeX Warning: Reference `tab:failure-modes' on page 15 undefined on input line
- 769.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active
-
-LaTeX Warning: Reference `tab:ablation' on page 15 undefined on input line 796.
-
-
-
-LaTeX Warning: Reference `tab:ablation' on page 15 undefined on input line 796.
-
-
-
-LaTeX Warning: Reference `tab:cost' on page 15 undefined on input line 817.
-
-
 Underfull \hbox (badness 6094) in paragraph at lines 882--887
 []\OT1/lmr/m/n/10 (+20) Log-domain sub-sti-tu-tion $\OML/lmm/m/it/10 x \OMS/lms
 y/m/n/10 7!
@@ -454,9 +359,8 @@ Underfull \hbox (badness 4454) in paragraph at lines 933--936
 Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
 
-LaTeX Warning: Reference `tab:aristotle-sessions' on page 17 undefined on input
- line 950.
-
+Underfull \hbox (badness 10000) in paragraph at lines 975--975
+[]\OT1/lmr/m/n/9 (+20) sharp-rank, en-tropy,
 
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
@@ -466,12 +370,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active) [18]
 (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
@@ -495,7 +393,7 @@ onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 571361 bytes).
+Output written on main.pdf (18 pages, 571371 bytes).
 Transcript written on main.log.
 This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 The top-level auxiliary file: main.aux
@@ -862,6 +760,9 @@ Underfull \hbox (badness 4454) in paragraph at lines 933--936
 Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
 
+Underfull \hbox (badness 10000) in paragraph at lines 975--975
+[]\OT1/lmr/m/n/9 (+20) sharp-rank, en-tropy,
+
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
 
@@ -893,7 +794,7 @@ onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 571318 bytes).
+Output written on main.pdf (18 pages, 571371 bytes).
 Transcript written on main.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -1256,6 +1157,9 @@ Underfull \hbox (badness 4454) in paragraph at lines 933--936
 Underfull \hbox (badness 4217) in paragraph at lines 940--944
 []\OT1/lmr/m/n/10 (+20) The bench-mark is ver-sioned. Snap-shot tags
 
+Underfull \hbox (badness 10000) in paragraph at lines 975--975
+[]\OT1/lmr/m/n/9 (+20) sharp-rank, en-tropy,
+
 Overfull \hbox (113.48483pt too wide) in paragraph at lines 1019--1031
 [][] 
 
@@ -1287,5 +1191,5 @@ onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 571318 bytes).
+Output written on main.pdf (18 pages, 571371 bytes).
 Transcript written on main.log.

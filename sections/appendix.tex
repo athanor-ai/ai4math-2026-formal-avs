@@ -380,7 +380,7 @@ and \texttt{lakefile.lean}).
 location (URL in supplementary \texttt{REPRODUCE.md},
 item~\textsc{dataset-snapshot}).
 \item Run the provided \texttt{sweep.py} against a drafter
-endpoint. It submits each of the $48$ evaluated targets under
+endpoint. It submits each of the $60$ targets under
 the mixed-temperature pass@$5$ schedule (one greedy sample at
 $T=0$ followed by four independent samples at $T=0.7$) and
 writes per-target closure records. The driver prints the
@@ -462,10 +462,10 @@ attempts per cell. The slate, prompts, verification regime, and
 v2-strict sorry-detection are held identical to the $N=5$ headline.
 The four closed-source drafters (Sonnet, Kimi, Gemini, Mistral),
 the supplementary fifth row (Opus), and the specialised prover
-(DSPv2-$7$B GPTQ-int8) were each extended on the full $48$-target
+(DSPv2-$7$B GPTQ-int8) were each extended on the full $60$-target
 slate.
 
-Across the $6 \times 48 = 288$ (drafter, target) cells, doubling
+Across the $6 \times 60 = 360$ (drafter, target) cells, doubling
 the attempt budget shifts only \emph{three} target-level closures:
 Gemini closes one new T2 target
 (\texttt{dichotomy\_\allowbreak universal\_\allowbreak monotonicity\_\allowbreak impossible}), Opus
@@ -698,7 +698,7 @@ Target & Kimi & Sonnet & Gemini & Aristotle & Regime \\
 The four regimes correspond directly to the capability axes identified
 in \S\ref{sec:results}. \emph{Universal} targets exercise only baseline
 tactic chains (well within every drafter's Mathlib prior).
-\emph{Majority} targets exercise a a rewrite step that most
+\emph{Majority} targets exercise a rewrite step that most
 but not all drafters' priors reach. \emph{Drafter-monopoly} targets
 expose cross-drafter tactic-prior divergence (Gemini's \texttt{gcongr}
 prior vs Kimi's \texttt{one\_div\_le\_one\_div\_iff} prior).
@@ -815,7 +815,7 @@ aggregate   & 322 (11.6\%) & 68 (2.5\%) & 2202 (79.5\%) & 170 (6.1\%) & 8 (0.3\%
 \label{app:cost}
 
 Table~\ref{tab:cost} reports per-drafter wall-clock and
-per-attempt API cost aggregated across the $48$-slate
+per-attempt API cost aggregated across the $60$-target benchmark
 drafter sweeps (one greedy attempt at $T=0$ plus four
 $T=0.7$ independent samples, per target). The cost column
 is the per-attempt USD cost at Anthropic/Gemini/Mistral list
@@ -826,7 +826,7 @@ latency.
 \centering
 \small
 \caption{Drafter sweep latency and cost profile on the
-$48$-slate. Attempt counts include duplicate runs after a
+$60$-target benchmark. Attempt counts include duplicate runs after a
 tokenizer fix. Per-attempt cost uses $T=0$ greedy plus $T=0.7$
 samples at list prices. Total API-priced cost across the five
 closed-source drafters is $\$37.30$. DSPv2 and Goedel-V2 run
@@ -852,17 +852,17 @@ Goedel-V2-$8$B (community GGUF Q$6$\_K) & 240 & 21.8 & \$0 & 111 & 535 & \$0 \\
 
 \paragraph{Cost per closed target.}
 We report API cost per closed target, defined as the
-per-drafter total API cost on the $48$-slate divided by the
+per-drafter total API cost on the $60$-target benchmark divided by the
 number of targets closed at pass@$5$. This avoids treating
 attempts as independent Bernoulli trials, which they are not.
-On the $48$-slate at pass@$5$: Mistral closes $2/48$ at
+On the $60$-target benchmark at pass@$5$: Mistral closes $2/60$ at
 $\$0.87$ total ($\$0.44$ per closed target on the neutral
-prompt). Sonnet closes $18/48$ at $\$5.71$ total ($\$0.32$
-per closed target). Kimi closes $18/48$ at $\$2.30$ total
-($\$0.13$ per closed target). Gemini closes $22/48$ at
+prompt). Sonnet closes $18/60$ at $\$5.71$ total ($\$0.32$
+per closed target). Kimi closes $18/60$ at $\$2.30$ total
+($\$0.13$ per closed target). Gemini closes $22/60$ at
 $\$14.67$ total ($\$0.67$ per closed target). Opus closes
-$13/48$ at $\$13.75$ total ($\$1.06$ per closed target).
-DSPv2 closes $12/48$ at $\$0$ marginal API cost. The ranking changes if measured
+$13/60$ at $\$13.75$ total ($\$1.06$ per closed target).
+DSPv2 closes $12/60$ at $\$0$ marginal API cost. The ranking changes if measured
 per attempt rather than per closed target, because attempt
 cost and closure are not linearly related. We do not derive a
 per-attempt expected closure rate.
@@ -1052,8 +1052,8 @@ reduces Mistral's closure rate.
 \textbf{Mistral Large~3.} The hint-list acts as an action-space
 restriction. Mistral's hint-list attempts converge to a deterministic
 \texttt{:= by positivity} pattern, selecting one tactic from the
-enumerated list ($0/48$ on hint-list). Without the enumeration,
-pass@$5$ rises to $2/48$, recovering the T3 $\sqrt{2}$ identity
+enumerated list ($0/60$ on hint-list). Without the enumeration,
+pass@$5$ rises to $2/60$, recovering the T3 $\sqrt{2}$ identity
 and one T1 target.
 
 \textbf{Sonnet, Kimi, Gemini.} The hint-list provides a useful
@@ -1067,8 +1067,8 @@ against reading the headline table as a single leaderboard.
 \section{Inference-format analysis}
 \label{app:inference-format}
 
-On our slate, DSPv2-7B~\cite{dspv22025} closes $9/48$ at pass@$5$
-while Goedel-Prover-V2-8B~\cite{goedelprover2025} closes $5/48$
+On our slate, DSPv2-7B~\cite{dspv22025} closes $9/60$ at pass@$5$
+while Goedel-Prover-V2-8B~\cite{goedelprover2025} closes $5/60$
 under single-shot, despite Goedel-V2 reporting higher closure rates
 on published benchmarks (MiniF2F, ProofNet). Four of five Goedel-V2
 closures overlap with DSPv2. The gap is a hardware-constraint
@@ -1080,8 +1080,8 @@ context is $4096$ tokens ($12.5\%$ of the recommended budget).
 Under agentic mode (\texttt{cycle\_prove} $r{=}4$), Goedel-V2's
 verifier-guided self-correction training activates: the model uses
 Lean compiler feedback to iteratively revise its proofs, rising from
-$5/48$ to $13/48$ ($2.6\times$). This surpasses DSPv2's single-shot
-$9/48$, making Goedel-V2 the strongest local prover on our slate at
+$5/60$ to $13/60$ ($2.6\times$). This surpasses DSPv2's single-shot
+$9/60$, making Goedel-V2 the strongest local prover on our slate at
 \$0 marginal cost. The self-correction capability is the
 differentiator: DSPv2 (autocomplete-trained, no self-correction)
 cannot benefit from a refinement loop.
